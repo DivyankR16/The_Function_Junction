@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Made Person,Customer,Manager.">
+      <change afterPath="$PROJECT_DIR$/CMP/src/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GUI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ChangePasswordViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ChangePasswordViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMP/src/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMP/src/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMP/src/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Login.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CMP/CMP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/Login.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,16 +43,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Project.color&quot;: &quot;302f2a&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IIIT/IIIT Shri City/JavaProject/TFJ/TheFunctionJunction/GUI/src/main/resources/tfj_gui/gui/Login_View.fxml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Project.color": "302f2a",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "D:/IIIT/IIIT Shri City/JavaProject/TFJ/TheFunctionJunction/GUI/src/main/resources/tfj_gui/gui/Login_View.fxml",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IIIT\IIIT Shri City\JavaProject\TFJ\TheFunctionJunction\GUI\src\main\resources\tfj_gui\gui" />

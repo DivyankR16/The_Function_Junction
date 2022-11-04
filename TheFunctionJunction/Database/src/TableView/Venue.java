@@ -1,4 +1,6 @@
 package TableView;
 
-public class Venue {
+public class Venue
+{
+
 }
