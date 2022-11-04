@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demokkklkl" />
         <module name="GUI" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demokkklkl" target="19" />
       <module name="GUI" target="18" />
     </bytecodeTargetLevel>
   </component>
