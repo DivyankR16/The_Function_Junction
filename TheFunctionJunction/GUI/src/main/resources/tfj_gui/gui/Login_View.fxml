@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="Anchor_Pane_View1" maxHeight="540.0" maxWidth="720.0" minHeight="540.0" minWidth="720.0" prefHeight="540.0" prefWidth="720.0" style="-fx-background-color: #195190FF;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tfj_gui.gui.Login_View_Controller">
+   <children>
+      <TextField fx:id="Login_Page_Input_LoginId" alignment="CENTER" layoutX="285.0" layoutY="283.0" prefHeight="26.0" prefWidth="167.0" promptText="Enter Login Id" />
+      <PasswordField fx:id="Login_Page_Input_Password" alignment="CENTER" layoutX="285.0" layoutY="319.0" prefHeight="18.0" prefWidth="167.0" promptText="Enter Password" />
+      <Button fx:id="Login_View_Login_Button" alignment="CENTER" layoutX="337.0" layoutY="397.0" mnemonicParsing="false" onAction="#Login_View_Clicked_On_Login" text="Login" />
+      <Label layoutX="421.0" layoutY="423.0" prefHeight="36.0" prefWidth="289.0" text="New to The Function Junction? Click below to Sign Up." textFill="WHITE" />
+      <Button fx:id="Login_View_SignUp_Button" layoutX="566.0" layoutY="459.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" text="Sign-Up" />
+      <ChoiceBox fx:id="Login_View_Choice_Box" layoutX="324.0" layoutY="353.0" prefHeight="26.0" prefWidth="130.0" />
+      <Label fx:id="Login_View_ChoiceBox_Label" layoutX="285.0" layoutY="357.0" text="I am a" textFill="WHITE" />
+      <Pane layoutX="-3.0" layoutY="-2.0" prefHeight="240.0" prefWidth="720.0" style="-fx-background-color: #00008b;">
+         <children>
+            <ImageView fitHeight="240.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@tfjlogo6.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
