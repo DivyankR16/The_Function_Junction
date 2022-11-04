@@ -1,6 +1,7 @@
 module tfj_gui.gui {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens tfj_gui.gui to javafx.fxml;
