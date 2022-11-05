@@ -1,5 +1,6 @@
 package Login;
 
 public interface Login {
-    public int Login(String userName,String password,String TableName);
+     int Login(String userName,String password,String TableName);
+     String getPass(String loginID);
 }

@@ -49,7 +49,7 @@ public class Person implements Login{
 
     @Override
     public int Login(String LoginID, String password,String TableName) {
-
+        LoginID=LoginID.trim();
         int validity=0;
         Connection conn= Connect.createConnection();
         try{if(LoginID.isEmpty()){
@@ -79,5 +79,26 @@ public class Person implements Login{
             Connect.closeConnection();
         }
         return validity;
+    }
+
+    @Override
+    public String getPass(String loginID){
+        Connection conn=Connect.createConnection();
+        String password="";
+        try{String query="Select password from where loginid=?";
+            PreparedStatement preStatement=conn.prepareStatement(query);
+            preStatement.setString(1,loginID);
+            ResultSet rs=preStatement.executeQuery();
+            if(rs.next()){
+                password=rs.getString("password");
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            Connect.closeConnection();
+        }
+        return password;
     }
     }

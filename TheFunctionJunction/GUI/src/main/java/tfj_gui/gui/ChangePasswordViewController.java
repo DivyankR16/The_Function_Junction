@@ -1,5 +1,6 @@
 package tfj_gui.gui;
 
+import Login.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -132,17 +133,18 @@ public class ChangePasswordViewController {
         stage.show();
     }
     @FXML
-    protected void ChangePasswordFinalButtonClicked()
+    protected void ChangePasswordFinalButtonClicked(String LoginID)
     {
         String oldPassword = OldPasswordInput.getText();
         String newPassword = NewPasswordInput.getText();
         String confirmNewPassword = ConfirmNewPasswordInput.getText();
         if (newPassword.compareTo(confirmNewPassword)==0)
         {
-//            if (oldPassword.compareTo(Person.getPassword())==0)
-//            {
-//
-//            }
+            Person p=new Manager();
+              if (oldPassword.compareTo(p.getPass(LoginID))==0)
+              {
+
+             }
 //            else
 //            {
 //                Remarks.setText("Old Password does not match!!!");
