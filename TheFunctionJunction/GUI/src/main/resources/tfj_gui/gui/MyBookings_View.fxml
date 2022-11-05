@@ -20,7 +20,19 @@
             </children></VBox>
     </left>
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER" />
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
+         <children>
+            <TableView prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #A2A2A1FF;">
+              <columns>
+                  <TableColumn minWidth="-Infinity" prefWidth="150.0" text="Name" />
+                <TableColumn prefWidth="150.0" text="Email" />
+                <TableColumn prefWidth="75.0" text="Phone Number" />
+                  <TableColumn prefWidth="75.0" text="venue" />
+                  <TableColumn prefWidth="75.0" text="Start Date" />
+                  <TableColumn prefWidth="75.0" text="End Date" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
     </center>
     <top>
         <Pane prefHeight="120.0" prefWidth="720.0" style="-fx-background-color: #195190FF;" BorderPane.alignment="CENTER">
