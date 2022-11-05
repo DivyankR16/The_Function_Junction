@@ -44,9 +44,10 @@ public class Login_View_Controller implements Initializable {
     public void Login_As_Customer(String LoginID, String Password,ActionEvent event) throws IOException {
         //System.out.printf("Login Successful!!\nCustomer LoginId: %s\nPassword: %s",LoginID,Password);
         Customer c1=new Customer();
+        c1.setLoginId(LoginID);
          if (c1.Login(LoginID,Password,"Customer")==1)
          {
-            Go_to_Home(event);
+            Go_to_Home(event,c1);
          }
          else if(c1.Login(LoginID,Password,"Customer")==0){
              //Incorrect user or password
@@ -58,8 +59,10 @@ public class Login_View_Controller implements Initializable {
              //Password cannot be empty OR return is 3
          }
     }
-    protected void Go_to_Home(ActionEvent event) throws IOException {
+    protected void Go_to_Home(ActionEvent event,Customer c) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Home_View.fxml"));
+        Send_Data_Between customer=Send_Data_Between.getInstance();
+        customer.setCustomer(c);
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),720,540);
         stage.setTitle("THE FUNCTION JUNCTION");
@@ -69,9 +72,10 @@ public class Login_View_Controller implements Initializable {
     public void Login_As_Manager(String LoginId,String Password,ActionEvent event) throws IOException {
         //System.out.printf("Manager LoginID: %s \nPassword: %s",LoginId,Password);
         Manager m1=new Manager();
+        m1.setLoginId(LoginId);
         if (m1.Login(LoginId,Password,"Manager")==1)
         {
-            Go_to_Manager_Home(event,LoginId);
+            Go_to_Manager_Home(event,m1);
         }
         else if(m1.Login(LoginId,Password,"Manager")==0){
             //Incorrect user or password
@@ -83,8 +87,10 @@ public class Login_View_Controller implements Initializable {
             //Password cannot be empty OR return is 3
         }
     }
-    protected void Go_to_Manager_Home(ActionEvent event,String ID) throws IOException {
+    protected void Go_to_Manager_Home(ActionEvent event,Manager m) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerHome_View.fxml"));
+        Send_Data_Between Man=Send_Data_Between.getInstance();
+        Man.setManager(m);
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),720,540);
         stage.setTitle("THE FUNCTION JUNCTION");

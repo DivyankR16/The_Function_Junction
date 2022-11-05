@@ -133,22 +133,42 @@ public class ChangePasswordViewController {
         stage.show();
     }
     @FXML
-    protected void ChangePasswordFinalButtonClicked(String LoginID)
+    protected void ChangePasswordFinalButtonClicked()
     {
         String oldPassword = OldPasswordInput.getText();
         String newPassword = NewPasswordInput.getText();
         String confirmNewPassword = ConfirmNewPasswordInput.getText();
+        String LoginID="";
+        Send_Data_Between need=Send_Data_Between.getInstance();
+        Person p;
+        if(need.getCheck()==1){
+            Manager m1=need.getManager();
+            LoginID=m1.getLoginId();
+            p=new Manager();
+        }
+        else{
+            Customer c1=need.getCustomer();
+            LoginID=c1.getLoginId();
+            p=new Customer();
+        }
         if (newPassword.compareTo(confirmNewPassword)==0)
         {
-            Person p=new Manager();
               if (oldPassword.compareTo(p.getPass(LoginID))==0)
               {
-
+                   if(p instanceof Manager){
+                       //Manager m=new Manager();
+                       p.changePass(LoginID,newPassword);
+                   }
+                   else if(p instanceof Customer){
+                       //Customer c=new Customer();
+                       p.changePass(LoginID,newPassword);
+                   }
+                  Remarks.setText("Password Updates Successfully!!");
              }
-//            else
-//            {
-//                Remarks.setText("Old Password does not match!!!");
-//            }
+            else
+            {
+                Remarks.setText("Old Password does not match!!!");
+            }
         }
         else
         {

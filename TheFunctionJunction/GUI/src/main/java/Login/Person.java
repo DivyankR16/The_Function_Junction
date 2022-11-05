@@ -101,4 +101,18 @@ public class Person implements Login{
         }
         return password;
     }
+    public void changePass(String LoginID,String newPassword){
+        Connection conn=Connect.createConnection();
+        try{String query="update set password=? where loginid=?";
+            PreparedStatement preparedStatement=conn.prepareStatement(query);
+            preparedStatement.setString(1,newPassword);
+            preparedStatement.setString(2,LoginID);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            Connect.closeConnection();
+        }
+    }
     }
