@@ -1,4 +1,6 @@
 package Database.TableView;
 
-public class Venue {
+public class Venue
+{
+
 }

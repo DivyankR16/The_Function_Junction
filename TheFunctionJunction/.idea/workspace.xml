@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Made Person,Customer,Manager.">
-      <change afterPath="$PROJECT_DIR$/CMP/src/Login.java" afterDir="false" />
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="-">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/GUI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ChangePasswordViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ChangePasswordViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMP/src/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMP/src/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMP/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/Login.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CMP/CMP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Database/DBconnection/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Database/DBconnection/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Database/TableView/Venue.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Database/TableView/Venue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +25,7 @@
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,8 +43,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "D:/IIIT/IIIT Shri City/JavaProject/TFJ/TheFunctionJunction/GUI/src/main/resources/tfj_gui/gui/Login_View.fxml",
-    "project.structure.last.edited": "Artifacts",
+    "last_opened_file_path": "D:/IIIT/IIIT Shri City/JavaProject/TFJ/TheFunctionJunction/GUI/Lib/mysql-connector-java-8.0.30.jar",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
   }
@@ -133,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667566442660</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="-">
+      <created>1667571935682</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667571935682</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,6 +156,7 @@
     <MESSAGE value="Improved navigation panel" />
     <MESSAGE value="Made Person" />
     <MESSAGE value="Made Person,Customer,Manager." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made Person,Customer,Manager." />
+    <MESSAGE value="-" />
+    <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
 </project>
