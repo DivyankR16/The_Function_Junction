@@ -71,7 +71,7 @@ public class Login_View_Controller implements Initializable {
         Manager m1=new Manager();
         if (m1.Login(LoginId,Password,"Manager")==1)
         {
-            Go_to_Manager_Home(event);
+            Go_to_Manager_Home(event,LoginId);
         }
         else if(m1.Login(LoginId,Password,"Manager")==0){
             //Incorrect user or password
@@ -83,7 +83,7 @@ public class Login_View_Controller implements Initializable {
             //Password cannot be empty OR return is 3
         }
     }
-    protected void Go_to_Manager_Home(ActionEvent event) throws IOException {
+    protected void Go_to_Manager_Home(ActionEvent event,String ID) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerHome_View.fxml"));
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),720,540);
