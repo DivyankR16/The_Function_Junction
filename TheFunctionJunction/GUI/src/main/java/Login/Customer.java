@@ -1,3 +1,11 @@
+package Login;
+
+import Database.DBconnection.Connect;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -32,6 +40,41 @@ public class Customer extends Person
     public void setMembershipStatus(String membershipStatus){this.MembershipStatus = membershipStatus;}
     public Calendar getDateOfJoining(){return this.DateOfJoining;}
     public void setDateOfJoining(Calendar dateOfJoining){this.DateOfJoining = dateOfJoining;}
-
+    @Override
+    public String getPass(String loginID){
+        Connection conn= Connect.createConnection();
+        String password="";
+        try{String query="Select password from customer where loginid=?";
+            PreparedStatement preStatement=conn.prepareStatement(query);
+            preStatement.setString(1,loginID);
+            ResultSet rs=preStatement.executeQuery();
+            if(rs.next()){
+                password=rs.getString("password");
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            Connect.closeConnection();
+        }
+        return password;
+    }
+    @Override
+    public void changePass(String LoginID,String newPassword){
+        Connection conn=Connect.createConnection();
+        try{String query="update customer set password=? where loginid=?";
+            PreparedStatement preparedStatement=conn.prepareStatement(query);
+            preparedStatement.setString(1,newPassword);
+            preparedStatement.setString(2,LoginID);
+            preparedStatement.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            Connect.closeConnection();
+        }
+    }
 
 }

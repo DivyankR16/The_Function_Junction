@@ -1,7 +1,12 @@
+package Database.TableView;
+
+import java.sql.*;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Manager extends Person
+import static Database.DBconnection.Connect.createConnection;
+
+class Manager extends Person
 {
     private String EmployeeID;
     private Calendar DateOfJoining;
@@ -18,6 +23,14 @@ public class Manager extends Person
         super(firstName, lastName, phoneNumber, emailId, loginId, password, DOB);
         DateOfJoining = Calendar.getInstance();
         this.DateOfJoining.set(Calendar.HOUR_OF_DAY,0);
+    }
+
+    public void getDetails() throws SQLException {
+        Connection con1= createConnection();
+        Statement st=con1.createStatement();
+        String Query="select * from booking_history";
+        ResultSet rs =st.executeQuery(Query);
+
     }
 
 }

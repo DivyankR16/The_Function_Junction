@@ -74,6 +74,8 @@ public class ManagerHomeViewController {
     protected void ChangePasswordButtonClicked(ActionEvent event) throws IOException
     {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ChangePassword_View.fxml"));
+        Send_Data_Between mana=Send_Data_Between.getInstance();
+        mana.setCheck(1);
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),720,540);
         stage.setTitle("THE FUNCTION JUNCTION");
