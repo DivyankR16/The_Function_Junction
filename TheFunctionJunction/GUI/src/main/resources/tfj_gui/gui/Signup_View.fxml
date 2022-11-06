@@ -61,6 +61,6 @@
       </TextFlow>
    </children>
    <effect>
-      <ColorAdjust contrast="0.02" hue="0.3" saturation="0.26" />
+      <ColorAdjust brightness="-0.17" />
    </effect>
 </AnchorPane>
