@@ -1,11 +1,15 @@
 package tfj_gui.gui;
 
+import Login.*;
+
+import Login.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -31,6 +35,15 @@ public class InfoOfAccountViewController
     private Button LogoutButton;
     @FXML
     private Button ExitButton;
+    @FXML
+    private Label Name;
+    @FXML
+    private void abcd()
+    {
+        Customer c1 = new Customer();
+        Name.setText(c1.getFirstName()+" "+c1.getLastName());
+    }
+
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
@@ -120,4 +133,6 @@ public class InfoOfAccountViewController
         stage.setScene(scene);
         stage.show();
     }
+
+
 }

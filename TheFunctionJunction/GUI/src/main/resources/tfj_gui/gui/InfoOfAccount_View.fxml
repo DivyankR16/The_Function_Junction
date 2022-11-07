@@ -33,7 +33,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="90.0" layoutY="60.0" text="getName" textFill="#195190">
+            <Label fx:id="Name" layoutX="90.0" layoutY="60.0" text="getName" textFill="#195190">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -43,7 +43,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="140.0" layoutY="90.0" text="getPhNo" textFill="#195190">
+            <Label fx:id="PhoneNumber" layoutX="140.0" layoutY="90.0" text="getPhNo" textFill="#195190">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -53,7 +53,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="106.0" layoutY="120.0" text="getEmail" textFill="#195190">
+            <Label fx:id="Email" layoutX="106.0" layoutY="120.0" text="getEmail" textFill="#195190">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -63,7 +63,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="175.0" layoutY="150.0" text="getMEMStatus" textFill="#195190">
+            <Label fx:id="MembershipStatus" layoutX="175.0" layoutY="150.0" text="getMEMStatus" textFill="#195190">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -73,7 +73,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="106.0" layoutY="180.0" text="getLoginId" textFill="#195190">
+            <Label fx:id="LoginId" layoutX="106.0" layoutY="180.0" text="getLoginId" textFill="#195190">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -83,7 +83,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="70.0" layoutY="210.0" text="getAge" textFill="#195190">
+            <Label fx:id="Age" layoutX="70.0" layoutY="210.0" text="getAge" textFill="#195190">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
