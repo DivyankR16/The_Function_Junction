@@ -114,7 +114,16 @@ public class Login_View_Controller implements Initializable {
     }
     protected void Choice_in_ChoiceBox(ActionEvent event)
     {
+        Send_Data_Between per=Send_Data_Between.getInstance();
         myChoice = Login_View_Choice_Box.getValue();
+        if (myChoice.compareTo("Customer")==0)
+        {
+            per.setCheck(0);
+        }
+        else if (myChoice.compareTo("Manager")==0)
+        {
+            per.setCheck(1);
+        }
     }
 
 

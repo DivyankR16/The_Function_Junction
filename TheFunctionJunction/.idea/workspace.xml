@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Adding mysql-connector-java-8.0.30.jar file.">
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment=" -">
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/BookingHistoryManagerViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/BookingHistoryManager_View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/MyBookingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/MyBookingsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/InfoOfAccount_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/InfoOfAccount_View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/MyBookings_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/MyBookings_View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Database/DBconnection/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Database/DBconnection/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Database/TableView/ManagerDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Database/TableView/ManagerDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HomeViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Login_View_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Login_View_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerHomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerHomeViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Send_Data_Between.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Send_Data_Between.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,19 +42,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Project.color": "302f2a",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "D:/IIIT/IIIT Shri City/JavaProject/TFJ/TheFunctionJunction/GUI/Lib/mysql-connector-java-8.0.30.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Project.color&quot;: &quot;302f2a&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.30.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3770115&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IIIT\IIIT Shri City\JavaProject\TFJ\TheFunctionJunction\GUI\src\main\resources\tfj_gui\gui" />
@@ -141,7 +146,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667656396458</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added table in MyBookings_View.fxml . &#10;Added output labels in InfoOfAccount_View.fxml.">
+      <created>1667662808181</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667662808181</updated>
+    </task>
+    <task id="LOCAL-00013" summary=" -">
+      <created>1667815631507</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667815631507</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +185,18 @@
     <MESSAGE value="Made Person,Customer,Manager." />
     <MESSAGE value="-" />
     <MESSAGE value="Adding mysql-connector-java-8.0.30.jar file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding mysql-connector-java-8.0.30.jar file." />
+    <MESSAGE value="Added table in MyBookings_View.fxml . &#10;Added output labels in InfoOfAccount_View.fxml." />
+    <MESSAGE value=" -" />
+    <option name="LAST_COMMIT_MESSAGE" value=" -" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
