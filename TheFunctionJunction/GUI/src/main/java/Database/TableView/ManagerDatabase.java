@@ -18,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import static Database.DBconnection.Connect.closeConnection;
 import static Database.DBconnection.Connect.createConnection;
 
 class BookingHistory{
@@ -89,6 +90,7 @@ public class ManagerDatabase extends Application {
         while (rs.next()){
             data.add(new BookingHistory(rs.getString(1),rs.getString(2),rs.getString(3),rs.getDate(4),rs.getDate(5)));
         }
+        closeConnection();
     }
 
     @Override
@@ -142,5 +144,7 @@ public class ManagerDatabase extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
+    public static void main(String[] args) {
+        launch();
+    }
 }

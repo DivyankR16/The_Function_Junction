@@ -6,7 +6,7 @@ public final class Send_Data_Between {
     private Customer customer;
     private Manager manager;
     private int check;
-    private static final Send_Data_Between instance=new Send_Data_Between();
+    private static final Send_Data_Between instance = new Send_Data_Between();
     private Send_Data_Between(){}
 
     public int getCheck() {

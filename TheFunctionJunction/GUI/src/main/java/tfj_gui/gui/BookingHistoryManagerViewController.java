@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ManagerHomeViewController {
+public class BookingHistoryManagerViewController{
     @FXML
     private Button HomeButton;
     @FXML
@@ -29,7 +29,6 @@ public class ManagerHomeViewController {
     private Button LogoutButton;
     @FXML
     private Button ExitButton;
-
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
@@ -74,8 +73,6 @@ public class ManagerHomeViewController {
     protected void ChangePasswordButtonClicked(ActionEvent event) throws IOException
     {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ChangePassword_View.fxml"));
-//        Send_Data_Between mana=Send_Data_Between.getInstance();
-//        mana.setCheck(1);
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),720,540);
         stage.setTitle("THE FUNCTION JUNCTION");
@@ -102,7 +99,6 @@ public class ManagerHomeViewController {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     protected void LogoutButtonClicked(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login_View.fxml"));
@@ -112,7 +108,6 @@ public class ManagerHomeViewController {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     protected void ExitButtonClicked(ActionEvent event) throws IOException
     {
