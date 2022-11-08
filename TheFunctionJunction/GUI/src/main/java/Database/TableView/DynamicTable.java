@@ -72,6 +72,9 @@ public class DynamicTable extends Application{
             e.printStackTrace();
             System.out.println("Error on Building Data");
         }
+        finally {
+            Connect.closeConnection();
+        }
     }
 
 

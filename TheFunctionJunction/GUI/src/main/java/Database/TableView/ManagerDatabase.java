@@ -42,10 +42,6 @@ public class ManagerDatabase extends Application {
         }
         return data;
     }
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
     @Override
     public void start(Stage stage) throws Exception {
         Scene scene = new Scene(new Group());

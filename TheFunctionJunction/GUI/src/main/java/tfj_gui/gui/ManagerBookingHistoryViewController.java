@@ -1,11 +1,22 @@
 package tfj_gui.gui;
 
+import Database.DBconnection.Connect;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
 
 public class ManagerBookingHistoryViewController {
     @FXML
@@ -27,6 +38,8 @@ public class ManagerBookingHistoryViewController {
     @FXML
     private Button ExitButton;
     @FXML
+    private TableColumn BookingIdColumn;
+    @FXML
     private TableColumn NameColumn;
     @FXML
     private TableColumn EmailColumn;
@@ -38,51 +51,63 @@ public class ManagerBookingHistoryViewController {
     private TableColumn StartDateColumn;
     @FXML
     private TableColumn EndDateColumn;
+    @FXML
+    private TableColumn StatusColumn;
+    @FXML
+    private TableView tableview = new TableView();
 
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
-        ControllerFunctions.GoToHome(event);
+        ManagerControllerFunctions.GoToHome(event);
     }
     @FXML
     protected void NewBookingButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.NewBookingButtonClicked(event);
+        ManagerControllerFunctions.NewBookingButtonClicked(event);
     }
     @FXML
     protected void MyAccountButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.MyAccountButtonClicked(event);
+        ManagerControllerFunctions.MyAccountButtonClicked(event);
     }
+//    TableView tableview = new TableView();
     @FXML
     protected void MyBookingsButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.MyBookingsButtonClicked(event);
+//        buildData();
+        ManagerControllerFunctions.MyBookingsButtonClicked(event);
+//        Scene scene = new Scene(tableview);
+//        Stage stage = new Stage();
+//        stage.setScene(scene);
+//        stage.show();
     }
     @FXML
     protected void ChangePasswordButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.ChangePasswordButtonClicked(event);
+        ManagerControllerFunctions.ChangePasswordButtonClicked(event);
     }
     @FXML
     protected void AboutUsButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.AboutUsButtonClicked(event);
+        ManagerControllerFunctions.AboutUsButtonClicked(event);
     }
     @FXML
     protected void HelpButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.HelpButtonClicked(event);
+        ManagerControllerFunctions.HelpButtonClicked(event);
     }
     @FXML
-    protected void LogoutButtonClicked(ActionEvent event) throws IOException {
-        ControllerFunctions.LogoutButtonClicked(event);
+    protected void LogoutButtonClicked(ActionEvent event) throws IOException
+    {
+        ManagerControllerFunctions.LogoutButtonClicked(event);
     }
     @FXML
     protected void ExitButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.ExitButtonClicked(event);
+        ManagerControllerFunctions.ExitButtonClicked(event);
     }
+
 //    @FXML
 //    protected void BH() throws SQLException {
 //        TableView<BookingHistory> table = new TableView<BookingHistory>();
@@ -116,5 +141,54 @@ public class ManagerBookingHistoryViewController {
 //
 //        table.setItems(data);
 //        table.getColumns().addAll(NameColumn, EmailColumn, PhoneNumberColumn, VenueColumn, StartDateColumn,EndDateColumn);
+//    }
+
+//    private ObservableList<ObservableList> data;
+////    private TableView tableview;
+//    public void buildData()
+//    {
+//        Connection c ;
+//        data = FXCollections.observableArrayList();
+//        try{
+//            c = Connect.createConnection();
+//            //SQL FOR SELECTING ALL OF CUSTOMER
+//            String SQL = "SELECT * from BookingHistory";
+//            //ResultSet
+//            ResultSet rs = c.createStatement().executeQuery(SQL);
+//
+//            for(int i=0 ; i<rs.getMetaData().getColumnCount(); i++)
+//            {
+//                //We are using non property style for making dynamic table
+//                final int j = i;
+//                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i+1));
+//                col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,String>, ObservableValue<String>>()
+//                    {public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param)
+//                        {return new SimpleStringProperty(param.getValue().get(j).toString());}
+//                    }
+//                );
+//                tableview.getColumns().addAll(col);
+//                System.out.println("Column ["+i+"] ");
+//            }
+//
+//            while(rs.next()){
+//                //Iterate Row
+//                ObservableList<String> row = FXCollections.observableArrayList();
+//                for(int i=1 ; i<=rs.getMetaData().getColumnCount(); i++){
+//                    //Iterate Column
+//                    row.add(rs.getString(i));
+//                }
+//                System.out.println("Row [1] added "+row );
+//                data.add(row);
+//            }
+//            //FINALLY ADDED TO TableView
+//            tableview.setItems(data);
+//            System.out.println(tableview.getItems());
+//        }catch(Exception e){
+//            e.printStackTrace();
+//            System.out.println("Error on Building Data");
+//        }
+//        finally {
+//            Connect.closeConnection();
+//        }
 //    }
 }
