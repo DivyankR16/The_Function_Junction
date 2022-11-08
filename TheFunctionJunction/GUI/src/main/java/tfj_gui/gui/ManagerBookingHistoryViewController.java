@@ -1,22 +1,13 @@
 package tfj_gui.gui;
 
-import Database.TableView.*;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
-public class BookingHistoryManagerViewController{
+public class ManagerBookingHistoryViewController {
     @FXML
     private Button HomeButton;
     @FXML
@@ -125,6 +116,5 @@ public class BookingHistoryManagerViewController{
 //
 //        table.setItems(data);
 //        table.getColumns().addAll(NameColumn, EmailColumn, PhoneNumberColumn, VenueColumn, StartDateColumn,EndDateColumn);
-//
 //    }
 }
