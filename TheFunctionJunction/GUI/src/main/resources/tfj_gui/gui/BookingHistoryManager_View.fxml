@@ -11,7 +11,7 @@
                 <Button fx:id="HomeButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#GoToHome" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2px 2px 2px 2px;" text="Home" textFill="WHITE" />
                 <Button fx:id="NewBookingButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#NewBookingButtonClicked" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="New Booking" textFill="WHITE" />
                 <Button fx:id="MyAccountButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#MyAccountButtonClicked" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="My Account" textFill="WHITE" />
-                <Button fx:id="MyBookingsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#MyBookingsButtonClicked" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #A2A2A1FF; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="My Bookings" textFill="#195190" />
+                <Button fx:id="MyBookingsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#MyBookingsButtonClicked" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #A2A2A1FF; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Booking History" textFill="#195190" />
                 <Button fx:id="ChangePasswordButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ChangePasswordButtonClicked" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Change Password" textFill="WHITE" />
                 <Button fx:id="AboutUsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AboutUsButtonClicked" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="About Us" textFill="WHITE" />
                 <Button fx:id="HelpButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#HelpButtonClicked" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Help" textFill="WHITE" />
@@ -24,12 +24,12 @@
             <children>
                 <TableView prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #A2A2A1FF;">
                     <columns>
-                        <TableColumn minWidth="-Infinity" prefWidth="150.0" text="Name" />
-                        <TableColumn prefWidth="150.0" text="Email" />
-                        <TableColumn prefWidth="75.0" text="Phone Number" />
-                        <TableColumn prefWidth="75.0" text="venue" />
-                        <TableColumn prefWidth="75.0" text="Start Date" />
-                        <TableColumn prefWidth="75.0" text="End Date" />
+                        <TableColumn fx:id="NameColumn" minWidth="-Infinity" prefWidth="150.0" text="Name" />
+                        <TableColumn fx:id="EmailColumn" prefWidth="150.0" text="Email" />
+                        <TableColumn fx:id="PhoneNumberColumn" prefWidth="75.0" text="Phone No." />
+                        <TableColumn fx:id="VenueColumn" prefWidth="75.0" text="venue" />
+                        <TableColumn fx:id="StartDateColumn" prefWidth="75.0" text="Start Date" />
+                        <TableColumn fx:id="EndDateColumn" prefWidth="75.0" text="End Date" />
                     </columns>
                 </TableView>
             </children></AnchorPane>

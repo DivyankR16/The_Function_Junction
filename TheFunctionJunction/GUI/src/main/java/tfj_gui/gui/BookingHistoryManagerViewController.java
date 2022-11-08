@@ -1,14 +1,20 @@
 package tfj_gui.gui;
 
+import Database.TableView.*;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class BookingHistoryManagerViewController{
     @FXML
@@ -30,92 +36,95 @@ public class BookingHistoryManagerViewController{
     @FXML
     private Button ExitButton;
     @FXML
+    private TableColumn NameColumn;
+    @FXML
+    private TableColumn EmailColumn;
+    @FXML
+    private TableColumn PhoneNumberColumn;
+    @FXML
+    private TableColumn VenueColumn;
+    @FXML
+    private TableColumn StartDateColumn;
+    @FXML
+    private TableColumn EndDateColumn;
+
+    @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Home_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
+        ControllerFunctions.GoToHome(event);
     }
     @FXML
     protected void NewBookingButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBooking_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
+        ControllerFunctions.NewBookingButtonClicked(event);
     }
     @FXML
     protected void MyAccountButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("InfoOfAccount_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
+        ControllerFunctions.MyAccountButtonClicked(event);
     }
     @FXML
     protected void MyBookingsButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MyBookings_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
+        ControllerFunctions.MyBookingsButtonClicked(event);
     }
     @FXML
     protected void ChangePasswordButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ChangePassword_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
+        ControllerFunctions.ChangePasswordButtonClicked(event);
     }
     @FXML
     protected void AboutUsButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AboutUs_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
+        ControllerFunctions.AboutUsButtonClicked(event);
     }
     @FXML
     protected void HelpButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Help_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
+        ControllerFunctions.HelpButtonClicked(event);
     }
     @FXML
     protected void LogoutButtonClicked(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
+        ControllerFunctions.LogoutButtonClicked(event);
     }
     @FXML
     protected void ExitButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Exit_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
+        ControllerFunctions.ExitButtonClicked(event);
     }
+//    @FXML
+//    protected void BH() throws SQLException {
+//        TableView<BookingHistory> table = new TableView<BookingHistory>();
+//
+//        table.setEditable(true);
+//
+//        ObservableList<BookingHistory> data = (ObservableList<BookingHistory>) ManagerDatabase.GetDetails();
+//        NameColumn = new TableColumn("Name");
+//        NameColumn.setMinWidth(100);
+//        NameColumn.setCellValueFactory(new PropertyValueFactory<BookingHistory, String>("Name"));
+//
+//        EmailColumn = new TableColumn("Email");
+//        EmailColumn.setMinWidth(100);
+//        EmailColumn.setCellValueFactory(new PropertyValueFactory<BookingHistory, String>("email"));
+//
+//        PhoneNumberColumn = new TableColumn("Phone Number");
+//        PhoneNumberColumn.setMinWidth(100);
+//        PhoneNumberColumn.setCellValueFactory(new PropertyValueFactory<BookingHistory, String>("PhoneNumber"));
+//
+//        VenueColumn = new TableColumn("Hall Name");
+//        VenueColumn.setMinWidth(100);
+//        VenueColumn.setCellValueFactory(new PropertyValueFactory<BookingHistory, String>("email"));
+//
+//        StartDateColumn = new TableColumn("Start Date");
+//        StartDateColumn.setMinWidth(100);
+//        StartDateColumn.setCellValueFactory(new PropertyValueFactory<BookingHistory, String>("StartDate"));
+//
+//        EndDateColumn = new TableColumn("End Date");
+//        EndDateColumn.setMinWidth(100);
+//        EndDateColumn.setCellValueFactory(new PropertyValueFactory<BookingHistory, String>("EndDate"));
+//
+//        table.setItems(data);
+//        table.getColumns().addAll(NameColumn, EmailColumn, PhoneNumberColumn, VenueColumn, StartDateColumn,EndDateColumn);
+//
+//    }
 }

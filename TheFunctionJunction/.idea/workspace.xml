@@ -5,15 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment=" -">
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/BookingHistoryManagerViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/BookingHistoryManager_View.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ControllerFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Database/DBconnection/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Database/DBconnection/Connect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Database/TableView/ManagerDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Database/TableView/ManagerDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/AboutUsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/AboutUsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/BookingHistoryManagerViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/BookingHistoryManagerViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ChangePasswordViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ChangePasswordViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ExitViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ExitViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelpViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelpViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HomeViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/InfoOfAccountViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/InfoOfAccountViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Login_View_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Login_View_Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerHomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerHomeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Send_Data_Between.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Send_Data_Between.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/MyBookingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/MyBookingsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/NewBookingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/NewBookingViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/AboutUs_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/AboutUs_View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/BookingHistoryManager_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/BookingHistoryManager_View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerHome_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerHome_View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Signup_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Signup_View.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667815631507</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary=" -">
+      <created>1667818435853</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667818435853</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

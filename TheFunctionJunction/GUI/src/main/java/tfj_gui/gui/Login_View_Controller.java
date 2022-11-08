@@ -92,7 +92,7 @@ public class Login_View_Controller implements Initializable {
         Send_Data_Between Man=Send_Data_Between.getInstance();
         Man.setManager(m);
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
+        Scene scene = new Scene(fxmlLoader.load(),1080,720);
         stage.setTitle("THE FUNCTION JUNCTION");
         stage.setScene(scene);
         stage.show();
