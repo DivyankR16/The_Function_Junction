@@ -29,16 +29,26 @@ class BookingHistory{
     private String HallName;
     private Date StartDate;
     private Date EndDate;
+    private String Status;
 
-    public BookingHistory(String name, String email, String phoneNumber, String hallName, Date startDate, Date endDate) {
+
+    public BookingHistory(String name, String email, String phoneNumber, String hallName, Date startDate, Date endDate, String status) {
         Name = name;
         Email = email;
         PhoneNumber = phoneNumber;
         HallName = hallName;
         StartDate = startDate;
         EndDate = endDate;
+        Status = status;
     }
 
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
+    }
     public String getPhoneNumber() {
         return PhoneNumber;
     }
@@ -104,7 +114,7 @@ public class ManagerDatabase extends Application {
             Statement st = con1.createStatement();
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
-                data.add(new BookingHistory(rs.getString(1), rs.getString(2), rs.getString(3),rs.getString(4), rs.getDate(5), rs.getDate(6)));
+                data.add(new BookingHistory(rs.getString(1), rs.getString(2), rs.getString(3),rs.getString(4), rs.getDate(5), rs.getDate(6),rs.getString(7)));
             }
         }
         catch (SQLException e){
@@ -161,8 +171,13 @@ public class ManagerDatabase extends Application {
         emailCol.setCellValueFactory(
                 new PropertyValueFactory<BookingHistory, String>("EndDate"));
 
+        TableColumn Status = new TableColumn("Status");
+        emailCol.setMinWidth(100);
+        emailCol.setCellValueFactory(
+                new PropertyValueFactory<BookingHistory, String>("Status"));
+
         table.setItems(data);
-        table.getColumns().addAll(firstNameCol, emailCol,hallname, Sdate,Edate);
+        table.getColumns().addAll(firstNameCol, emailCol,hallname, Sdate,Edate,Status);
 
         final VBox vbox = new VBox();
         vbox.setSpacing(5);
