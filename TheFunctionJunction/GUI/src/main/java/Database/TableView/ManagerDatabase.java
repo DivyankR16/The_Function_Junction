@@ -96,8 +96,8 @@ public class ManagerDatabase extends Application {
 
     private TableView<BookingHistory> table = new TableView<BookingHistory>();
 
-    public ArrayList<BookingHistory> GetDetails() throws SQLException {
-        ArrayList<BookingHistory> data = new ArrayList<>();
+    public ObservableList<BookingHistory> GetDetails() throws SQLException {
+        ObservableList<BookingHistory> data = null;
         try {
             Connection con1 = createConnection();
             String query = "Select * from bookingHistory";
