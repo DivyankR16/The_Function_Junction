@@ -1,12 +1,7 @@
 package Database.TableView;
 
-import java.sql.*;
-import java.sql.Date;
-import java.util.*;
-
 import javafx.application.Application;
-import javafx.beans.InvalidationListener;
-import javafx.collections.ListChangeListener;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
@@ -19,105 +14,17 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.sql.*;
+
 import static Database.DBconnection.Connect.closeConnection;
 import static Database.DBconnection.Connect.createConnection;
 
-class BookingHistory{
-    private int Bookin_Id;
-    private String Name;
-    private String Email;
-    private String PhoneNumber;
-    private String HallName;
-    private Date StartDate;
-    private Date EndDate;
-    private String Status;
-
-
-    public BookingHistory(int bookin_Id, String name, String email, String phoneNumber, String hallName, Date startDate, Date endDate, String status) {
-        Bookin_Id = bookin_Id;
-        Name = name;
-        Email = email;
-        PhoneNumber = phoneNumber;
-        HallName = hallName;
-        StartDate = startDate;
-        EndDate = endDate;
-        Status = status;
-    }
-
-    public int getBookin_Id() {
-        return Bookin_Id;
-    }
-
-    public void setBookin_Id(int bookin_Id) {
-        Bookin_Id = bookin_Id;
-    }
-
-    public String getStatus() {
-        return Status;
-    }
-
-    public void setStatus(String status) {
-        Status = status;
-    }
-    public String getPhoneNumber() {
-        return PhoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
-    }
-
-
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
-    }
-
-    public String getHallName() {
-        return HallName;
-    }
-
-    public void setHallName(String hallName) {
-        HallName = hallName;
-    }
-
-    public Date getStartDate() {
-        return StartDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        StartDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return EndDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        EndDate = endDate;
-    }
-
-
-}
 
 public class ManagerDatabase extends Application {
-
-    private TableView<BookingHistory> table = new TableView<BookingHistory>();
-
+    private final TableView<BookingHistory>table=new TableView<BookingHistory>();
+    private ObservableList<BookingHistory> data = FXCollections.observableArrayList();
     public ObservableList<BookingHistory> GetDetails() throws SQLException {
-        ObservableList<BookingHistory> data = null;
+
         try {
             Connection con1 = createConnection();
             String query = "Select * from bookingHistory";
@@ -135,12 +42,15 @@ public class ManagerDatabase extends Application {
         }
         return data;
     }
-
+    public static void main(String[] args)
+    {
+        launch(args);
+    }
     @Override
     public void start(Stage stage) throws Exception {
         Scene scene = new Scene(new Group());
         stage.setTitle("Table View Sample");
-        stage.setWidth(700);
+        stage.setWidth(800);
         stage.setHeight(500);
 
         ObservableList<BookingHistory> data = (ObservableList<BookingHistory>) GetDetails();
@@ -150,43 +60,43 @@ public class ManagerDatabase extends Application {
 
         table.setEditable(true);
 
-        TableColumn BID = new TableColumn("Booking ID");
+        TableColumn<BookingHistory,Integer> BID = new TableColumn<>("Booking ID");
         BID.setMinWidth(100);
         BID.setCellValueFactory(
-                new PropertyValueFactory<BookingHistory, String>("Booking_Id"));
+                new PropertyValueFactory<BookingHistory, Integer>("Booking_Id"));
 
-        TableColumn firstNameCol = new TableColumn("First Name");
+        TableColumn<BookingHistory,String> firstNameCol = new TableColumn<>("First Name");
         firstNameCol.setMinWidth(100);
         firstNameCol.setCellValueFactory(
                 new PropertyValueFactory<BookingHistory, String>("Name"));
 
 
-        TableColumn emailCol = new TableColumn("Email");
+        TableColumn<BookingHistory,String> emailCol = new TableColumn<>("Email");
         emailCol.setMinWidth(100);
         emailCol.setCellValueFactory(
                 new PropertyValueFactory<BookingHistory, String>("email"));
 
-        TableColumn phonecol = new TableColumn("Phone Number");
-        emailCol.setMinWidth(100);
-        emailCol.setCellValueFactory(
+        TableColumn<BookingHistory,String> phonecol = new TableColumn<>("Phone Number");
+        phonecol.setMinWidth(100);
+        phonecol.setCellValueFactory(
                 new PropertyValueFactory<BookingHistory, String>("PhoneNumber"));
 
-        TableColumn hallname = new TableColumn("Hall Name");
+        TableColumn<BookingHistory,String> hallname = new TableColumn<>("Hall Name");
         hallname.setMinWidth(100);
         hallname.setCellValueFactory(
                 new PropertyValueFactory<BookingHistory, String>("email"));
 
-        TableColumn Sdate = new TableColumn("Start Date");
+        TableColumn<BookingHistory,Date> Sdate = new TableColumn<>("Start Date");
         Sdate.setMinWidth(100);
         Sdate.setCellValueFactory(
-                new PropertyValueFactory<BookingHistory, String>("StartDate"));
+                new PropertyValueFactory<BookingHistory, Date>("StartDate"));
 
-        TableColumn Edate = new TableColumn("End Date");
+        TableColumn<BookingHistory,Date> Edate = new TableColumn<>("End Date");
         Edate.setMinWidth(100);
         Edate.setCellValueFactory(
-                new PropertyValueFactory<BookingHistory, String>("EndDate"));
+                new PropertyValueFactory<BookingHistory, Date>("EndDate"));
 
-        TableColumn Status = new TableColumn("Status");
+        TableColumn<BookingHistory,String> Status = new TableColumn<>("Status");
         Status.setMinWidth(100);
         Status.setCellValueFactory(
                 new PropertyValueFactory<BookingHistory, String>("Status"));
