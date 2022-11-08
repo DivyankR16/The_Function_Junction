@@ -23,6 +23,7 @@ import static Database.DBconnection.Connect.closeConnection;
 import static Database.DBconnection.Connect.createConnection;
 
 class BookingHistory{
+    private int Bookin_Id;
     private String Name;
     private String Email;
     private String PhoneNumber;
@@ -32,7 +33,8 @@ class BookingHistory{
     private String Status;
 
 
-    public BookingHistory(String name, String email, String phoneNumber, String hallName, Date startDate, Date endDate, String status) {
+    public BookingHistory(int bookin_Id, String name, String email, String phoneNumber, String hallName, Date startDate, Date endDate, String status) {
+        Bookin_Id = bookin_Id;
         Name = name;
         Email = email;
         PhoneNumber = phoneNumber;
@@ -40,6 +42,14 @@ class BookingHistory{
         StartDate = startDate;
         EndDate = endDate;
         Status = status;
+    }
+
+    public int getBookin_Id() {
+        return Bookin_Id;
+    }
+
+    public void setBookin_Id(int bookin_Id) {
+        Bookin_Id = bookin_Id;
     }
 
     public String getStatus() {
@@ -114,7 +124,7 @@ public class ManagerDatabase extends Application {
             Statement st = con1.createStatement();
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
-                data.add(new BookingHistory(rs.getString(1), rs.getString(2), rs.getString(3),rs.getString(4), rs.getDate(5), rs.getDate(6),rs.getString(7)));
+                data.add(new BookingHistory(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5), rs.getDate(6), rs.getDate(7),rs.getString(8)));
             }
         }
         catch (SQLException e){
@@ -140,6 +150,11 @@ public class ManagerDatabase extends Application {
 
         table.setEditable(true);
 
+        TableColumn BID = new TableColumn("Booking ID");
+        BID.setMinWidth(100);
+        BID.setCellValueFactory(
+                new PropertyValueFactory<BookingHistory, String>("Booking_Id"));
+
         TableColumn firstNameCol = new TableColumn("First Name");
         firstNameCol.setMinWidth(100);
         firstNameCol.setCellValueFactory(
@@ -157,23 +172,23 @@ public class ManagerDatabase extends Application {
                 new PropertyValueFactory<BookingHistory, String>("PhoneNumber"));
 
         TableColumn hallname = new TableColumn("Hall Name");
-        emailCol.setMinWidth(100);
-        emailCol.setCellValueFactory(
+        hallname.setMinWidth(100);
+        hallname.setCellValueFactory(
                 new PropertyValueFactory<BookingHistory, String>("email"));
 
         TableColumn Sdate = new TableColumn("Start Date");
-        emailCol.setMinWidth(100);
-        emailCol.setCellValueFactory(
+        Sdate.setMinWidth(100);
+        Sdate.setCellValueFactory(
                 new PropertyValueFactory<BookingHistory, String>("StartDate"));
 
         TableColumn Edate = new TableColumn("End Date");
-        emailCol.setMinWidth(100);
-        emailCol.setCellValueFactory(
+        Edate.setMinWidth(100);
+        Edate.setCellValueFactory(
                 new PropertyValueFactory<BookingHistory, String>("EndDate"));
 
         TableColumn Status = new TableColumn("Status");
-        emailCol.setMinWidth(100);
-        emailCol.setCellValueFactory(
+        Status.setMinWidth(100);
+        Status.setCellValueFactory(
                 new PropertyValueFactory<BookingHistory, String>("Status"));
 
         table.setItems(data);
