@@ -51,17 +51,23 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="457.0" layoutY="261.0" text="Password" textFill="#195190">
+      <Label layoutX="457.0" layoutY="314.0" text="Password" textFill="#195190">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <PasswordField layoutX="548.0" layoutY="259.0" promptText="Enter your password" />
+      <PasswordField layoutX="568.0" layoutY="312.0" promptText="Enter your password" />
       <TextFlow layoutY="1.0" prefHeight="100.0" prefWidth="1080.0">
          <effect>
             <ColorAdjust />
          </effect>
       </TextFlow>
+      <Label layoutX="457.0" layoutY="228.0" text="Login ID" textFill="#30338e">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="568.0" layoutY="226.0" promptText="Enter suitable Login ID" />
    </children>
    <effect>
       <ColorAdjust brightness="-0.17" />
