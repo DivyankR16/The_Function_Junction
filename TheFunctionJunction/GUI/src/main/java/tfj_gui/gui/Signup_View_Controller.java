@@ -1,17 +1,12 @@
 package tfj_gui.gui;
 
-import Database.DBconnection.Connect;
 import Login.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.concurrent.Callable;
 
 public class Signup_View_Controller
 {
@@ -29,7 +24,7 @@ public class Signup_View_Controller
     @FXML
     private CheckBox ConfirmDetailsCheckbox;
     @FXML
-    private DatePicker DOBTF;
+    private DatePicker DOBTF = new DatePicker();
     @FXML
     private PasswordField PasswordTF;
     @FXML
@@ -43,7 +38,7 @@ public class Signup_View_Controller
     @FXML
     protected void AvailableButtonClicked()
     {
-        Customer c = new Customer(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(),dob);
+        Customer c = new Customer(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(),((TextField) DOBTF.getEditor()).getText());
         if (c.Availability(LoginIdTF.getText()))
         {
             AvailabilityLabel.setText("Available!!!");
@@ -54,17 +49,17 @@ public class Signup_View_Controller
     private void LoginButtonClicked(ActionEvent event) throws IOException {
         ManagerControllerFunctions.LogoutButtonClicked(event);
     }
-    LocalDate dob;
     @FXML
     protected void getDateFromPicker(ActionEvent event)
     {
-        dob = DOBTF.getValue();
+        LocalDate dob = DOBTF.getValue();
     }
     @FXML
     private void SignUpFinalButtonClicked()
     {
-        Customer c1 = new Customer(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(),dob);
-        c1.Signup(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(),dob,String.valueOf(custid));
+        Customer c1 = new Customer(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(), ((TextField) DOBTF.getEditor()).getText());
+        c1.Signup(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(),((TextField) DOBTF.getEditor()).getText(),String.valueOf(custid));
         custid++;
+        System.out.println(custid);
     }
 }

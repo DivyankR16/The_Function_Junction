@@ -2,13 +2,9 @@ package Login;
 
 import Database.DBconnection.Connect;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.concurrent.Callable;
 
 public class Customer extends Person implements Login
@@ -22,14 +18,14 @@ public class Customer extends Person implements Login
 
     }
 
-    public Customer(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password, LocalDate DOB, String membershipStatus) {
+    public Customer(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password,String DOB, String membershipStatus) {
         super(firstName, lastName, phoneNumber, emailId, loginId, password, DOB);
         this.MembershipStatus = membershipStatus;
         this.DateOfJoining = Calendar.getInstance();
         this.DateOfJoining.set(Calendar.HOUR_OF_DAY,0);
     }
 
-    public Customer(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password, LocalDate DOB) {
+    public Customer(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password,String DOB) {
         super(firstName, lastName, phoneNumber, emailId, loginId, password, DOB);
         this.MembershipStatus = "New";
         this.DateOfJoining = Calendar.getInstance();
@@ -105,7 +101,7 @@ public class Customer extends Person implements Login
             Connect.closeConnection();
         }
     }
-    public void Signup(String Fname, String Lname,String PhNo,String Email,String LoginId,String Password,LocalDate dob,String cid)
+    public void Signup(String Fname, String Lname,String PhNo,String Email,String LoginId,String Password,String dob,String cid)
     {
         this.setFirstName(Fname);
         this.setLastName(Lname);
@@ -118,7 +114,7 @@ public class Customer extends Person implements Login
         this.DateOfJoining = Calendar.getInstance();
         this.DateOfJoining.set(Calendar.HOUR_OF_DAY,0);
         this.setCustomerID(cid);
-        Connection conn = Connect.createConnection();
+//        Connection conn = Connect.createConnection();
         if (Availability(LoginId))
         {
             try {
@@ -131,12 +127,11 @@ public class Customer extends Person implements Login
                 preStatement2.setString(4,this.getPhoneNumber());
                 preStatement2.setString(5,this.getEmailId());
                 preStatement2.setString(6,this.getPassword());
-                preStatement2.setString(7,this.getDOB().toString());
+                preStatement2.setString(7,this.getDOB());
                 preStatement2.setString(8,this.getCustomerID());
                 preStatement2.setString(9,this.getMembershipStatus());
                 preStatement2.setString(10,this.getDateOfJoining().toString());
-//                preStatement2.executeUpdate();
-                preStatement2.execute();
+                preStatement2.executeUpdate();
 
             }
             catch (SQLException e)

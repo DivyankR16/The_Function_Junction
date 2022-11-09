@@ -23,7 +23,7 @@ public class Manager extends Person
 
     }
 
-    public Manager(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password, LocalDate DOB) {
+    public Manager(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password, String DOB) {
         super(firstName, lastName, phoneNumber, emailId, loginId, password, DOB);
         DateOfJoining = Calendar.getInstance();
         this.DateOfJoining.set(Calendar.HOUR_OF_DAY,0);

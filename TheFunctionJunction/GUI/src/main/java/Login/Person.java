@@ -1,13 +1,8 @@
 package Login;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
-import java.util.Date;
-import Database.DBconnection.Connect;
 
-import static Database.DBconnection.Connect.createConnection;
+import Database.DBconnection.Connect;
 
 public class Person implements Login{
     private String FirstName;
@@ -16,14 +11,14 @@ public class Person implements Login{
     private String EmailId;
     private String LoginId;
     private String Password;
-    private LocalDate DOB;
+    private String DOB;
 
     public String getFirstName(){return this.FirstName;}
     public void setFirstName(String firstName){this.FirstName = firstName;}
     public String getLastName(){return this.LastName;}
     public void setLastName(String lastName){this.LastName = lastName;}
-    public LocalDate getDOB(){return this.DOB;}
-    public void setDOB(LocalDate DOB){this.DOB = DOB;}
+    public String getDOB(){return this.DOB;}
+    public void setDOB(String DOB){this.DOB = DOB;}
     public String getPhoneNumber(){return this.PhoneNumber;}
     public void setPhoneNumber(String phoneNumber){this.PhoneNumber = phoneNumber;}
     public String getEmailId(){return this.EmailId;}
@@ -38,7 +33,7 @@ public class Person implements Login{
 
     }
 
-    public Person(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password, LocalDate DOB) {
+    public Person(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password, String DOB) {
         FirstName = firstName;
         LastName = lastName;
         PhoneNumber = phoneNumber;
