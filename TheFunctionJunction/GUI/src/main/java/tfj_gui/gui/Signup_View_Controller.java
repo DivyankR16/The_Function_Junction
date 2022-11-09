@@ -1,12 +1,16 @@
 package tfj_gui.gui;
 
+import Database.DBconnection.Connect;
 import Login.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.sql.*;
 
 public class Signup_View_Controller
 {
@@ -55,11 +59,24 @@ public class Signup_View_Controller
         LocalDate dob = DOBTF.getValue();
     }
     @FXML
-    private void SignUpFinalButtonClicked()
-    {
+    private void SignUpFinalButtonClicked() throws SQLException {
         Customer c1 = new Customer(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(), ((TextField) DOBTF.getEditor()).getText());
+        Connection c= Connect.createConnection();
+        try{
+            String query="select max(customerid) from customer";
+            Statement statement=c.createStatement();
+            ResultSet rs=statement.executeQuery(query);
+            if(rs.next()){
+                custid=rs.getInt(1)+1;
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            c.close();
+        }
         c1.Signup(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(),((TextField) DOBTF.getEditor()).getText(),String.valueOf(custid));
-        custid++;
         System.out.println(custid);
     }
 }

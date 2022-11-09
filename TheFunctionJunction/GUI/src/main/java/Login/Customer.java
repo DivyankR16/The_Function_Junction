@@ -11,7 +11,7 @@ public class Customer extends Person implements Login
 {
     private String CustomerID;
     private String MembershipStatus; //New,Premium,Gold
-    private Calendar DateOfJoining ;
+    private LocalDate DateOfJoining ;
 
     public Customer()
     {
@@ -21,23 +21,21 @@ public class Customer extends Person implements Login
     public Customer(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password,String DOB, String membershipStatus) {
         super(firstName, lastName, phoneNumber, emailId, loginId, password, DOB);
         this.MembershipStatus = membershipStatus;
-        this.DateOfJoining = Calendar.getInstance();
-        this.DateOfJoining.set(Calendar.HOUR_OF_DAY,0);
+        this.DateOfJoining = LocalDate.now();
     }
 
     public Customer(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password,String DOB) {
         super(firstName, lastName, phoneNumber, emailId, loginId, password, DOB);
         this.MembershipStatus = "New";
-        this.DateOfJoining = Calendar.getInstance();
-        this.DateOfJoining.set(Calendar.HOUR_OF_DAY,0);
+        this.DateOfJoining = LocalDate.now();
     }
 
     public String getCustomerID(){return this.CustomerID;}
     public void setCustomerID(String customerID){this.CustomerID = customerID;}
     public String getMembershipStatus(){return this.MembershipStatus;}
     public void setMembershipStatus(String membershipStatus){this.MembershipStatus = membershipStatus;}
-    public Calendar getDateOfJoining(){return this.DateOfJoining;}
-    public void setDateOfJoining(Calendar dateOfJoining){this.DateOfJoining = dateOfJoining;}
+    public LocalDate getDateOfJoining(){return this.DateOfJoining;}
+    public void setDateOfJoining(LocalDate dateOfJoining){this.DateOfJoining = dateOfJoining;}
     @Override
     public String getPass(String loginID){
         String password="";
@@ -111,14 +109,12 @@ public class Customer extends Person implements Login
         this.setPassword(Password);
         this.setDOB(dob);
         this.setMembershipStatus("New");
-        this.DateOfJoining = Calendar.getInstance();
-        this.DateOfJoining.set(Calendar.HOUR_OF_DAY,0);
+        this.DateOfJoining = LocalDate.now();
         this.setCustomerID(cid);
 //        Connection conn = Connect.createConnection();
         if (Availability(LoginId))
-        {
+        {  Connection c2 = Connect.createConnection();
             try {
-                Connection c2 = Connect.createConnection();
                 String query2 = "INSERT INTO customer (LoginId,FirstName,LastName,PhoneNumber,EmailId,Password,DOB,CustomerID,MembershipStatus,DateOfJoining) VALUES (?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement preStatement2 = c2.prepareStatement(query2);
                 preStatement2.setString(1,this.getLoginId());
