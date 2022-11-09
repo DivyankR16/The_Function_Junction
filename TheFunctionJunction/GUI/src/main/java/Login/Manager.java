@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -22,7 +23,7 @@ public class Manager extends Person
 
     }
 
-    public Manager(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password, Date DOB) {
+    public Manager(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password, LocalDate DOB) {
         super(firstName, lastName, phoneNumber, emailId, loginId, password, DOB);
         DateOfJoining = Calendar.getInstance();
         this.DateOfJoining.set(Calendar.HOUR_OF_DAY,0);

@@ -17,51 +17,73 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="214.0" layoutY="145.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter your name here" />
+      <TextField fx:id="FirstNameTF" layoutX="214.0" layoutY="145.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter your name here" />
       <Label layoutX="68.0" layoutY="202.0" text="Last Name" textAlignment="CENTER" textFill="#195190">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="214.0" layoutY="200.0" promptText="Enter your name here" />
+      <TextField fx:id="LastNameTF" layoutX="214.0" layoutY="200.0" promptText="Enter your name here" />
       <Label layoutX="68.0" layoutY="259.0" text="Email ID" textAlignment="CENTER" textFill="#195190">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="214.0" layoutY="257.0" promptText="Enter your email id" />
+      <TextField fx:id="EmailIdTF" layoutX="214.0" layoutY="257.0" promptText="Enter your email id" />
       <Label layoutX="68.0" layoutY="314.0" text="Phone Number" textFill="#195190">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="215.0" layoutY="312.0" prefHeight="26.0" prefWidth="158.0" promptText="Enter your contact number" />
-      <Button layoutX="307.0" layoutY="450.0" mnemonicParsing="false" text="Sign Up" textAlignment="CENTER">
+      <TextField fx:id="PhoneNumberTF" layoutX="215.0" layoutY="312.0" prefHeight="26.0" prefWidth="158.0" promptText="Enter your contact number" />
+      <Button fx:id="SignUpFinalButton" layoutX="504.0" layoutY="447.0" mnemonicParsing="false" onAction="#SignUpFinalButtonClicked" text="Sign Up" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <CheckBox layoutX="265.0" layoutY="391.0" mnemonicParsing="false" text="Confirm your details" textFill="#195190">
+      <CheckBox fx:id="ConfirmDetailsCheckbox" layoutX="448.0" layoutY="398.0" mnemonicParsing="false" text="Confirm your details" textFill="#195190">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></CheckBox>
-      <DatePicker layoutX="568.0" layoutY="145.0" prefHeight="26.0" prefWidth="130.0" promptText="Select your DOB" />
-      <Label layoutX="457.0" layoutY="149.0" text="Date of Birth" textFill="#195190">
+      <DatePicker fx:id="DOBTF" layoutX="772.0" layoutY="146.0" onAction="#getDateFromPicker" prefHeight="26.0" prefWidth="130.0" promptText="Select your DOB" />
+      <Label layoutX="650.0" layoutY="146.0" text="Date of Birth" textFill="#195190">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="457.0" layoutY="261.0" text="Password" textFill="#195190">
+      <Label layoutX="681.0" layoutY="257.0" text="Password" textFill="#195190">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <PasswordField layoutX="548.0" layoutY="259.0" promptText="Enter your password" />
+      <PasswordField fx:id="PasswordTF" layoutX="772.0" layoutY="259.0" promptText="Enter your password" />
       <TextFlow layoutY="1.0" prefHeight="100.0" prefWidth="1080.0">
          <effect>
             <ColorAdjust />
          </effect>
       </TextFlow>
+      <Label layoutX="686.0" layoutY="202.0" text="Login Id" textFill="#195190">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="LoginIdTF" layoutX="772.0" layoutY="202.0" promptText="Login ID" />
+      <Button fx:id="AvailableButton" layoutX="944.0" layoutY="194.0" mnemonicParsing="false" onAction="#AvailableButtonClicked" text="Availability?" textFill="#195190">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="LoginButton" layoutX="894.0" layoutY="594.0" mnemonicParsing="false" onAction="#LoginButtonClicked" text="Login">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="794.0" layoutY="568.0" text="Already a member? Login Instead." textFill="#195190">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="AvailabilityLabel" layoutX="951.0" layoutY="240.0" textFill="#195190" />
    </children>
    <effect>
       <ColorAdjust brightness="-0.17" />

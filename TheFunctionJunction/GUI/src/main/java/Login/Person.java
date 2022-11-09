@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Date;
 import Database.DBconnection.Connect;
 
@@ -15,14 +16,14 @@ public class Person implements Login{
     private String EmailId;
     private String LoginId;
     private String Password;
-    private Date DOB;
+    private LocalDate DOB;
 
     public String getFirstName(){return this.FirstName;}
     public void setFirstName(String firstName){this.FirstName = firstName;}
     public String getLastName(){return this.LastName;}
     public void setLastName(String lastName){this.LastName = lastName;}
-    public Date getDOB(){return this.DOB;}
-    public void setDOB(Date DOB){this.DOB = DOB;}
+    public LocalDate getDOB(){return this.DOB;}
+    public void setDOB(LocalDate DOB){this.DOB = DOB;}
     public String getPhoneNumber(){return this.PhoneNumber;}
     public void setPhoneNumber(String phoneNumber){this.PhoneNumber = phoneNumber;}
     public String getEmailId(){return this.EmailId;}
@@ -37,7 +38,7 @@ public class Person implements Login{
 
     }
 
-    public Person(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password, Date DOB) {
+    public Person(String firstName, String lastName, String phoneNumber, String emailId, String loginId, String password, LocalDate DOB) {
         FirstName = firstName;
         LastName = lastName;
         PhoneNumber = phoneNumber;
