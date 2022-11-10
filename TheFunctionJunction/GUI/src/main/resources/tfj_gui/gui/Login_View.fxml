@@ -7,15 +7,15 @@
 
 <AnchorPane fx:id="Anchor_Pane_View1" maxHeight="720.0" maxWidth="1080.0" minHeight="720.0" minWidth="1080.0" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #195190FF;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tfj_gui.gui.Login_View_Controller">
    <children>
-      <TextField fx:id="Login_Page_Input_LoginId" alignment="CENTER" layoutX="520.0" layoutY="290.0" prefHeight="26.0" prefWidth="167.0" promptText="Enter Login Id" AnchorPane.leftAnchor="520.0">
+      <TextField fx:id="Login_Page_Input_LoginId" alignment="CENTER" layoutX="481.0" layoutY="291.0" prefHeight="26.0" prefWidth="167.0" promptText="Enter Login Id" AnchorPane.leftAnchor="481.0">
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <PasswordField fx:id="Login_Page_Input_Password" alignment="CENTER" layoutX="520.0" layoutY="338.0" prefHeight="18.0" prefWidth="167.0" promptText="Enter Password" AnchorPane.leftAnchor="520.0">
+      <PasswordField fx:id="Login_Page_Input_Password" alignment="CENTER" layoutX="481.0" layoutY="345.0" prefHeight="18.0" prefWidth="167.0" promptText="Enter Password" AnchorPane.leftAnchor="481.0">
          <font>
             <Font size="14.0" />
          </font></PasswordField>
-      <Button fx:id="Login_View_Login_Button" alignment="CENTER" layoutX="577.0" layoutY="428.0" mnemonicParsing="false" onAction="#Login_View_Clicked_On_Login" text="Login" AnchorPane.leftAnchor="577.0">
+      <Button fx:id="Login_View_Login_Button" alignment="CENTER" layoutX="528.0" layoutY="429.0" mnemonicParsing="false" onAction="#Login_View_Clicked_On_Login" text="Login" AnchorPane.leftAnchor="528.0">
          <font>
             <Font size="14.0" />
          </font></Button>
@@ -24,8 +24,8 @@
             <Font name="System Bold" size="14.0" />
          </font></Label>
       <Button fx:id="Login_View_SignUp_Button" layoutX="948.0" layoutY="617.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" text="Sign-Up" />
-      <ChoiceBox fx:id="Login_View_Choice_Box" layoutX="565.0" layoutY="392.0" prefHeight="26.0" prefWidth="130.0" AnchorPane.leftAnchor="565.0" />
-      <Label fx:id="Login_View_ChoiceBox_Label" layoutX="507.0" layoutY="395.0" text="I am a" textFill="WHITE" AnchorPane.leftAnchor="507.0">
+      <ChoiceBox fx:id="Login_View_Choice_Box" layoutX="528.0" layoutY="392.0" prefHeight="26.0" prefWidth="130.0" AnchorPane.leftAnchor="528.0" />
+      <Label fx:id="Login_View_ChoiceBox_Label" layoutX="481.0" layoutY="395.0" text="I am a" textFill="WHITE" AnchorPane.leftAnchor="481.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
@@ -38,5 +38,10 @@
             </ImageView>
          </children>
       </Pane>
+      <Label fx:id="RemarksLogin" layoutX="526.0" layoutY="505.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

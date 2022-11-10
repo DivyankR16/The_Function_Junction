@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Signup added.">
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Signup WORKING.&#10;Don't use date datatype otherwise signup will not work.&#10;Use String datatype in java and text datatype in mysql.">
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerChangePasswordViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerChangePassword_View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Database/DBconnection/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Database/DBconnection/Connect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Login/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Login/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Login/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Login/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Login/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Login/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Signup_View_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Signup_View_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/AboutUsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/AboutUsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelpViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelpViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Login_View_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Login_View_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerControllerFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerControllerFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Login_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Login_View.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -200,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668007925812</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Signup WORKING.&#10;Don't use date datatype otherwise signup will not work.&#10;Use String datatype in java and text datatype in mysql.">
+      <created>1668012618589</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1668012618589</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,7 +238,8 @@
     <MESSAGE value="Added table in MyBookings_View.fxml . &#10;Added output labels in InfoOfAccount_View.fxml." />
     <MESSAGE value=" -" />
     <MESSAGE value="Signup added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Signup added." />
+    <MESSAGE value="Signup WORKING.&#10;Don't use date datatype otherwise signup will not work.&#10;Use String datatype in java and text datatype in mysql." />
+    <option name="LAST_COMMIT_MESSAGE" value="Signup WORKING.&#10;Don't use date datatype otherwise signup will not work.&#10;Use String datatype in java and text datatype in mysql." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
