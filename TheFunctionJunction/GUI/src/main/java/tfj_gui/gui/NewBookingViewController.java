@@ -3,14 +3,18 @@ package tfj_gui.gui;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class NewBookingViewController {
+public class NewBookingViewController implements Initializable {
     @FXML
     private Button HomeButton;
     @FXML
@@ -38,7 +42,7 @@ public class NewBookingViewController {
     @FXML
     protected void NewBookingButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.NewBookingButtonClicked(event);
+
     }
     @FXML
     protected void MyAccountButtonClicked(ActionEvent event) throws IOException
@@ -74,4 +78,41 @@ public class NewBookingViewController {
     {
         ControllerFunctions.ExitButtonClicked(event);
     }
+    private final String[] Event_Choices = {"Marriage","Birthday party","NewYear Party","Conference","---None---"};
+    private final String[] Drinks_Choices = {"Tea","Coffee","Orange juice","Mixed fruit juice","Beer"};
+    @FXML
+    private ChoiceBox<String> EventChoicebox;
+    @FXML
+    private ChoiceBox<String> Breakfast_choicebox;
+    @FXML
+    private ChoiceBox<String> Drinks_choicebox;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        EventChoicebox.getItems().addAll(Event_Choices);
+        EventChoicebox.setOnAction(this::Choice_in_Choice_box);
+
+//        Breakfast_choicebox.getItems().addAll();
+//        Breakfast_choicebox.setOnAction(this::Choice_in_Choice_box_bf);
+
+        Drinks_choicebox.getItems().addAll(Drinks_Choices);
+        Drinks_choicebox.setOnAction(this::Choice_in_Choice_box_drinks);
+    }
+    private String myChoice,myChoice_bf,myChoice_Drinks;
+    protected void Choice_in_Choice_box(ActionEvent event)
+    {
+        myChoice=EventChoicebox.getValue();
+        System.out.println(myChoice);
+    }
+//    protected void Choice_in_Choice_box_bf(ActionEvent event)
+//    {
+//        myChoice_bf=Breakfast_choicebox.getValue();
+//        System.out.println(myChoice_bf);
+//    }
+    protected void Choice_in_Choice_box_drinks(ActionEvent event)
+    {
+        myChoice_Drinks=Drinks_choicebox.getValue();
+        System.out.println(myChoice_Drinks);
+
+    }
+
 }
