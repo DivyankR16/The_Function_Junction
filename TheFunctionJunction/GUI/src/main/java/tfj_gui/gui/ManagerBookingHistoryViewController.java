@@ -53,8 +53,8 @@ public class ManagerBookingHistoryViewController {
     private TableColumn EndDateColumn;
     @FXML
     private TableColumn StatusColumn;
-    @FXML
-    private TableView tableview = new TableView();
+//    @FXML
+//    private TableView tableview = new TableView();
 
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
@@ -71,16 +71,16 @@ public class ManagerBookingHistoryViewController {
     {
         ManagerControllerFunctions.MyAccountButtonClicked(event);
     }
-//    TableView tableview = new TableView();
+    TableView tableview = new TableView();
     @FXML
     protected void MyBookingsButtonClicked(ActionEvent event) throws IOException
     {
-//        buildData();
+        buildData();
         ManagerControllerFunctions.MyBookingsButtonClicked(event);
-//        Scene scene = new Scene(tableview);
-//        Stage stage = new Stage();
-//        stage.setScene(scene);
-//        stage.show();
+        Scene scene2 = new Scene(tableview);
+        Stage stage2 = new Stage();
+        stage2.setScene(scene2);
+        stage2.show();
     }
     @FXML
     protected void ChangePasswordButtonClicked(ActionEvent event) throws IOException
@@ -143,52 +143,52 @@ public class ManagerBookingHistoryViewController {
 //        table.getColumns().addAll(NameColumn, EmailColumn, PhoneNumberColumn, VenueColumn, StartDateColumn,EndDateColumn);
 //    }
 
-//    private ObservableList<ObservableList> data;
-////    private TableView tableview;
-//    public void buildData()
-//    {
-//        Connection c ;
-//        data = FXCollections.observableArrayList();
-//        try{
-//            c = Connect.createConnection();
-//            //SQL FOR SELECTING ALL OF CUSTOMER
-//            String SQL = "SELECT * from BookingHistory";
-//            //ResultSet
-//            ResultSet rs = c.createStatement().executeQuery(SQL);
-//
-//            for(int i=0 ; i<rs.getMetaData().getColumnCount(); i++)
-//            {
-//                //We are using non property style for making dynamic table
-//                final int j = i;
-//                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i+1));
-//                col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,String>, ObservableValue<String>>()
-//                    {public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param)
-//                        {return new SimpleStringProperty(param.getValue().get(j).toString());}
-//                    }
-//                );
-//                tableview.getColumns().addAll(col);
-//                System.out.println("Column ["+i+"] ");
-//            }
-//
-//            while(rs.next()){
-//                //Iterate Row
-//                ObservableList<String> row = FXCollections.observableArrayList();
-//                for(int i=1 ; i<=rs.getMetaData().getColumnCount(); i++){
-//                    //Iterate Column
-//                    row.add(rs.getString(i));
-//                }
-//                System.out.println("Row [1] added "+row );
-//                data.add(row);
-//            }
-//            //FINALLY ADDED TO TableView
-//            tableview.setItems(data);
-//            System.out.println(tableview.getItems());
-//        }catch(Exception e){
-//            e.printStackTrace();
-//            System.out.println("Error on Building Data");
-//        }
-//        finally {
-//            Connect.closeConnection();
-//        }
-//    }
+    private ObservableList<ObservableList> data;
+//    private TableView tableview;
+    public void buildData()
+    {
+        Connection c ;
+        data = FXCollections.observableArrayList();
+        try{
+            c = Connect.createConnection();
+            //SQL FOR SELECTING ALL OF CUSTOMER
+            String SQL = "SELECT * from BookingHistory";
+            //ResultSet
+            ResultSet rs = c.createStatement().executeQuery(SQL);
+
+            for(int i=0 ; i<rs.getMetaData().getColumnCount(); i++)
+            {
+                //We are using non property style for making dynamic table
+                final int j = i;
+                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i+1));
+                col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,String>, ObservableValue<String>>()
+                    {public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param)
+                        {return new SimpleStringProperty(param.getValue().get(j).toString());}
+                    }
+                );
+                tableview.getColumns().addAll(col);
+                System.out.println("Column ["+i+"] ");
+            }
+
+            while(rs.next()){
+                //Iterate Row
+                ObservableList<String> row = FXCollections.observableArrayList();
+                for(int i=1 ; i<=rs.getMetaData().getColumnCount(); i++){
+                    //Iterate Column
+                    row.add(rs.getString(i));
+                }
+                System.out.println("Row [1] added "+row );
+                data.add(row);
+            }
+            //FINALLY ADDED TO TableView
+            tableview.setItems(data);
+            System.out.println(tableview.getItems());
+        }catch(Exception e){
+            e.printStackTrace();
+            System.out.println("Error on Building Data");
+        }
+        finally {
+            Connect.closeConnection();
+        }
+    }
 }

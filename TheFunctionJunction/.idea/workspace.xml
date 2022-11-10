@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Added some manager Scenes and their controllers.">
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ExitViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ExitViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerExitViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerExitViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Exit_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Exit_View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerExit_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerExit_View.fxml" afterDir="false" />
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Exit function implemented.">
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/Database/TableView/Event.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668073572645</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Exit function implemented.">
+      <created>1668074200175</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1668074200175</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,7 +255,8 @@
     <MESSAGE value="Added alerts for login page&#10;1) login id cant be empty&#10;2) password cant be empty&#10;3) login id and password do not match&#10;&#10;Changed a bit in login controller to ensure that 1080*720 is consistent." />
     <MESSAGE value="Added some manager Scenes" />
     <MESSAGE value="Added some manager Scenes and their controllers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some manager Scenes and their controllers." />
+    <MESSAGE value="Exit function implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Exit function implemented." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
