@@ -9,6 +9,7 @@ public class Venue
     private String VenueName;
     private String BookingStatus;
     private String City;
+    private double cost;
 
     public String getVenueName() {
         return VenueName;
@@ -39,6 +40,9 @@ public class Venue
         catch(SQLException e){
             e.printStackTrace();
         }
+        finally {
+            Connect.closeConnection();
+        }
         return BookingStatus;
     }
 
@@ -53,6 +57,27 @@ public class Venue
     public Venue(String venueName, String city) {
         VenueName = venueName;
         City = city;
+    }
+
+    public double getCost(){
+        Connection con=Connect.createConnection();
+        try {
+            Statement St = con.createStatement();
+            String query = "Select * from Venue";
+            ResultSet rs=St.executeQuery(query);
+            while (rs.next()){
+                if (rs.getString(1)==this.VenueName){
+                    this.cost=rs.getDouble(4);
+                }
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            Connect.closeConnection();
+        }
+        return this.cost;
     }
     public Venue(){
 
