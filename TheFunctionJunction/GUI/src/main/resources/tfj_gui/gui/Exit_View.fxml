@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tfj_gui.gui.ExitViewController">
     <left>
@@ -20,7 +21,19 @@
             </children></VBox>
     </left>
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER" />
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
+         <children>
+            <CheckBox fx:id="ConfirmExitCheckbox" layoutX="288.0" layoutY="140.0" mnemonicParsing="false" text="Confirm Exit" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </CheckBox>
+            <Button fx:id="FinalExitButton" layoutX="324.0" layoutY="193.0" mnemonicParsing="false" onAction="#FinalExitButtonClicked" text="Exit">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
     </center>
     <top>
         <Pane prefHeight="150.0" prefWidth="1080.0" style="-fx-background-color: #195190FF;" BorderPane.alignment="CENTER">

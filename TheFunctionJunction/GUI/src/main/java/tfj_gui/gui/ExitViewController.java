@@ -6,9 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static javafx.application.Platform.exit;
 
 
 public class ExitViewController {
@@ -30,6 +33,19 @@ public class ExitViewController {
     private Button LogoutButton;
     @FXML
     private Button ExitButton;
+    @FXML
+    private CheckBox ConfirmExitCheckbox;
+    @FXML
+    private Button FinalExitButton;
+
+    @FXML
+    protected void FinalExitButtonClicked(ActionEvent event)
+    {
+        if (ConfirmExitCheckbox.isSelected())
+        {
+            exit();
+        }
+    }
 
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException

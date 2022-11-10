@@ -3,8 +3,11 @@ package tfj_gui.gui;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 
 import java.io.IOException;
+
+import static javafx.application.Platform.exit;
 
 public class ManagerExitViewController
 {
@@ -26,6 +29,18 @@ public class ManagerExitViewController
     private Button LogoutButton;
     @FXML
     private Button ExitButton;
+    @FXML
+    private CheckBox ConfirmExitCheckbox;
+    @FXML
+    private Button FinalExitButton;
+    @FXML
+    protected void FinalExitButtonClicked(ActionEvent event)
+    {
+        if (ConfirmExitCheckbox.isSelected())
+        {
+            exit();
+        }
+    }
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
