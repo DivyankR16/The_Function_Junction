@@ -41,8 +41,13 @@ public class Snacks extends Menu
         return SNC3;
     }
 
-    public Float CostOfSnacks()
-    {
+//    public Float CostOfSnacks()
+//    {
+//        return (float)(this.NumberOfGuests*this.PricePerPlate[this.getMyChoice()]);
+//    }
+
+    @Override
+    float calculateCost() {
         return (float)(this.NumberOfGuests*this.PricePerPlate[this.getMyChoice()]);
     }
 }

@@ -41,8 +41,12 @@ public class Dinner extends Menu
         return DIN3;
     }
 
-    public Float CostOFDinner()
-    {
+//    public Float CostOFDinner()
+//    {
+//        return (float)(this.NumberOfGuests*this.PricePerPlate[this.getMyChoice()]);
+//    }
+    @Override
+    float calculateCost() {
         return (float)(this.NumberOfGuests*this.PricePerPlate[this.getMyChoice()]);
     }
 }
