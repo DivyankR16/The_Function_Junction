@@ -12,7 +12,7 @@ public class ManagerControllerFunctions
 {
     protected static void GoToHome(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Home_View.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerHome_View.fxml"));
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),1080,720);
         stage.setTitle("THE FUNCTION JUNCTION");
@@ -30,7 +30,7 @@ public class ManagerControllerFunctions
     }
     protected static void MyAccountButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("InfoOfAccount_View.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerInfoOfAccount_View.fxml"));
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),1080,720);
         stage.setTitle("THE FUNCTION JUNCTION");
@@ -57,7 +57,7 @@ public class ManagerControllerFunctions
     }
     protected static void AboutUsButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AboutUs_View.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerAboutUs_View.fxml"));
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),1080,720);
         stage.setTitle("THE FUNCTION JUNCTION");
@@ -66,7 +66,7 @@ public class ManagerControllerFunctions
     }
     protected static void HelpButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Help_View.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerHelp_View.fxml"));
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),1080,720);
         stage.setTitle("THE FUNCTION JUNCTION");
@@ -84,7 +84,7 @@ public class ManagerControllerFunctions
     }
     protected static void ExitButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Exit_View.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerExit_View.fxml"));
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),1080,720);
         stage.setTitle("THE FUNCTION JUNCTION");

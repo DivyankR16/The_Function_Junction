@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Signup WORKING.&#10;Don't use date datatype otherwise signup will not work.&#10;Use String datatype in java and text datatype in mysql.">
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerChangePasswordViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerChangePassword_View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Added alerts for login page&#10;1) login id cant be empty&#10;2) password cant be empty&#10;3) login id and password do not match&#10;&#10;Changed a bit in login controller to ensure that 1080*720 is consistent.">
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerAboutUsViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerExitViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerHelpViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerInfoOfAccountViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerAboutUs_View.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerExit_View.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerHelp_View.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerInfoOfAccount_View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Database/DBconnection/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Database/DBconnection/Connect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/AboutUsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/AboutUsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelpViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelpViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Login_View_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/Login_View_Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerControllerFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ManagerControllerFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Login_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Login_View.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668012618589</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added alerts for login page&#10;1) login id cant be empty&#10;2) password cant be empty&#10;3) login id and password do not match&#10;&#10;Changed a bit in login controller to ensure that 1080*720 is consistent.">
+      <created>1668072680814</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1668072680814</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,7 +247,8 @@
     <MESSAGE value=" -" />
     <MESSAGE value="Signup added." />
     <MESSAGE value="Signup WORKING.&#10;Don't use date datatype otherwise signup will not work.&#10;Use String datatype in java and text datatype in mysql." />
-    <option name="LAST_COMMIT_MESSAGE" value="Signup WORKING.&#10;Don't use date datatype otherwise signup will not work.&#10;Use String datatype in java and text datatype in mysql." />
+    <MESSAGE value="Added alerts for login page&#10;1) login id cant be empty&#10;2) password cant be empty&#10;3) login id and password do not match&#10;&#10;Changed a bit in login controller to ensure that 1080*720 is consistent." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added alerts for login page&#10;1) login id cant be empty&#10;2) password cant be empty&#10;3) login id and password do not match&#10;&#10;Changed a bit in login controller to ensure that 1080*720 is consistent." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
