@@ -6,4 +6,5 @@ module tfj_gui.gui {
 
     opens tfj_gui.gui to javafx.fxml;
     exports tfj_gui.gui;
+    opens Database.TableView to javafx.base;
 }
