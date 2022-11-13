@@ -8,10 +8,12 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class NewBookingViewController implements Initializable {
@@ -102,6 +104,7 @@ public class NewBookingViewController implements Initializable {
 
         Venue_choicebox.getItems().addAll(Venue_Choices);
         Venue_choicebox.setOnAction(this::Choice_in_Choice_box_drinks);
+
     }
     private String myChoice,myChoice_breakfast,myChoice_Drinks,myChoice_venue;
     protected void Choice_in_Choice_box(ActionEvent event)
@@ -124,5 +127,17 @@ public class NewBookingViewController implements Initializable {
         myChoice=EventChoicebox.getValue();
         System.out.println(myChoice_venue);
     }
+    @FXML
+    private DatePicker Start_Date = new DatePicker();
+    protected void getStartDate(ActionEvent event)
+    {
+        LocalDate SD = Start_Date.getValue();
+    }
 
+    @FXML
+    private DatePicker End_Date = new DatePicker();
+    protected void getEndDate(ActionEvent event)
+    {
+        LocalDate ED = End_Date.getValue();
+    }
 }
