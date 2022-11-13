@@ -36,12 +36,12 @@
                </font>
             </Label>
             <ChoiceBox fx:id="Breakfast_choices" layoutX="39.0" layoutY="220.0" prefWidth="150.0" />
-            <Label layoutX="80.0" layoutY="182.0" text="Breakfast" textFill="RED">
+            <Label layoutX="65.0" layoutY="184.0" text="Breakfast" textFill="RED">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="292.0" layoutY="184.0" text="Lunch" textFill="RED">
+            <Label layoutX="280.0" layoutY="184.0" text="Lunch" textFill="RED">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -60,6 +60,24 @@
             <ChoiceBox fx:id="Snacks_choicebox" layoutX="451.0" layoutY="220.0" prefWidth="150.0" />
             <ChoiceBox fx:id="Drinks_choicebox" layoutX="687.0" layoutY="221.0" prefWidth="150.0" />
             <ScrollBar layoutX="886.0" layoutY="5.0" orientation="VERTICAL" prefHeight="420.0" prefWidth="14.0" />
+            <Label layoutX="77.0" layoutY="300.0" text="Venue" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="Venue_choicebox" layoutX="39.0" layoutY="335.0" prefWidth="150.0" />
+            <Label layoutX="238.0" layoutY="300.0" text="From(Starting date)" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="ED" layoutX="439.0" layoutY="335.0" />
+            <DatePicker fx:id="SD" layoutX="227.0" layoutY="335.0" />
+            <Label layoutX="468.0" layoutY="300.0" text="To(End date)" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
     </center>
     <top>
