@@ -16,7 +16,8 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class NewBookingViewController implements Initializable {
+public class NewBookingBirthdayController implements Initializable
+{
     @FXML
     private Button HomeButton;
     @FXML
@@ -81,9 +82,9 @@ public class NewBookingViewController implements Initializable {
     {
         ControllerFunctions.ExitButtonClicked(event);
     }
-    private final String[] Event_Choices = {"Marriage","Birthday party","NewYear Party","Conference","---None---"};
-    private final String[] Drinks_Choices = {"Tea","Coffee","Orange juice","Mixed fruit juice","Beer","---None---"};
-    private final String[] Venue_Choices = {"Lawn","Hall","Open Field","Conference room"};
+    private final String[] Event_Choices = {"Wedding","Birthday Party","New Year's Party","Conference","--Custom--"};
+    private final String[] Drinks_Choices = {"Tea","Coffee","Orange juice","Mixed fruit juice","Beer"};
+    private final String[] Venue_Choices = {"Lawn","Hall","Open Field","Conference room-1","Auditorium",""};
     @FXML
     private ChoiceBox<String> EventChoicebox;
     @FXML
@@ -113,7 +114,7 @@ public class NewBookingViewController implements Initializable {
         myChoice=EventChoicebox.getValue();
         System.out.println(myChoice);
     }
-//    protected void Choice_in_Choice_box_breakfast(ActionEvent event)
+    //    protected void Choice_in_Choice_box_breakfast(ActionEvent event)
 //    {
 //        myChoice_bf=Breakfast_choicebox.getValue();
 //        System.out.println(myChoice_bf);
@@ -143,7 +144,7 @@ public class NewBookingViewController implements Initializable {
     }
     @FXML
     protected void NextNewBooking(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBooking_View.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingBirthday_View.fxml"));
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),1080,720);
         stage.setTitle("THE FUNCTION JUNCTION");
