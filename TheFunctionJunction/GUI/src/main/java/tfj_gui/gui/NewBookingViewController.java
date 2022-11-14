@@ -18,6 +18,7 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class NewBookingViewController implements Initializable {
+    public ChoiceBox Decoration_choicebox;
     @FXML
     private Button HomeButton;
     @FXML
@@ -131,14 +132,14 @@ public class NewBookingViewController implements Initializable {
     }
     private final String[] Event_Choices = {"Marriage","Birthday party","NewYear Party","Conference","Custom"};
     private final String[] Venue_Choices = {"Lawn","Hall","Open Field","Conference room"};
-    private final String[] Drinks_Choices = {"Tea","Coffee","Orange juice","Mixed fruit juice","Beer","---None---"};
+    private final String[] Drinks_Choices = {"Coffee","Lemon Juice","Orange juice","Mixed fruit juice","Beer","---None---"};
     private final String[] Breakfast_Choices = {"breakfast1","breakfast2","breakfast3","---None---"};
     private final String[] Lunch_Choices = {"Lunch1","Lunch2","Lunch3","---None---"};
     private final String[] Snacks_Choices = {"Snacks1","Snacks2","Snacks3","---None---"};
     private final String[] Dinner_Choices = {"Dinner1","Dinner2","Dinner3","---None---"};
 
     @FXML
-    private ChoiceBox<String> EventChoicebox;
+    private ChoiceBox<String> Event_choicebox;
     @FXML
     private ChoiceBox<String> Venue_choicebox;
     @FXML
@@ -155,9 +156,9 @@ public class NewBookingViewController implements Initializable {
     private Label DisplayInformationLabel;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        EventChoicebox.getItems().addAll(Event_Choices);
-        EventChoicebox.setOnAction(this::Choice_in_Choice_box);
+    public void initialize(URL url,ResourceBundle resourceBundle) {
+        Event_choicebox.getItems().addAll(Event_Choices);
+        Event_choicebox.setOnAction(this::Choice_in_Choice_box);
 
         Venue_choicebox.getItems().addAll(Venue_Choices);
         Venue_choicebox.setOnAction(this::Choice_in_Choice_box_venue);
@@ -177,19 +178,18 @@ public class NewBookingViewController implements Initializable {
         Drinks_choicebox.getItems().addAll(Drinks_Choices);
         Drinks_choicebox.setOnAction(this::Choice_in_Choice_box_drinks);
 
-
     }
     private String myChoice;
     private String myChoice_venue;
     private String myChoice_breakfast,myChoice_Drinks,myChoice_Lunch,myChoice_Snacks,myChoice_Dinner;
     protected void Choice_in_Choice_box(ActionEvent event)
     {
-        myChoice=EventChoicebox.getValue();
+        myChoice=Event_choicebox.getValue();
         if ((myChoice.compareToIgnoreCase(Event_Choices[0]))==0)
         {
             DisplayInformationLabel.setText("Marriage Hall\n Capacity:1000people\n Cost per Day = 50,000 Rs.");
         }
-        else if ((myChoice.compareToIgnoreCase(Event_Choices[1]))==0)
+        else if((myChoice.compareToIgnoreCase(Event_Choices[1]))==0)
         {
             DisplayInformationLabel.setText("Event Selected is Birthday Party.");
         }
@@ -238,10 +238,10 @@ public class NewBookingViewController implements Initializable {
     {
         LocalDate ED = End_Date.getValue();
     }
-//    protected void save(ActionEvent event)
-//    {
-//
-//    }
+    protected void save(ActionEvent event)
+    {
+
+    }
     @FXML
     protected void NextNewBooking(ActionEvent event) throws IOException {
         System.out.println(myChoice);
@@ -295,4 +295,5 @@ public class NewBookingViewController implements Initializable {
             stage.show();
         }
     }
+
 }

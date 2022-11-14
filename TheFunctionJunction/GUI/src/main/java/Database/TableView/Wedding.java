@@ -2,6 +2,7 @@ package Database.TableView;
 
 import java.sql.Date;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class Wedding extends Event{
     private String decorationType;
@@ -12,7 +13,19 @@ public class Wedding extends Event{
         TypeCost.put("Basic",1000);
         TypeCost.put("Premium",2000);
         TypeCost.put("Royal",3000);
+
     }
+
+    public String getChoice() {
+        return Choice;
+    }
+
+    public void setChoice(String choice) {
+        Choice = choice;
+    }
+
+    private String Choice;
+
     public Wedding(){}
     public Wedding(String dtype,String recepreq){
         this.decorationType=dtype;
@@ -38,11 +51,13 @@ public class Wedding extends Event{
     public void setReceptionRequired(String receptionRequired) {
         this.receptionRequired = receptionRequired;
     }
-   int typeCostfun(String selectedType){
-        return TypeCost.get(selectedType);
+   int typeCostfun(){
+        return TypeCost.get(getChoice());
    }
     @Override
     double CalculateCost() {
-        return 0;
+        long gap=getEndDate().getTime()-getStartDate().getTime();
+        double days= TimeUnit.DAYS.convert(gap, TimeUnit.MILLISECONDS);
+        return days*getVenue().getCost()+typeCostfun();
     }
 }
