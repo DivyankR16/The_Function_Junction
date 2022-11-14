@@ -32,7 +32,7 @@
         </Pane>
     </top>
    <center>
-       <AnchorPane fx:id="Breakfast_choicebox" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
+       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
            <children>
                <Label layoutX="22.0" layoutY="68.0" text="Event" textFill="#195190">
                    <font>
@@ -46,7 +46,7 @@
                        <Font name="System Bold" size="15.0" />
                    </font>
                </Label>
-               <ChoiceBox fx:id="Breakfast_choices" layoutX="15.0" layoutY="195.0" prefWidth="150.0" />
+               <ChoiceBox fx:id="Breakfast_choicebox" layoutX="15.0" layoutY="195.0" prefWidth="150.0" />
                <Label layoutX="45.0" layoutY="173.0" text="Breakfast" textFill="#195190">
                    <font>
                        <Font name="System Bold" size="15.0" />
@@ -57,7 +57,7 @@
                        <Font name="System Bold" size="15.0" />
                    </font>
                </Label>
-               <ChoiceBox fx:id="Lunch_choicebox" layoutX="189.0" layoutY="195.0" prefWidth="150.0" />
+               <ChoiceBox fx:id="Lunch_Choicebox" layoutX="189.0" layoutY="195.0" prefWidth="150.0" />
                <Label layoutX="402.0" layoutY="173.0" text="Snacks" textFill="#195190">
                    <font>
                        <Font name="System Bold" size="15.0" />
@@ -68,7 +68,7 @@
                        <Font name="System Bold" size="15.0" />
                    </font>
                </Label>
-               <ChoiceBox fx:id="Snacks_choicebox" layoutX="351.0" layoutY="193.0" prefWidth="150.0" />
+               <ChoiceBox fx:id="Snacks_Choicebox" layoutX="351.0" layoutY="193.0" prefWidth="150.0" />
                <ChoiceBox fx:id="Drinks_choicebox" layoutX="514.0" layoutY="193.0" prefWidth="150.0" />
                <Label layoutX="317.0" layoutY="67.0" text="Venue" textFill="#195190">
                    <font>
@@ -81,9 +81,9 @@
                        <Font name="System Bold" size="15.0" />
                    </font>
                </Label>
-               <DatePicker fx:id="End_Date" layoutX="567.0" layoutY="261.0" />
+               <DatePicker fx:id="End_Date" layoutX="176.0" layoutY="316.0" />
                <DatePicker fx:id="Start_Date" layoutX="176.0" layoutY="261.0" />
-               <Label layoutX="468.0" layoutY="263.0" text="To(End date)" textFill="#195190">
+               <Label layoutX="20.0" layoutY="318.0" text="To(End date)" textFill="#195190">
                    <font>
                        <Font name="System Bold" size="15.0" />
                    </font>
@@ -99,6 +99,16 @@
                </font>
             </Label>
             <ChoiceBox fx:id="Dinner_Choicebox" layoutX="684.0" layoutY="193.0" prefWidth="150.0" />
+            <Label layoutX="400.0" layoutY="22.0" text="Enter Information for New Event" textFill="#195190">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="DisplayInformationLabel" layoutX="400.0" layoutY="234.0" prefHeight="214.0" prefWidth="459.0" textFill="#195190">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
            </children></AnchorPane>
    </center>
 </BorderPane>

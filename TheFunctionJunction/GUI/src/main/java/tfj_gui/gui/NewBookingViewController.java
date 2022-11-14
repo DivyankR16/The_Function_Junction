@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -37,6 +38,7 @@ public class NewBookingViewController implements Initializable {
     private Button ExitButton;
     @FXML
     private Button Next1;
+
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
@@ -81,52 +83,101 @@ public class NewBookingViewController implements Initializable {
     {
         ControllerFunctions.ExitButtonClicked(event);
     }
-    private final String[] Event_Choices = {"Marriage","Birthday party","NewYear Party","Conference","---None---"};
-    private final String[] Drinks_Choices = {"Tea","Coffee","Orange juice","Mixed fruit juice","Beer","---None---"};
+    private final String[] Event_Choices = {"Marriage","Birthday party","NewYear Party","Conference","Custom"};
     private final String[] Venue_Choices = {"Lawn","Hall","Open Field","Conference room"};
+    private final String[] Drinks_Choices = {"Tea","Coffee","Orange juice","Mixed fruit juice","Beer","---None---"};
+    private final String[] Breakfast_Choices = {"breakfast1","breakfast2","breakfast3","---None---"};
+    private final String[] Lunch_Choices = {"Lunch1","Lunch2","Lunch3","---None---"};
+    private final String[] Snacks_Choices = {"Snacks1","Snacks2","Snacks3","---None---"};
+    private final String[] Dinner_Choices = {"Dinner1","Dinner2","Dinner3","---None---"};
+
     @FXML
     private ChoiceBox<String> EventChoicebox;
     @FXML
+    private ChoiceBox<String> Venue_choicebox;
+    @FXML
     private ChoiceBox<String> Breakfast_choicebox;
+    @FXML
+    private ChoiceBox<String> Lunch_Choicebox;
+    @FXML
+    private ChoiceBox<String> Snacks_Choicebox;
+    @FXML
+    private ChoiceBox<String> Dinner_Choicebox;
     @FXML
     private ChoiceBox<String> Drinks_choicebox;
     @FXML
-    private ChoiceBox<String> Venue_choicebox;
+    private Label DisplayInformationLabel;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         EventChoicebox.getItems().addAll(Event_Choices);
         EventChoicebox.setOnAction(this::Choice_in_Choice_box);
 
-//        Breakfast_choicebox.getItems().addAll();
-//        Breakfast_choicebox.setOnAction(this::Choice_in_Choice_box_breakfast);
+        Venue_choicebox.getItems().addAll(Venue_Choices);
+        Venue_choicebox.setOnAction(this::Choice_in_Choice_box_venue);
+
+        Breakfast_choicebox.getItems().addAll(Breakfast_Choices);
+        Breakfast_choicebox.setOnAction(this::Choice_in_Choice_box_breakfast);
+
+        Lunch_Choicebox.getItems().addAll(Lunch_Choices);
+        Lunch_Choicebox.setOnAction(this::Choice_in_Choice_box_Lunch);
+
+        Snacks_Choicebox.getItems().addAll(Snacks_Choices);
+        Snacks_Choicebox.setOnAction(this::Choice_in_Choice_box_Snacks);
+
+        Dinner_Choicebox.getItems().addAll(Dinner_Choices);
+        Dinner_Choicebox.setOnAction(this::Choice_in_Choice_box_Dinner);
 
         Drinks_choicebox.getItems().addAll(Drinks_Choices);
         Drinks_choicebox.setOnAction(this::Choice_in_Choice_box_drinks);
 
-        Venue_choicebox.getItems().addAll(Venue_Choices);
-        Venue_choicebox.setOnAction(this::Choice_in_Choice_box_drinks);
 
     }
-    private String myChoice,myChoice_breakfast,myChoice_Drinks,myChoice_venue;
+    private String myChoice;
+    private String myChoice_venue;
+    private String myChoice_breakfast,myChoice_Drinks,myChoice_Lunch,myChoice_Snacks,myChoice_Dinner;
     protected void Choice_in_Choice_box(ActionEvent event)
     {
         myChoice=EventChoicebox.getValue();
+        if ((myChoice.compareToIgnoreCase(Event_Choices[0]))==0)
+        {
+            DisplayInformationLabel.setText("Marriage Hall\n Capacity:1000people\n Cost per Day = 50,000 Rs.");
+        }
+        else if ((myChoice.compareToIgnoreCase(Event_Choices[1]))==0)
+        {
+            DisplayInformationLabel.setText("Event Selected is Birthday Party.");
+        }
         System.out.println(myChoice);
     }
-//    protected void Choice_in_Choice_box_breakfast(ActionEvent event)
-//    {
-//        myChoice_bf=Breakfast_choicebox.getValue();
-//        System.out.println(myChoice_bf);
-//    }
+    protected void Choice_in_Choice_box_venue(ActionEvent event)
+    {
+        myChoice_venue=Venue_choicebox.getValue();
+        System.out.println(myChoice_venue);
+    }
+    protected void Choice_in_Choice_box_breakfast(ActionEvent event)
+    {
+        myChoice_breakfast=Breakfast_choicebox.getValue();
+        System.out.println(myChoice_breakfast);
+    }
+    private void Choice_in_Choice_box_Lunch(ActionEvent event)
+    {
+        myChoice_Lunch=Lunch_Choicebox.getValue();
+        System.out.println(myChoice_Lunch);
+    }
     protected void Choice_in_Choice_box_drinks(ActionEvent event)
     {
         myChoice_Drinks=Drinks_choicebox.getValue();
         System.out.println(myChoice_Drinks);
     }
-    protected void Choice_in_Choice_box_venue(ActionEvent event)
+    protected void Choice_in_Choice_box_Snacks(ActionEvent event)
     {
-        myChoice=EventChoicebox.getValue();
-        System.out.println(myChoice_venue);
+        myChoice_Snacks=Snacks_Choicebox.getValue();
+        System.out.println(myChoice_Snacks);
+    }
+    protected void Choice_in_Choice_box_Dinner(ActionEvent event)
+    {
+        myChoice_Dinner=Dinner_Choicebox.getValue();
+        System.out.println(myChoice_Dinner);
     }
     @FXML
     private DatePicker Start_Date = new DatePicker();
@@ -141,13 +192,26 @@ public class NewBookingViewController implements Initializable {
     {
         LocalDate ED = End_Date.getValue();
     }
+//    protected void save(ActionEvent event)
+//    {
+//
+//    }
     @FXML
     protected void NextNewBooking(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBooking_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),1080,720);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
+        System.out.println(myChoice);
+        System.out.println(myChoice_breakfast);
+        System.out.println(myChoice_venue);
+        System.out.println(myChoice_Lunch);
+        System.out.println(myChoice_Drinks);
+        System.out.println(myChoice_Snacks);
+        System.out.println(myChoice_Dinner);
+        if (myChoice.compareToIgnoreCase(Event_Choices[0])==0) {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingBirthday_View.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
+            stage.setTitle("THE FUNCTION JUNCTION");
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 }

@@ -34,60 +34,6 @@
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="41.0" layoutY="68.0" text="Event" textFill="#eb0e0e">
-                    <font>
-                        <Font name="System Bold" size="14.0" />
-                    </font>
-                </Label>
-                <ChoiceBox fx:id="EventChoicebox" layoutX="99.0" layoutY="65.0" prefWidth="150.0" />
-                <Label layoutX="45.0" layoutY="129.0" />
-                <Label layoutX="39.0" layoutY="136.0" text="Menu:-" textFill="RED">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                </Label>
-                <ChoiceBox fx:id="Breakfast_choices" layoutX="39.0" layoutY="220.0" prefWidth="150.0" />
-                <Label layoutX="65.0" layoutY="184.0" text="Breakfast" textFill="RED">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                </Label>
-                <Label layoutX="280.0" layoutY="184.0" text="Lunch" textFill="RED">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                </Label>
-                <ChoiceBox fx:id="Lunch_choicebox" layoutX="238.0" layoutY="221.0" prefWidth="150.0" />
-                <Label layoutX="502.0" layoutY="184.0" text="Snacks" textFill="RED">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                </Label>
-                <Label layoutX="700.0" layoutY="184.0" text="Drinks/Beverages" textFill="RED">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                </Label>
-                <ChoiceBox fx:id="Snacks_choicebox" layoutX="451.0" layoutY="220.0" prefWidth="150.0" />
-                <ChoiceBox fx:id="Drinks_choicebox" layoutX="687.0" layoutY="221.0" prefWidth="150.0" />
-                <Label layoutX="77.0" layoutY="300.0" text="Venue" textFill="RED">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                </Label>
-                <ChoiceBox fx:id="Venue_choicebox" layoutX="39.0" layoutY="335.0" prefWidth="150.0" />
-                <Label layoutX="238.0" layoutY="300.0" text="From(Starting date)" textFill="RED">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                </Label>
-                <DatePicker fx:id="End_Date" layoutX="439.0" layoutY="335.0" />
-                <DatePicker fx:id="Start_Date" layoutX="227.0" layoutY="335.0" />
-                <Label layoutX="468.0" layoutY="300.0" text="To(End date)" textFill="RED">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                </Label>
                 <Button fx:id="Next1" layoutX="413.0" layoutY="509.0" mnemonicParsing="false" onAction="#NextNewBooking" text="NEXT" textFill="#195190">
                     <font>
                         <Font name="System Bold" size="16.0" />
