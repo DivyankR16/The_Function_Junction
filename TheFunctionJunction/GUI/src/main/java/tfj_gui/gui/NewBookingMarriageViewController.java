@@ -82,11 +82,11 @@ public class NewBookingMarriageViewController implements Initializable
     {
         ControllerFunctions.ExitButtonClicked(event);
     }
-    private final String[] Event_Choices = {"Wedding","Birthday Party","New Year's Party","Conference","--Custom--"};
-    private final String[] Drinks_Choices = {"Tea","Coffee","Orange juice","Mixed fruit juice","Beer"};
+    private final String[] Drinks_Choices = {"Lemon juice","Orange juice","Mixed fruit juice","Beer","---None---"};
     private final String[] Venue_Choices = {"Lawn","Hall","Open Field","Conference room-1","Auditorium",""};
+    private final String[] Decoration_Choices = {"Basic","Premium","Royal"};
     @FXML
-    private ChoiceBox<String> EventChoicebox;
+    private ChoiceBox<String> Decoration_choicebox;
     @FXML
     private ChoiceBox<String> Breakfast_choicebox;
     @FXML
@@ -95,30 +95,29 @@ public class NewBookingMarriageViewController implements Initializable
     private ChoiceBox<String> Venue_choicebox;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        EventChoicebox.getItems().addAll(Event_Choices);
-        EventChoicebox.setOnAction(this::Choice_in_Choice_box);
-
-//        Breakfast_choicebox.getItems().addAll();
-//        Breakfast_choicebox.setOnAction(this::Choice_in_Choice_box_breakfast);
+        Breakfast_choicebox.getItems().addAll();
+        Breakfast_choicebox.setOnAction(this::Choice_in_Choice_box_breakfast);
 
         Drinks_choicebox.getItems().addAll(Drinks_Choices);
         Drinks_choicebox.setOnAction(this::Choice_in_Choice_box_drinks);
 
         Venue_choicebox.getItems().addAll(Venue_Choices);
-        Venue_choicebox.setOnAction(this::Choice_in_Choice_box_drinks);
+        Venue_choicebox.setOnAction(this::Choice_in_Choice_box_venue);
 
+        Decoration_choicebox.getItems().addAll(Decoration_Choices);
+        Decoration_choicebox.setOnAction(this::Choice_in_Choice_box_decoration);
     }
-    private String myChoice,myChoice_breakfast,myChoice_Drinks,myChoice_venue;
-    protected void Choice_in_Choice_box(ActionEvent event)
+    private String myChoice_decoration,myChoice_breakfast,myChoice_Drinks,myChoice_venue;
+    protected void Choice_in_Choice_box_decoration(ActionEvent event)
     {
-        myChoice=EventChoicebox.getValue();
-        System.out.println(myChoice);
+        myChoice_decoration=Decoration_choicebox.getValue();
+        System.out.println(myChoice_decoration);
     }
-    //    protected void Choice_in_Choice_box_breakfast(ActionEvent event)
-//    {
-//        myChoice_bf=Breakfast_choicebox.getValue();
-//        System.out.println(myChoice_bf);
-//    }
+        protected void Choice_in_Choice_box_breakfast(ActionEvent event)
+    {
+        myChoice_breakfast=Breakfast_choicebox.getValue();
+        System.out.println(myChoice_breakfast);
+    }
     protected void Choice_in_Choice_box_drinks(ActionEvent event)
     {
         myChoice_Drinks=Drinks_choicebox.getValue();
@@ -126,7 +125,7 @@ public class NewBookingMarriageViewController implements Initializable
     }
     protected void Choice_in_Choice_box_venue(ActionEvent event)
     {
-        myChoice=EventChoicebox.getValue();
+        myChoice_venue=Venue_choicebox.getValue();
         System.out.println(myChoice_venue);
     }
     @FXML
@@ -142,6 +141,7 @@ public class NewBookingMarriageViewController implements Initializable
     {
         LocalDate ED = End_Date.getValue();
     }
+    private double Cost;
     @FXML
     protected void NextNewBooking(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingBirthday_View.fxml"));
