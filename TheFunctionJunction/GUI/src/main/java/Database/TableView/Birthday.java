@@ -62,6 +62,9 @@ public class Birthday extends Event{
     }
     @Override
     double CalculateCost() {
-        return 0;
+        long interval=(super.getEndDate().getTime()-super.getStartDate().getTime())/(1000*60*60*24)%365;
+        double cost=super.getVenue().getCost()*interval+getCostCake();
+
+        return cost;
     }
 }

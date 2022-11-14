@@ -27,6 +27,14 @@ public class BookingHistory{
         this.EndDate = endDate;
         this.Status = status;
     }
+    public BookingHistory(String name, String email, String phoneNumber, String hallName, String startDate, String endDate) {
+        this.Name = name;
+        this.Email = email;
+        this.PhoneNumber = phoneNumber;
+        this.HallName = hallName;
+        this.StartDate = startDate;
+        this.EndDate = endDate;
+    }
 
     public String getBookinID() {
         return String.valueOf(Bookin_Id);

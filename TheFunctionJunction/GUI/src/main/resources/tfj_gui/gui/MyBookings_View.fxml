@@ -23,16 +23,16 @@
     <center>
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
             <children>
-                <TableView layoutX="-151.0" layoutY="-90.0" prefHeight="510.0" prefWidth="900.0" style="-fx-background-color: #A2A2A1FF;" AnchorPane.topAnchor="-50.0">
+                <TableView fx:id="tableview" layoutX="-151.0" layoutY="-90.0" prefHeight="510.0" prefWidth="900.0" style="-fx-background-color: #A2A2A1FF;" AnchorPane.topAnchor="-50.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="Booking ID" />
+<!--                        <TableColumn prefWidth="75.0" text="Booking ID" />-->
                         <TableColumn fx:id="NameColumn" minWidth="-Infinity" prefWidth="200.0" text="Name" />
                         <TableColumn fx:id="EmailColumn" prefWidth="200.0" text="Email" />
                         <TableColumn fx:id="PhoneNumberColumn" prefWidth="100.0" text="Phone No." />
                         <TableColumn fx:id="VenueColumn" minWidth="0.0" prefWidth="100.0" text="venue" />
                         <TableColumn fx:id="StartDateColumn" prefWidth="75.0" text="Start Date" />
                         <TableColumn fx:id="EndDateColumn" prefWidth="75.0" text="End Date" />
-                        <TableColumn prefWidth="75.0" text="Status" />
+<!--                        <TableColumn prefWidth="75.0" text="Status" />-->
                     </columns>
                 </TableView>
                 <Label text="Booking History" textFill="#195190" underline="true" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="-75.0">
