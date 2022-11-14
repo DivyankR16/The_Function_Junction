@@ -206,7 +206,42 @@ public class NewBookingViewController implements Initializable {
         System.out.println(myChoice_Snacks);
         System.out.println(myChoice_Dinner);
         if (myChoice.compareToIgnoreCase(Event_Choices[0])==0) {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingMarriage_View.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
+            stage.setTitle("THE FUNCTION JUNCTION");
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (myChoice.compareToIgnoreCase(Event_Choices[1])==0) {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingBirthday_View.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
+            stage.setTitle("THE FUNCTION JUNCTION");
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (myChoice.compareToIgnoreCase(Event_Choices[2])==0)
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingNewYear_View.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
+            stage.setTitle("THE FUNCTION JUNCTION");
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (myChoice.compareToIgnoreCase(Event_Choices[3])==0)
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingConference_View.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
+            stage.setTitle("THE FUNCTION JUNCTION");
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (myChoice.compareToIgnoreCase(Event_Choices[4])==0)
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingCustom_View.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
             stage.setTitle("THE FUNCTION JUNCTION");

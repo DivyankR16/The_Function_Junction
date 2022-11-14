@@ -16,7 +16,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class NewBookingBirthdayController implements Initializable
+public class NewBookingNewYearViewController implements Initializable
 {
     @FXML
     private Button HomeButton;
@@ -74,8 +74,7 @@ public class NewBookingBirthdayController implements Initializable
         ControllerFunctions.HelpButtonClicked(event);
     }
     @FXML
-    protected void LogoutButtonClicked(ActionEvent event) throws IOException
-    {
+    protected void LogoutButtonClicked(ActionEvent event) throws IOException {
         ControllerFunctions.LogoutButtonClicked(event);
     }
     @FXML
