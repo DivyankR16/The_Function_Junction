@@ -42,7 +42,13 @@ public class NewBookingViewController implements Initializable {
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
-        ControllerFunctions.GoToHome(event);
+        //ControllerFunctions.GoToHome(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.GoToHome(event);}
+        else{
+            ControllerFunctions.GoToHome(event);
+        }
     }
     @FXML
     protected void NewBookingButtonClicked(ActionEvent event) throws IOException
@@ -51,37 +57,77 @@ public class NewBookingViewController implements Initializable {
     }
     @FXML
     protected void MyAccountButtonClicked(ActionEvent event) throws IOException
-    {
-        ControllerFunctions.MyAccountButtonClicked(event);
+    {   Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+        ManagerControllerFunctions.MyAccountButtonClicked(event);}
+        else{
+            ControllerFunctions.MyAccountButtonClicked(event);
+        }
     }
     @FXML
     protected void MyBookingsButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.MyBookingsButtonClicked(event);
+        //ControllerFunctions.MyBookingsButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.MyBookingsButtonClicked(event);}
+        else{
+            ControllerFunctions.MyBookingsButtonClicked(event);
+        }
     }
     @FXML
     protected void ChangePasswordButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.ChangePasswordButtonClicked(event);
+        //ControllerFunctions.ChangePasswordButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.ChangePasswordButtonClicked(event);}
+        else{
+            ControllerFunctions.ChangePasswordButtonClicked(event);
+        }
     }
     @FXML
     protected void AboutUsButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.AboutUsButtonClicked(event);
+        //ControllerFunctions.AboutUsButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.AboutUsButtonClicked(event);}
+        else{
+            ControllerFunctions.AboutUsButtonClicked(event);
+        }
     }
     @FXML
     protected void HelpButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.HelpButtonClicked(event);
+        //ControllerFunctions.HelpButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.HelpButtonClicked(event);}
+        else{
+            ControllerFunctions.HelpButtonClicked(event);
+        }
     }
     @FXML
     protected void LogoutButtonClicked(ActionEvent event) throws IOException {
-        ControllerFunctions.LogoutButtonClicked(event);
+        //ControllerFunctions.LogoutButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.LogoutButtonClicked(event);}
+        else{
+            ControllerFunctions.LogoutButtonClicked(event);
+        }
     }
     @FXML
     protected void ExitButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.ExitButtonClicked(event);
+        //ControllerFunctions.ExitButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.ExitButtonClicked(event);}
+        else{
+            ControllerFunctions.ExitButtonClicked(event);
+        }
     }
     private final String[] Event_Choices = {"Marriage","Birthday party","NewYear Party","Conference","Custom"};
     private final String[] Venue_Choices = {"Lawn","Hall","Open Field","Conference room"};
