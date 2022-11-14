@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="New Booking">
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/NewBookingMarriageViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/NewBookingMarriage_View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/NewBookingBirthdayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/NewBookingBirthdayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/NewBookingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/NewBookingViewController.java" afterDir="false" />
-    </list>
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="New booking birthday&#10;New booking marriage&#10;New booking new years party&#10;New booking conference&#10;New booking custom" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -275,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668433716643</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="New booking birthday&#10;New booking marriage&#10;New booking new years party&#10;New booking conference&#10;New booking custom">
+      <created>1668435126591</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1668435126591</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -313,7 +315,8 @@
     <MESSAGE value="Menu is made an abstract class.&#10;calculate_cost added as an abstract menthod." />
     <MESSAGE value="Manager Booking Added." />
     <MESSAGE value="New Booking" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Booking" />
+    <MESSAGE value="New booking birthday&#10;New booking marriage&#10;New booking new years party&#10;New booking conference&#10;New booking custom" />
+    <option name="LAST_COMMIT_MESSAGE" value="New booking birthday&#10;New booking marriage&#10;New booking new years party&#10;New booking conference&#10;New booking custom" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
