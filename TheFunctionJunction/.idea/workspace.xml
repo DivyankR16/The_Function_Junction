@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Exit function implemented.">
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/Database/TableView/Event.java" afterDir="false" />
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="PUSHED!!!">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03-11-2022_16_59_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03-11-2022_16_59__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ControllerFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ControllerFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/NewBooking_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/NewBooking_View.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +227,42 @@
       <option name="project" value="LOCAL" />
       <updated>1668074200175</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="booking history partial">
+      <created>1668075035936</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1668075035936</updated>
+    </task>
+    <task id="LOCAL-00025" summary="booking history partial">
+      <created>1668075195488</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1668075195488</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Menu&#10;BreakFas&#10;Lunch&#10;Snacks&#10;Dinner">
+      <created>1668078741132</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1668078741132</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Menu is made an abstract class.&#10;calculate_cost added as an abstract menthod.">
+      <created>1668079111223</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1668079111223</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Manager Booking Added.">
+      <created>1668080085127</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1668080085127</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,7 +295,11 @@
     <MESSAGE value="Added some manager Scenes" />
     <MESSAGE value="Added some manager Scenes and their controllers." />
     <MESSAGE value="Exit function implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="Exit function implemented." />
+    <MESSAGE value="booking history partial" />
+    <MESSAGE value="Menu&#10;BreakFas&#10;Lunch&#10;Snacks&#10;Dinner" />
+    <MESSAGE value="Menu is made an abstract class.&#10;calculate_cost added as an abstract menthod." />
+    <MESSAGE value="Manager Booking Added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Manager Booking Added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
