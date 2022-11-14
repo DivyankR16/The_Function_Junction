@@ -23,6 +23,7 @@ import static Database.DBconnection.Connect.createConnection;
 public class ManagerDatabase {
     private final TableView<BookingHistory>table=new TableView<BookingHistory>();
     private ObservableList<BookingHistory> data = FXCollections.observableArrayList();
+    private ObservableList<BookingHistory> Cdata = FXCollections.observableArrayList();
     public ObservableList<BookingHistory> GetDetails() throws SQLException {
 
         try {
@@ -43,6 +44,34 @@ public class ManagerDatabase {
             closeConnection();
         }
         return data;
+    }
+    public ObservableList<BookingHistory> GetCustomerDetails(String loginID) throws SQLException {
+
+        try {
+            Connection con1 = createConnection();
+            String query1="select * from customer where loginid=?";
+            String email="";
+            PreparedStatement preStatement1=con1.prepareStatement(query1);
+            preStatement1.setString(1,loginID);
+            ResultSet rs1=preStatement1.executeQuery();
+            if(rs1.next()){
+                email=rs1.getString("emailid");
+            }
+            String query="select * from bookinghistory where email=?";
+            PreparedStatement preStatement=con1.prepareStatement(query);
+            preStatement.setString(1,email);
+            ResultSet rs=preStatement.executeQuery();
+            while (rs.next()) {
+                Cdata.add(new BookingHistory(rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5), rs.getDate(6).toString(), rs.getDate(7).toString()));
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            closeConnection();
+        }
+        return Cdata;
     }
 //    @Override
 //    public void start(Stage stage) throws Exception {
