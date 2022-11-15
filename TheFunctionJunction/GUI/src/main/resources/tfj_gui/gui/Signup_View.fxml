@@ -7,6 +7,7 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tfj_gui.gui.Signup_View_Controller">
    <children>
+
       <Label layoutX="480.0" layoutY="40.0" text="New Sign Up" textAlignment="CENTER" textFill="#195190FF">
          <font>
             <Font name="Arial Black" size="21.0" />

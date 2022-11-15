@@ -47,7 +47,7 @@ public class Snacks extends Menu
 //    }
 
     @Override
-    float calculateCost() {
+    public float calculateCost() {
         return (float)(this.NumberOfGuests*this.PricePerPlate[this.getMyChoice()]);
     }
 }

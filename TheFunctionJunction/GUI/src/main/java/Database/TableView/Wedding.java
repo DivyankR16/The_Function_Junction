@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 public class Wedding extends Event{
     private String decorationType;
     private String receptionRequired;
-    private static final Map<String,Integer>TypeCost;
+    public static final Map<String,Integer>TypeCost;
     static{
         TypeCost=new HashMap<>();
         TypeCost.put("Basic",1000);
@@ -55,9 +55,9 @@ public class Wedding extends Event{
         return TypeCost.get(getChoice());
    }
     @Override
-    double CalculateCost() {
+    public double CalculateCost() {
         long gap=getEndDate().getTime()-getStartDate().getTime();
         double days= TimeUnit.DAYS.convert(gap, TimeUnit.MILLISECONDS);
-        return days*getVenue().getCost()+typeCostfun();
+        return days*getVenue().getCost();
     }
 }

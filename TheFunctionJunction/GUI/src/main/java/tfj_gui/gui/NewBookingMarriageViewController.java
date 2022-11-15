@@ -1,19 +1,16 @@
 package tfj_gui.gui;
 
 import Database.DBconnection.Connect;
+import Database.TableView.*;
 import Database.TableView.Menu;
-import Database.TableView.Venue;
-import Database.TableView.Wedding;
+import Login.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,6 +18,7 @@ import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class NewBookingMarriageViewController implements Initializable
@@ -94,9 +92,10 @@ public class NewBookingMarriageViewController implements Initializable
     private final String[] Drinks_Choices = {"Lemon juice","Orange juice","Mixed fruit juice","Beer","---None---"};
     private final String[] Venue_Choices = {"Lawn","Hall","Open Field","Conference room-1","Auditorium",""};
     private final String[] Decoration_Choices = {"Basic","Premium","Royal"};
-    private final String[] Lunch_Choices ={"Lunch 1","Lunch 2","Lunch 3"};
-    private final String[] Snacks_Choices={"Snacks 1","Snacks 2","Snacks 3"};
-    private final String[] Breakfast_Choices={"Breakfast 1","Breakfast 2","Breakfast 3"};
+    private final String[] Lunch_Choices ={"Lunch 1","Lunch 2","Lunch 3","---None---"};
+    private final String[] Snacks_Choices={"Snacks 1","Snacks 2","Snacks 3","---None---"};
+    private final String[] Breakfast_Choices={"Breakfast 1","Breakfast 2","Breakfast 3","---None---"};
+    private final String[] Dinner_Choices={"Dinner 1","Dinner 2","Dinner 3","---None---"};
 
     @FXML
     private ChoiceBox<String> Decoration_choicebox;
@@ -106,6 +105,17 @@ public class NewBookingMarriageViewController implements Initializable
     private ChoiceBox<String> Drinks_choicebox;
     @FXML
     private ChoiceBox<String> Venue_choicebox;
+    @FXML
+    private ChoiceBox<String> Lunch_choicebox;
+    @FXML
+    private ChoiceBox<String> Snacks_choicebox;
+    @FXML
+    private ChoiceBox<String> Dinner_choicebox;
+    @FXML
+    private TextField guests;
+    @FXML
+    private Button GetCost;
+
     //@Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Breakfast_choicebox.getItems().addAll();
@@ -119,17 +129,24 @@ public class NewBookingMarriageViewController implements Initializable
 
         Decoration_choicebox.getItems().addAll(Decoration_Choices);
         Decoration_choicebox.setOnAction(this::Choice_in_Choice_box_decoration);
+
+        Breakfast_choicebox.getItems().addAll(Breakfast_Choices);
+        Breakfast_choicebox.setOnAction((this::Choice_in_Choice_box_breakfast));
+
+        Lunch_choicebox.getItems().addAll(Lunch_Choices);
+        Lunch_choicebox.setOnAction((this::Choice_in_Choice_box_lunch));
+
+        Snacks_choicebox.getItems().addAll(Snacks_Choices);
+        Snacks_choicebox.setOnAction((this::Choice_in_Choice_box_snacks));
+
+        Dinner_choicebox.getItems().addAll(Dinner_Choices);
+        Dinner_choicebox.setOnAction((this::Choice_in_Choice_box_dinner));
     }
-    private String myChoice_decoration,myChoice_breakfast,myChoice_Drinks,myChoice_venue;
+    private String myChoice_decoration,myChoice_breakfast,myChoice_Drinks,myChoice_venue,myChoice_Lunch,myChoice_Snacks,myChoice_Dinner;
     protected void Choice_in_Choice_box_decoration(ActionEvent event)
     {
         myChoice_decoration=Decoration_choicebox.getValue();
         System.out.println(myChoice_decoration);
-    }
-        protected void Choice_in_Choice_box_breakfast(ActionEvent event)
-    {
-        myChoice_breakfast=Breakfast_choicebox.getValue();
-        System.out.println(myChoice_breakfast);
     }
     protected void Choice_in_Choice_box_drinks(ActionEvent event)
     {
@@ -141,6 +158,27 @@ public class NewBookingMarriageViewController implements Initializable
         myChoice_venue=Venue_choicebox.getValue();
         System.out.println(myChoice_venue);
     }
+    protected void Choice_in_Choice_box_breakfast(ActionEvent event)
+    {
+        myChoice_breakfast=Breakfast_choicebox.getValue();
+        System.out.println(myChoice_breakfast);
+    }
+    protected void Choice_in_Choice_box_lunch(ActionEvent event)
+    {
+        myChoice_Lunch=Lunch_choicebox.getValue();
+        System.out.println(myChoice_Lunch);
+    }
+    protected void Choice_in_Choice_box_snacks(ActionEvent event)
+    {
+        myChoice_Snacks=Snacks_choicebox.getValue();
+        System.out.println(myChoice_Snacks);
+    }
+    protected void Choice_in_Choice_box_dinner(ActionEvent event)
+    {
+        myChoice_Dinner=Dinner_choicebox.getValue();
+        System.out.println(myChoice_Dinner);
+    }
+
     @FXML
     private DatePicker Start_Date = new DatePicker();
     protected void getStartDate(ActionEvent event)
@@ -156,17 +194,9 @@ public class NewBookingMarriageViewController implements Initializable
     }
     private double Cost;
     @FXML
-    protected void NextNewBooking(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingBirthday_View.fxml"));
-        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),1080,720);
-        stage.setTitle("THE FUNCTION JUNCTION");
-        stage.setScene(scene);
-        stage.show();
-    }
-    protected double GetCost()
-    {
-        return 0;
+    protected void NextNewBooking(ActionEvent event) throws IOException, SQLException {
+        SetBooking();
+        if(w1.getBookingStatus().equals("Booked"))     Add_to_DB();
     }
 
     private String Name;
@@ -195,7 +225,7 @@ public class NewBookingMarriageViewController implements Initializable
     }
     protected String GetBookingID()
     {
-        String bi="";
+        String bookingid="";
         Connection c = Connect.createConnection();
         try{
             String query="Select max(BookingID) from bookinghistory";
@@ -203,19 +233,33 @@ public class NewBookingMarriageViewController implements Initializable
             ResultSet rs = s1.executeQuery(query);
             if(rs.next())
             {
-                bi=rs.getString("BookingID");
+                bookingid = rs.getString(1);
+                int bs = Integer.parseInt(bookingid)+1;
+                bookingid = String.valueOf(bs);
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return bi;
+        return bookingid;
     }
     ArrayList<Menu> menu;
-
+    double Venue_cost;
+    double Breakfast_cost;
+    double Lunch_cost;
+    double Snacks_cost;
+    double Drinks_cost;
+    double Dinner_cost;
+    @FXML
+    protected void DisplayFinalCost(ActionEvent event)
+    {
+        SetBooking();
+        //DisplayInformationLabel.setText("Breakfast");
+    }
+    Wedding w1 = new Wedding();
     protected void SetBooking()
     {
-        Wedding w1 = new Wedding();
+
         LocalDate startdate = Start_Date.getValue();
         LocalDate enddate = End_Date.getValue();
         Date sd = Date.valueOf(startdate);
@@ -223,16 +267,118 @@ public class NewBookingMarriageViewController implements Initializable
         String venue = Venue_choicebox.getValue();
         Venue v1 = new Venue(venue,"sample");
         String booking_status = v1.getBookingStatus(sd,ed);
+        int no_of_guests = Integer.parseInt(guests.getText());
+
+        BreakFast b1 = new BreakFast();
+        int breakfast_index=0;
+        if(Objects.equals(myChoice_breakfast, Breakfast_Choices[0]))     breakfast_index=1;
+        if(Objects.equals(myChoice_breakfast, Breakfast_Choices[1]))     breakfast_index=2;
+        if(Objects.equals(myChoice_breakfast, Breakfast_Choices[2]))     breakfast_index=3;
+        if(Objects.equals(myChoice_breakfast, Breakfast_Choices[3]))     breakfast_index=0;
+        b1.setMyChoice(breakfast_index);
+        b1.setNumberOfGuests(no_of_guests);
+        Breakfast_cost = b1.calculateCost();
+
+        Lunch l1 = new Lunch();
+        int lunch_index=0;
+        if(Objects.equals(myChoice_Lunch, Lunch_Choices[0]))     lunch_index=1;
+        if(Objects.equals(myChoice_Lunch, Lunch_Choices[1]))     lunch_index=2;
+        if(Objects.equals(myChoice_Lunch, Lunch_Choices[2]))     lunch_index=3;
+        if(Objects.equals(myChoice_Lunch, Lunch_Choices[3]))     lunch_index=0;
+        l1.setMyChoice(lunch_index);
+        l1.setNumberOfGuests(no_of_guests);
+        Lunch_cost = l1.calculateCost();
+
+        Snacks s1 = new Snacks();
+        int snacks_index=0;
+        if(Objects.equals(myChoice_Snacks, Snacks_Choices[0]))     snacks_index=1;
+        if(Objects.equals(myChoice_Snacks, Snacks_Choices[1]))     snacks_index=2;
+        if(Objects.equals(myChoice_Snacks, Snacks_Choices[2]))     snacks_index=3;
+        if(Objects.equals(myChoice_Snacks, Snacks_Choices[3]))     snacks_index=0;
+        s1.setMyChoice(snacks_index);
+        s1.setNumberOfGuests(no_of_guests);
+        Snacks_cost = s1.calculateCost();
+
+        Dinner d1 = new Dinner();
+        int dinner_index=0;
+        if(Objects.equals(myChoice_Dinner, Dinner_Choices[0]))     dinner_index=1;
+        if(Objects.equals(myChoice_Dinner, Dinner_Choices[1]))     dinner_index=2;
+        if(Objects.equals(myChoice_Dinner, Dinner_Choices[2]))     dinner_index=3;
+        if(Objects.equals(myChoice_Dinner, Dinner_Choices[3]))     dinner_index=0;
+        d1.setMyChoice(dinner_index);
+        d1.setNumberOfGuests(no_of_guests);
+        Dinner_cost=d1.calculateCost();
+
+        Drinks dr1 = new Drinks();
+        int drinks_index=0;
+        if(Objects.equals(myChoice_Drinks, Drinks_Choices[0]))     drinks_index=1;
+        if(Objects.equals(myChoice_Drinks, Drinks_Choices[1]))     drinks_index=2;
+        if(Objects.equals(myChoice_Drinks, Drinks_Choices[2]))     drinks_index=3;
+        if(Objects.equals(myChoice_Drinks, Drinks_Choices[3]))     drinks_index=4;
+        if(Objects.equals(myChoice_Drinks, Drinks_Choices[4]))     drinks_index=0;
+        dr1.setMyChoice(drinks_index);
+        dr1.setNumberOfGuests(no_of_guests);
+        Drinks_cost = dr1.calculateCost();
+
+        System.out.println(Breakfast_cost);
+        System.out.println(Lunch_cost);
+        System.out.println(Snacks_cost);
+        System.out.println(Drinks_cost);
+        System.out.println(Dinner_cost);
+        double Menu_Cost = Breakfast_cost + Lunch_cost + Snacks_cost + Drinks_cost + Dinner_cost;
+        System.out.print(Menu_Cost);
+        double Final_Cost;
         if(booking_status.compareToIgnoreCase("Available") == 0)
         {
             int next_booking_id = Integer.parseInt(GetBookingID());
             w1.setBookingStatus("Booked");
+            w1.setChoice(myChoice_decoration);
             w1.setStartDate(sd);
             w1.setEndDate(ed);
             w1.setVenue(v1);
+            Venue_cost = w1.CalculateCost();
+            System.out.print(Venue_cost);
+            Final_Cost = Venue_cost + Menu_Cost;
+            DisplayInformationLabel.setText("Breakfast Cost : "+Breakfast_cost);
+            DisplayInformationLabel.setText("Lunch Cost : "+Lunch_cost);
+            DisplayInformationLabel.setText("Drinks Cost : "+Drinks_cost);
+            DisplayInformationLabel.setText("Snacks Cost : "+Snacks_cost);
+            DisplayInformationLabel.setText("Dinner Cost : "+Dinner_cost);
+            DisplayInformationLabel.setText("Final_Cost = "+ Final_Cost);
         }
-        else {
+        else
+        {
             DisplayInformationLabel.setText("Hall not available.");
         }
+    }
+
+    protected void Add_to_DB() throws SQLException {
+        Send_Data_Between instance = Send_Data_Between.getInstance();
+        Customer c1 = instance.getCustomer();
+        String LoginID = c1.getLoginId();
+        Connection dbcon = Connect.createConnection();
+        String Query1 = "select * from customer where LoginID = ?";
+        PreparedStatement ps = dbcon.prepareStatement(Query1);
+        ps.setString(1,LoginID);
+        ResultSet rs = ps.executeQuery();
+        String name="",email="",ph_number="";
+        if(rs.next())
+        {
+            name = rs.getString(3);
+            email = rs.getString(6);
+            ph_number = rs.getString(5);
+        }
+
+        String query2 = "insert into bookinghistory values(?,?,?,?,?,?,?,?)";
+        PreparedStatement ps1 = dbcon.prepareStatement(query2);
+        ps1.setString(1,GetBookingID());
+        ps1.setString(2,name);
+        ps1.setString(3,email);
+        ps1.setString(4,ph_number);
+        ps1.setString(5,myChoice_venue);
+        ps1.setString(6,w1.getStartDate().toString());
+        ps1.setString(7,w1.getEndDate().toString());
+        ps1.setString(8,"Booked");
+        ps1.executeUpdate();
     }
 }

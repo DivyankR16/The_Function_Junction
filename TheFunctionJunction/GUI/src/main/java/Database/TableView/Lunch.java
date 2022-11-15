@@ -37,7 +37,7 @@ public class Lunch extends Menu
 //        return (float)(this.NumberOfGuests*this.PricePerPlate[this.getMyChoice()]);
 //    }
     @Override
-    float calculateCost() {
+    public float calculateCost() {
         return (float)(this.NumberOfGuests*this.PricePerPlate[this.getMyChoice()]);
     }
 }

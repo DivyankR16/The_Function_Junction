@@ -3,6 +3,7 @@ package Database.TableView;
 import Database.DBconnection.Connect;
 
 import java.sql.*;
+import java.util.Objects;
 
 public class Venue
 {
@@ -30,7 +31,7 @@ public class Venue
                Date startDate=rs.getDate(6);
                Date endDate=rs.getDate(7);
                String status=rs.getString(8);
-               if(status.compareTo("booked")==0){
+               if(status.compareToIgnoreCase("booked")==0){
                    if(Startdate.compareTo(startDate)>0 && Startdate.compareTo(endDate)<0|| EndDate.compareTo(startDate)<0 && EndDate.compareTo(endDate)<0){
                            BookingStatus="Not Available";
                    }
@@ -66,7 +67,7 @@ public class Venue
             String query = "Select * from Venue";
             ResultSet rs=St.executeQuery(query);
             while (rs.next()){
-                if (rs.getString(1)==this.VenueName){
+                if (rs.getString(1).compareToIgnoreCase( this.VenueName)==0){
                     this.cost=rs.getDouble(4);
                 }
             }
