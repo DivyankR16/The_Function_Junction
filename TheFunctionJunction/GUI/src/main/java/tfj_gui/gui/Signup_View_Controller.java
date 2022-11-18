@@ -14,6 +14,7 @@ import java.sql.*;
 
 public class Signup_View_Controller
 {
+    Date DOB;
     static int custid=1000;
     @FXML
     private TextField FirstNameTF;
@@ -57,7 +58,9 @@ public class Signup_View_Controller
     protected void getDateFromPicker(ActionEvent event)
     {
         LocalDate dob = DOBTF.getValue();
+        DOB = Date.valueOf(dob);
     }
+
     @FXML
     private void SignUpFinalButtonClicked() throws SQLException {
         Customer c1 = new Customer(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(), ((TextField) DOBTF.getEditor()).getText());
@@ -76,7 +79,7 @@ public class Signup_View_Controller
         finally {
             c.close();
         }
-        c1.Signup(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(),((TextField) DOBTF.getEditor()).getText(),String.valueOf(custid));
+        c1.Signup(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(),DOB.toString(),String.valueOf(custid));
         System.out.println(custid);
     }
 }

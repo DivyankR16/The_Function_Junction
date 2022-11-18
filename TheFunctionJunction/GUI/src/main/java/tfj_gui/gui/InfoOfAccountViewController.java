@@ -134,9 +134,7 @@ public class InfoOfAccountViewController implements Initializable {
                 String age = String.valueOf(period.getYears());
                 Age.setText(age);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
+        } catch (SQLException | ParseException e) {
             throw new RuntimeException(e);
         } finally {
             Connect.closeConnection();

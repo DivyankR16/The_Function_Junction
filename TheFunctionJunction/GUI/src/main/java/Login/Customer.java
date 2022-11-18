@@ -123,7 +123,7 @@ public class Customer extends Person implements Login
                 preStatement2.setString(4,this.getPhoneNumber());
                 preStatement2.setString(5,this.getEmailId());
                 preStatement2.setString(6,this.getPassword());
-                preStatement2.setString(7,this.getDOB());
+                preStatement2.setString(7,this.getDOB().toString());
                 preStatement2.setString(8,this.getCustomerID());
                 preStatement2.setString(9,this.getMembershipStatus());
                 preStatement2.setString(10,this.getDateOfJoining().toString());

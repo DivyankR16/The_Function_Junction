@@ -4,8 +4,8 @@ import Database.DBconnection.Connect;
 import java.io.*;
 import java.sql.*;
 
-public class Recipt {
-    public void PrintRecipt(String EID){
+public class Receipt {
+    public void PrintReceipt(String EID){
         try{
             String Name="";
             String EventName="";
