@@ -24,8 +24,9 @@ public class Search {
     public static boolean isSubsequence(String userInput,String custName){
         int i=0;
         int j=0;
+        userInput= userInput.toLowerCase();
         while(i<userInput.length() && j<custName.length()){
-            if(userInput.charAt(i)==custName.charAt(j)){
+            if(userInput.charAt(i)==custName.toLowerCase().charAt(j)){
                 i++;
             }
             j++;
