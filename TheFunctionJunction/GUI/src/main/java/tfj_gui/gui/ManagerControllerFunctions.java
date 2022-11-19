@@ -91,4 +91,13 @@ public class ManagerControllerFunctions
         stage.setScene(scene);
         stage.show();
     }
+    protected static void GoToSearch(ActionEvent event) throws IOException
+    {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Search_View.fxml"));
+        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(),1080,720);
+        stage.setTitle("THE FUNCTION JUNCTION");
+        stage.setScene(scene);
+        stage.show();
+    }
 }

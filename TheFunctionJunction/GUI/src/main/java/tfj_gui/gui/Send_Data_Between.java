@@ -6,6 +6,16 @@ public final class Send_Data_Between {
     private Customer customer;
     private Manager manager;
     private int check;
+    private String searchInput;
+
+    public String getSearchInput() {
+        return searchInput;
+    }
+
+    public void setSearchInput(String searchInput) {
+        this.searchInput = searchInput;
+    }
+
     private static final Send_Data_Between instance = new Send_Data_Between();
     private Send_Data_Between(){}
 

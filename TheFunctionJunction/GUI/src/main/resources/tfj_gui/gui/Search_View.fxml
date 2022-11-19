@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="1080.0" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #A2A2A1FF;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tfj_gui.gui.Manager_search_ViewController">
+    <left>
+        <VBox prefHeight="200.0" prefWidth="180.0" style="-fx-background-color: #195190FF;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="HomeButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#GoToHome" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2px 2px 2px 2px;" text="Home" textFill="WHITE" />
+                <Button fx:id="NewBookingButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#NewBookingButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="New Booking" textFill="WHITE" />
+                <Button fx:id="MyAccountButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#MyAccountButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color:#A2A2A1FF; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="My Account" textFill="#195190" />
+                <Button fx:id="MyBookingsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#MyBookingsButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="My Bookings" textFill="WHITE" />
+                <Button fx:id="ChangePasswordButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ChangePasswordButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Change Password" textFill="WHITE" />
+                <Button fx:id="AboutUsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AboutUsButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="About Us" textFill="WHITE" />
+                <Button fx:id="HelpButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#HelpButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Help" textFill="WHITE" />
+                <Button fx:id="LogoutButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LogoutButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Logout" textFill="WHITE" />
+                <Button fx:id="ExitButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ExitButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Exit" textFill="WHITE" />
+            </children></VBox>
+    </left>
+    <center>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="tableview" layoutX="-151.0" layoutY="-90.0" prefHeight="510.0" prefWidth="900.0" style="-fx-background-color: #A2A2A1FF;" AnchorPane.topAnchor="-50.0">
+                    <columns>
+<!--                        <TableColumn prefWidth="75.0" text="Booking ID" />-->
+                        <TableColumn fx:id="Fname" minWidth="-Infinity" prefWidth="75.0" text="FirstName" />
+                        <TableColumn fx:id="Lname" prefWidth="75.0" text="LastName" />
+                        <TableColumn fx:id="EmailId" prefWidth="100.0" text="Email" />
+                        <TableColumn fx:id="PhoneNo" minWidth="0.0" prefWidth="100.0" text="Phone No." />
+                        <TableColumn fx:id="Loginid" prefWidth="75.0" text="LoginID" />
+                        <TableColumn fx:id="Password" prefWidth="75.0" text="Password" />
+                        <TableColumn fx:id="DoB" prefWidth="75.0" text="DOB" />
+                        <TableColumn fx:id="Mstatus" prefWidth="75.0" text="MembershipStatusw" />
+<!--                        <TableColumn prefWidth="75.0" text="Status" />-->
+                    </columns>
+                </TableView>
+                <Label text="Booking History" textFill="#195190" underline="true" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="-75.0">
+                    <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                    </font>
+                </Label>
+                <Pagination prefHeight="50.0" prefWidth="270.0" AnchorPane.bottomAnchor="-70.0" AnchorPane.leftAnchor="200.0" />
+            </children></AnchorPane>
+    </center>
+    <top>
+        <Pane prefHeight="150.0" prefWidth="1080.0" style="-fx-background-color: #195190FF;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="1080.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@tfjlogo6.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+    </top>
+</BorderPane>

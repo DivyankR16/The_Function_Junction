@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.net.URL;
@@ -36,6 +37,7 @@ public class ManagerInfoOfAccountViewController implements Initializable
     public Label LoginId;
     @FXML
     public Label Age;
+    public TextField userInput;
     @FXML
     private Button HomeButton;
     @FXML
@@ -136,6 +138,17 @@ public class ManagerInfoOfAccountViewController implements Initializable
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+
+    @FXML
+    protected void GotoSearch(ActionEvent event) throws IOException, SQLException {
+        Send_Data_Between need=Send_Data_Between.getInstance();
+        need.setSearchInput(userInput.getText());
+        if(Search.getCustNames(need.getSearchInput())!=null){
+        ManagerControllerFunctions.GoToSearch(event);}
+        else{
+            //
         }
     }
 }
