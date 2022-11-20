@@ -30,7 +30,7 @@
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="23.0" pickOnBounds="true">
                <image>
-                  <Image url="@Divyank_Khajuria.jpg" />
+                  <Image url="@photo2.jpg" />
                </image>
             </ImageView>
             <Label layoutX="78.0" layoutY="187.0" text="Akash Kulkarni&#10;(S20210010011)&#10;(SPOC)&#10;" textAlignment="CENTER" textFill="#195190">
