@@ -1,0 +1,13 @@
+"menuid","type","class","Description","Cost per plate"
+0001,"Breakfast","Basic","",75
+0002,"Breakfast","Premium",,150
+0003,"Breakfast","Royal","",200
+0004,"Lunch","Basic","",150
+0005,"Lunch","Premium","",250
+0006,"Lunch","Royal","",350
+0007,"Snacks","Basic","",50
+0008,"Snacks","Premium","",75
+0009,"Snacks","Royal","",150
+0010,"Dinner","Basic","",200
+0011,"Dinner","Premium","",300
+0012,"Dinner","Royal","",400

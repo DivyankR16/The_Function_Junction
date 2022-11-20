@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="-">
-      <change afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/bookinghistory.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/manager.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/venue.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/VenuLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/VenuLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/customer.csv" afterDir="false" />
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="some csv files added">
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/menue.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/venue.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/venue.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668942691907</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="some csv files added">
+      <created>1668947262703</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1668947262703</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,7 +359,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added images at appropriate folders" />
     <MESSAGE value="Added Home GUI" />
     <MESSAGE value="Adding more GUI" />
     <MESSAGE value="Adding more GUI again.Made internal menu and navigation bar on the left side." />
@@ -382,7 +383,8 @@
     <MESSAGE value="Fixed case problem with Search." />
     <MESSAGE value="AboutUs_View.fxml edited and info added." />
     <MESSAGE value="-" />
-    <option name="LAST_COMMIT_MESSAGE" value="-" />
+    <MESSAGE value="some csv files added" />
+    <option name="LAST_COMMIT_MESSAGE" value="some csv files added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
