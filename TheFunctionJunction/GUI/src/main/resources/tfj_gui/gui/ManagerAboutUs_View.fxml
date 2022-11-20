@@ -4,6 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.text.Font?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tfj_gui.gui.ManagerAboutUsViewController">
     <left>
         <VBox prefHeight="200.0" prefWidth="180.0" style="-fx-background-color: #195190FF;" BorderPane.alignment="CENTER">
@@ -20,7 +21,58 @@
             </children></VBox>
     </left>
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER" />
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="32.0" layoutY="23.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@photo1.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="23.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@photo2.jpg" />
+                    </image>
+                </ImageView>
+                <Label layoutX="78.0" layoutY="187.0" text="Akash Kulkarni&#10;(S20210010011)&#10;(SPOC)&#10;" textAlignment="CENTER" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="394.0" layoutY="187.0" text="Divyank Khajuria&#10;(S20210010068)" textAlignment="CENTER" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="644.0" layoutY="23.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@tfjlogo5.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="690.0" layoutY="187.0" text="Parth Irache&#10;(S20210010092)" textAlignment="CENTER" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="185.0" layoutY="269.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@tfjlogo5.png" />
+                    </image></ImageView>
+                <Label layoutX="231.0" layoutY="434.0" text="Digvijay Ghule&#10;(S20210010082)" textAlignment="CENTER" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="506.0" layoutY="269.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@tfjlogo5.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="552.0" layoutY="434.0" text="Anurag Yadav&#10;(S20210010026)&#10;" textAlignment="CENTER" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
     </center>
     <top>
         <Pane prefHeight="150.0" prefWidth="1080.0" style="-fx-background-color: #195190FF;" BorderPane.alignment="CENTER">

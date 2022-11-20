@@ -103,11 +103,6 @@ public class InfoOfAccountViewController implements Initializable {
     @FXML
     private Label Name;
 
-
-    //Connect JDBC
-
-    //search the database for required login id
-//    @FXML
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Send_Data_Between need = Send_Data_Between.getInstance();
