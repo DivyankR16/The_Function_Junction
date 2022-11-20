@@ -99,7 +99,7 @@ public class Login_View_Controller implements Initializable {
     {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Signup_View.fxml"));
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load(),720,540);
+        Scene scene = new Scene(fxmlLoader.load(),1080,720);
         stage.setTitle("THE FUNCTION JUNCTION");
         stage.setScene(scene);
         stage.show();
