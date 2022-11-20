@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.util.Objects;
 
 public class Search {
     public static ObservableList<Customer> getCustNames(String userInput) throws SQLException {
@@ -22,6 +23,9 @@ public class Search {
         return listNames;
     }
     public static boolean isSubsequence(String userInput,String custName){
+        if(Objects.equals(userInput, "")){
+            return false;
+        }
         int i=0;
         int j=0;
         userInput= userInput.toLowerCase();

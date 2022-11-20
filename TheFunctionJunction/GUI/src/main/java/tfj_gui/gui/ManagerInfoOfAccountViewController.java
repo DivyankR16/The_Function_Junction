@@ -37,7 +37,10 @@ public class ManagerInfoOfAccountViewController implements Initializable
     public Label LoginId;
     @FXML
     public Label Age;
-    public TextField userInput;
+    @FXML
+    private TextField userInput;
+    @FXML
+    private Label Remark;
     @FXML
     private Button HomeButton;
     @FXML
@@ -145,10 +148,10 @@ public class ManagerInfoOfAccountViewController implements Initializable
     protected void GotoSearch(ActionEvent event) throws IOException, SQLException {
         Send_Data_Between need=Send_Data_Between.getInstance();
         need.setSearchInput(userInput.getText());
-        if(Search.getCustNames(need.getSearchInput())!=null){
+        if(Search.getCustNames(need.getSearchInput()).size()>1){
         ManagerControllerFunctions.GoToSearch(event);}
         else{
-            //
+            Remark.setText("Either no person matches with inputted name or input is empty");
         }
     }
 }
