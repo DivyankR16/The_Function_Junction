@@ -1,7 +1,9 @@
 package Login;
 
+import CSVLoaders.changeCustomerCSV;
 import Database.DBconnection.Connect;
 
+import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -128,12 +130,16 @@ public class Customer extends Person implements Login
                 preStatement2.setString(9,this.getMembershipStatus());
                 preStatement2.setString(10,this.getDateOfJoining().toString());
                 preStatement2.executeUpdate();
-
+//                changeCustomerCSV.load_into_customer_csv(this.getFirstName(),this.getLastName(),this.getPhoneNumber(),this.getEmailId(),this.getLoginId(),this.getPassword(),this.getDOB(),this.getCustomerID());
             }
             catch (SQLException e)
             {
                 e.printStackTrace();
             }
+//            catch (IOException e)
+//            {
+//                throw new RuntimeException(e);
+//            }
             finally
             {
                 Connect.closeConnection();

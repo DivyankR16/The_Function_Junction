@@ -44,6 +44,7 @@ public class Signup_View_Controller
     protected void AvailableButtonClicked()
     {
         Customer c = new Customer(FirstNameTF.getText(), LastNameTF.getText(),PhoneNumberTF.getText(),EmailIdTF.getText(),LoginIdTF.getText(),PasswordTF.getText(),((TextField) DOBTF.getEditor()).getText());
+
         if (c.Availability(LoginIdTF.getText()))
         {
             AvailabilityLabel.setText("Available!!!");

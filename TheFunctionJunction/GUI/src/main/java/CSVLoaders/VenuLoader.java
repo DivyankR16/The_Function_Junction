@@ -18,8 +18,8 @@ public class VenuLoader
             con.setAutoCommit(false);
             String Query1="Drop table if exist venu";
             String Query2="create table venu(venuid INT, name TEXT, capacity INT, price_per_day INT, description TEXT)" ;
-            St.executeQuery(Query1);
-            St.executeQuery(Query2);
+            St.executeUpdate(Query1);
+            St.executeUpdate(Query2);
 
             String Query3 = "INSERT INTO venu(venuid, name, capacity, price_per_day, description) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = con.prepareStatement(Query3);

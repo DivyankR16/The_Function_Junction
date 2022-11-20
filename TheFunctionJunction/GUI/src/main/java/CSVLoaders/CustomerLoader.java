@@ -12,14 +12,14 @@ public class CustomerLoader
     private int batchSize = 50;
     static String csvFilePath="customer.csv";
     Connection con= Connect.createConnection();
-    public void LoadCSV(){
+    public void LoadCustomerCSV(){
         try{
             Statement St = con.createStatement();
             con.setAutoCommit(false);
             String Query1="Drop table if exist customer";
             String Query2="create table customer(loginid INT, password INT, FirstName TEXT, LastName TEXT, PhoneNumber INT, EmailId TEXT, DOB DATE, CustomerID INT, MembershipStatus TEXT, DateOfJoining DATE)" ;
-            St.executeQuery(Query1);
-            St.executeQuery(Query2);
+            St.executeUpdate(Query1);
+            St.executeUpdate(Query2);
 
             String Query3 = "INSERT INTO customer (loginid, password, FirstName, LastName, PhoneNumber, EmailId, DOB, CustomerID, MembershipStatus, DateOfJoining ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = con.prepareStatement(Query3);
