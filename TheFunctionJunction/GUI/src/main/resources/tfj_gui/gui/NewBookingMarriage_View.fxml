@@ -103,6 +103,7 @@
             <TextField fx:id="guests" layoutX="176.0" layoutY="374.0" prefHeight="26.0" prefWidth="214.0" promptText="Enter expected number of attendants" />
             <Button fx:id="GetCost" layoutX="294.0" layoutY="435.0" mnemonicParsing="false" onAction="#DisplayFinalCost" text="Get expected Cost" />
             <Button layoutX="64.0" layoutY="436.0" mnemonicParsing="false" text="Back" />
+            <Label layoutX="583.0" layoutY="53.0" prefHeight="110.0" prefWidth="291.0" />
             </children></AnchorPane>
    </bottom>
 </BorderPane>

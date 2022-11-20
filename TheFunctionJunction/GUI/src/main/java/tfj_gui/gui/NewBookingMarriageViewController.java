@@ -90,12 +90,12 @@ public class NewBookingMarriageViewController implements Initializable
         ControllerFunctions.ExitButtonClicked(event);
     }
     private final String[] Drinks_Choices = {"Lemon juice","Orange juice","Mixed fruit juice","Beer","---None---"};
-    private final String[] Venue_Choices = {"Lawn","Hall","Open Field","Conference room-1","Auditorium",""};
+    private final String[] Venue_Choices = new Venue().getAllVenueNames().toArray(new String[0]);
     private final String[] Decoration_Choices = {"Basic","Premium","Royal"};
-    private final String[] Lunch_Choices ={"Lunch 1","Lunch 2","Lunch 3","---None---"};
-    private final String[] Snacks_Choices={"Snacks 1","Snacks 2","Snacks 3","---None---"};
-    private final String[] Breakfast_Choices={"Breakfast 1","Breakfast 2","Breakfast 3","---None---"};
-    private final String[] Dinner_Choices={"Dinner 1","Dinner 2","Dinner 3","---None---"};
+    private final String[] Lunch_Choices ={"Basic","Premium","Royal","---None---"};
+    private final String[] Snacks_Choices={"Basic","Premium","Royal","---None---"};
+    private final String[] Breakfast_Choices={"Basic","Premium","Royal","---None---"};
+    private final String[] Dinner_Choices={"Basic","Premium","Royal","---None---"};
 
     @FXML
     private ChoiceBox<String> Decoration_choicebox;
@@ -195,13 +195,36 @@ public class NewBookingMarriageViewController implements Initializable
     private double Cost;
     @FXML
     protected void NextNewBooking(ActionEvent event) throws IOException, SQLException {
+        Venue v=new Venue(myChoice_venue,no_of_guests);
+        v.setCapacity();
+        totalCapacity=v.getCapacity();
+        no_of_guests= Integer.parseInt(guests.getText());
+        if(totalCapacity<no_of_guests){
+            DisplayInformationLabel.setText("Venue capacity is insufficient");
+        }
+        else{
         SetBooking();
-        if(w1.getBookingStatus().equals("Booked"))     Add_to_DB();
+        if(w1.getBookingStatus().compareToIgnoreCase("Booked")==0)     Add_to_DB();
+        else DisplayInformationLabel.setText("Venue not available");}
+    }
+    @FXML
+    protected void DisplayFinalCost(ActionEvent event)
+    {   Venue v=new Venue(myChoice_venue,no_of_guests);
+        v.setCapacity();
+        totalCapacity=v.getCapacity();
+        no_of_guests= Integer.parseInt(guests.getText());
+        if(totalCapacity<no_of_guests){
+        DisplayInformationLabel.setText("Venue capacity is insufficient");
+    }
+    else SetBooking();
+        //DisplayInformationLabel.setText("Breakfast");
     }
 
     private String Name;
     private String Email;
     private String PhNumber;
+    private int totalCapacity;
+    private int no_of_guests;
     public void getPass(String loginID){
         String password="";
         try{
@@ -250,12 +273,6 @@ public class NewBookingMarriageViewController implements Initializable
     double Snacks_cost;
     double Drinks_cost;
     double Dinner_cost;
-    @FXML
-    protected void DisplayFinalCost(ActionEvent event)
-    {
-        SetBooking();
-        //DisplayInformationLabel.setText("Breakfast");
-    }
     Wedding w1 = new Wedding();
     protected void SetBooking()
     {
@@ -265,49 +282,46 @@ public class NewBookingMarriageViewController implements Initializable
         Date sd = Date.valueOf(startdate);
         Date ed = Date.valueOf(enddate);
         String venue = Venue_choicebox.getValue();
-        Venue v1 = new Venue(venue,"sample");
+        Venue v1 = new Venue(venue,Integer.parseInt(guests.getText()));
+        no_of_guests= Integer.parseInt(guests.getText());
+        v1.setCapacity();
+        totalCapacity=v1.getCapacity();
         String booking_status = v1.getBookingStatus(sd,ed);
-        int no_of_guests = Integer.parseInt(guests.getText());
 
         BreakFast b1 = new BreakFast();
-        int breakfast_index=0;
-        if(Objects.equals(myChoice_breakfast, Breakfast_Choices[0]))     breakfast_index=1;
-        if(Objects.equals(myChoice_breakfast, Breakfast_Choices[1]))     breakfast_index=2;
-        if(Objects.equals(myChoice_breakfast, Breakfast_Choices[2]))     breakfast_index=3;
-        if(Objects.equals(myChoice_breakfast, Breakfast_Choices[3]))     breakfast_index=0;
-        b1.setMyChoice(breakfast_index);
         b1.setNumberOfGuests(no_of_guests);
-        Breakfast_cost = b1.calculateCost();
-
+        if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
+        b1.setBf_class(myChoice_breakfast);
+        Breakfast_cost = b1.calculateCost();}
+        else{
+            Breakfast_cost=0;
+        }
         Lunch l1 = new Lunch();
-        int lunch_index=0;
-        if(Objects.equals(myChoice_Lunch, Lunch_Choices[0]))     lunch_index=1;
-        if(Objects.equals(myChoice_Lunch, Lunch_Choices[1]))     lunch_index=2;
-        if(Objects.equals(myChoice_Lunch, Lunch_Choices[2]))     lunch_index=3;
-        if(Objects.equals(myChoice_Lunch, Lunch_Choices[3]))     lunch_index=0;
-        l1.setMyChoice(lunch_index);
-        l1.setNumberOfGuests(no_of_guests);
-        Lunch_cost = l1.calculateCost();
+        b1.setNumberOfGuests(no_of_guests);
+        if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
+            l1.setLunch_class(myChoice_breakfast);
+            Lunch_cost = l1.calculateCost();}
+        else{
+            Lunch_cost=0;
+        }
 
         Snacks s1 = new Snacks();
-        int snacks_index=0;
-        if(Objects.equals(myChoice_Snacks, Snacks_Choices[0]))     snacks_index=1;
-        if(Objects.equals(myChoice_Snacks, Snacks_Choices[1]))     snacks_index=2;
-        if(Objects.equals(myChoice_Snacks, Snacks_Choices[2]))     snacks_index=3;
-        if(Objects.equals(myChoice_Snacks, Snacks_Choices[3]))     snacks_index=0;
-        s1.setMyChoice(snacks_index);
         s1.setNumberOfGuests(no_of_guests);
-        Snacks_cost = s1.calculateCost();
+        if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
+            s1.setSnack_class(myChoice_breakfast);
+            Snacks_cost = s1.calculateCost();}
+        else{
+            Snacks_cost=0;
+        }
 
         Dinner d1 = new Dinner();
-        int dinner_index=0;
-        if(Objects.equals(myChoice_Dinner, Dinner_Choices[0]))     dinner_index=1;
-        if(Objects.equals(myChoice_Dinner, Dinner_Choices[1]))     dinner_index=2;
-        if(Objects.equals(myChoice_Dinner, Dinner_Choices[2]))     dinner_index=3;
-        if(Objects.equals(myChoice_Dinner, Dinner_Choices[3]))     dinner_index=0;
-        d1.setMyChoice(dinner_index);
         d1.setNumberOfGuests(no_of_guests);
-        Dinner_cost=d1.calculateCost();
+        if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
+            d1.setDinner_class(myChoice_breakfast);
+            Dinner_cost = d1.calculateCost();}
+        else{
+            Dinner_cost=0;
+        }
 
         Drinks dr1 = new Drinks();
         int drinks_index=0;
@@ -325,6 +339,7 @@ public class NewBookingMarriageViewController implements Initializable
         System.out.println(Snacks_cost);
         System.out.println(Drinks_cost);
         System.out.println(Dinner_cost);
+        System.out.println(booking_status);
         double Menu_Cost = Breakfast_cost + Lunch_cost + Snacks_cost + Drinks_cost + Dinner_cost;
         System.out.print(Menu_Cost);
         double Final_Cost;
@@ -346,10 +361,10 @@ public class NewBookingMarriageViewController implements Initializable
             DisplayInformationLabel.setText("Dinner Cost : "+Dinner_cost);
             DisplayInformationLabel.setText("Final_Cost = "+ Final_Cost);
         }
-        else
-        {
-            DisplayInformationLabel.setText("Hall not available.");
-        }
+//        else
+//        {
+//            DisplayInformationLabel.setText("Hall not available.");
+//        }
     }
 
     protected void Add_to_DB() throws SQLException {

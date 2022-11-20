@@ -25,7 +25,7 @@ public class Drinks extends Menu {
         this.myChoice = myChoice;
     }
     @Override
-    public float calculateCost() {
+    public double calculateCost() {
         return (float)(this.NumberOfGuests*this.PricePerPlate[this.getMyChoice()]);
     }
 }

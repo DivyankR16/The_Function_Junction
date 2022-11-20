@@ -58,6 +58,6 @@ public class Wedding extends Event{
     public double CalculateCost() {
         long gap=getEndDate().getTime()-getStartDate().getTime();
         double days= TimeUnit.DAYS.convert(gap, TimeUnit.MILLISECONDS);
-        return days*getVenue().getCost();
+        return this.typeCostfun()+days*getVenue().getCost();
     }
 }

@@ -1,43 +1,61 @@
 package Database.TableView;
 
+import Database.DBconnection.Connect;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class BreakFast extends Menu
 {
     private int NumberOfGuests;
-    private final int [] PricePerPlate = {0,100,200,300};
-    private final String BF1 = "Breakfast1";
-    private final String BF2 = "Breakfast2";
-    private final String BF3 = "Breakfast3";
-    private int myChoice;
-    public int getMyChoice() {
-        return myChoice;
+    private double cost;
+
+    public double getCost() {
+        return cost;
     }
-    public void setMyChoice(int myChoice) {
-        this.myChoice = myChoice;
+    public void setCost(double cost) {
+        this.cost = cost;
     }
+
+    private String bf_class;
+
+    public String getBf_class() {
+        return bf_class;
+    }
+
+    public void setBf_class(String bf_class) {
+        this.bf_class = bf_class;
+    }
+
     public int getNumberOfGuests() {
         return NumberOfGuests;
     }
     public void setNumberOfGuests(int numberOfGuests) {
         NumberOfGuests = numberOfGuests;
     }
-    public int[] getPricePerPlate() {
-        return PricePerPlate;
-    }
-    public String getBF1() {
-        return BF1;
-    }
-    public String getBF2() {
-        return BF2;
-    }
-    public String getBF3() {
-        return BF3;
-    }
-//    public float CostOfBreakFast()
-//    {
-//        return (float)(this.NumberOfGuests*this.PricePerPlate[this.getMyChoice()]);
-//    }
+
     @Override
-    public float calculateCost() {
-        return (float)(this.NumberOfGuests*this.PricePerPlate[this.getMyChoice()]);
+    public double calculateCost() {
+        Connection con= Connect.createConnection();
+        try {
+            Statement St = con.createStatement();
+            String query = "Select * from Menue where type='Breakfast'";
+            ResultSet rs=St.executeQuery(query);
+            while (rs.next()){
+                if (rs.getString(3).compareToIgnoreCase( this.bf_class)==0){
+                    this.cost=rs.getDouble(5);
+                }
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            Connect.closeConnection();
+        }
+        return this.cost;
+
     }
 }

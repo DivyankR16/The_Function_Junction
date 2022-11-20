@@ -2,5 +2,5 @@ package Database.TableView;
 
 public abstract class Menu
 {
-    abstract float calculateCost();
+    abstract double calculateCost();
 }
