@@ -295,5 +295,4 @@ public class NewBookingViewController implements Initializable {
             stage.show();
         }
     }
-
 }
