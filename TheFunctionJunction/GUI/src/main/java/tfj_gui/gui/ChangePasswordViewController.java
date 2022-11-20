@@ -110,13 +110,13 @@ public class ChangePasswordViewController {
         {
               if (oldPassword.compareTo(p.getPass(LoginID))==0)
               {
-                   if(p instanceof Manager){
+                  if(p instanceof Manager){
+                       p.changePass(LoginID,newPassword);
                        //Manager m=new Manager();
-                       p.changePass(LoginID,newPassword);
                    }
-                   else if(p instanceof Customer){
-                       //Customer c=new Customer();
+                  else if(p instanceof Customer){
                        p.changePass(LoginID,newPassword);
+                       //Customer c=new Customer();
                    }
                   Remarks.setText("Password Updates Successfully!!");
              }
