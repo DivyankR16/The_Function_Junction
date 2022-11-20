@@ -17,11 +17,11 @@ public class VenuLoader
             Statement St = con.createStatement();
             con.setAutoCommit(false);
             String Query1="Drop table if exist venu";
-            String Query2="create table venu(venuid INT, name TEXT, capacity INT, price_per_day INT, type TEXT)" ;
+            String Query2="create table venu(venuid INT, name TEXT, capacity INT, price_per_day INT, description TEXT)" ;
             St.executeQuery(Query1);
             St.executeQuery(Query2);
 
-            String Query3 = "INSERT INTO venu(venuid, name, capacity, price_per_day, type) VALUES (?, ?, ?, ?, ?, ?)";
+            String Query3 = "INSERT INTO venu(venuid, name, capacity, price_per_day, description) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = con.prepareStatement(Query3);
             BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath));
             String lineText = null;
@@ -37,7 +37,7 @@ public class VenuLoader
                 String name_data = data[1];
                 String capacity_data = data[2];
                 String price_per_day_data = data[3];
-                String type_data = data[4];
+                String description_data = data[4];
 
                 String comment = data.length == 5 ? data[4] : "";
 
@@ -45,13 +45,13 @@ public class VenuLoader
                 statement.setString(2, name_data);
                 statement.setInt(3, Integer.parseInt(capacity_data));
                 statement.setInt(4, Integer.parseInt(price_per_day_data));
-                statement.setString(5, type_data);
+                statement.setString(5, description_data);
 
                 statement.addBatch();
 
 //                if (count % batchSize == 0)
 //                {
-                    statement.executeBatch();
+                statement.executeBatch();
 //                }
             }
 
