@@ -4,7 +4,11 @@ import Database.DBconnection.Connect;
 import Login.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -53,7 +57,12 @@ public class Signup_View_Controller
     }
     @FXML
     private void LoginButtonClicked(ActionEvent event) throws IOException {
-        ManagerControllerFunctions.LogoutButtonClicked(event);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login_View.fxml"));
+        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(),1080,720);
+        stage.setTitle("THE FUNCTION JUNCTION");
+        stage.setScene(scene);
+        stage.show();
     }
     @FXML
     protected void getDateFromPicker(ActionEvent event)
