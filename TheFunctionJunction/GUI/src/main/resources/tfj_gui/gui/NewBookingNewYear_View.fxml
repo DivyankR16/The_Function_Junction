@@ -6,20 +6,6 @@
 <?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="1080.0" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tfj_gui.gui.NewBookingNewYearViewController">
-    <left>
-        <VBox prefHeight="200.0" prefWidth="180.0" style="-fx-background-color: #195190FF;" BorderPane.alignment="CENTER">
-            <children>
-                <Button fx:id="HomeButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#GoToHome" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2px 2px 2px 2px;" text="Home" textFill="WHITE" />
-                <Button fx:id="NewBookingButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#NewBookingButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: #A2A2A1FF; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="New Booking" textFill="#195190" />
-                <Button fx:id="MyAccountButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#MyAccountButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="My Account" textFill="WHITE" />
-                <Button fx:id="MyBookingsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#MyBookingsButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="My Bookings" textFill="WHITE" />
-                <Button fx:id="ChangePasswordButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ChangePasswordButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Change Password" textFill="WHITE" />
-                <Button fx:id="AboutUsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AboutUsButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="About Us" textFill="WHITE" />
-                <Button fx:id="HelpButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#HelpButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Help" textFill="WHITE" />
-                <Button fx:id="LogoutButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LogoutButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Logout" textFill="WHITE" />
-                <Button fx:id="ExitButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ExitButtonClicked" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 2px 2px 2px;" text="Exit" textFill="WHITE" />
-            </children></VBox>
-    </left>
     <top>
         <Pane prefHeight="150.0" prefWidth="1080.0" style="-fx-background-color: #195190FF;" BorderPane.alignment="CENTER">
             <children>
@@ -31,15 +17,96 @@
             </children>
         </Pane>
     </top>
-    <center>
+   <bottom>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
             <children>
+                <ChoiceBox fx:id="Decoration_choicebox" layoutX="145.0" layoutY="65.0" prefWidth="150.0" />
+                <Label layoutX="45.0" layoutY="129.0" />
+                <Label layoutX="15.0" layoutY="136.0" text="Menu:-" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="Breakfast_choicebox" layoutX="15.0" layoutY="195.0" prefWidth="150.0" />
+                <Label layoutX="45.0" layoutY="173.0" text="Breakfast" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="243.0" layoutY="173.0" text="Lunch" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="Lunch_choicebox" layoutX="189.0" layoutY="195.0" prefWidth="150.0" />
+                <Label layoutX="402.0" layoutY="173.0" text="Snacks" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="527.0" layoutY="173.0" text="Drinks/Beverages" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="Snacks_choicebox" layoutX="351.0" layoutY="193.0" prefWidth="150.0" />
+                <ChoiceBox fx:id="Drinks_choicebox" layoutX="514.0" layoutY="193.0" prefWidth="150.0" />
+                <Label layoutX="317.0" layoutY="67.0" text="Venue" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="Venue_choicebox" layoutX="375.0" layoutY="65.0" prefWidth="150.0" />
+                <Label layoutX="20.0" layoutY="263.0" text="From(Starting date)" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="End_Date" layoutX="176.0" layoutY="316.0" />
+                <DatePicker fx:id="Start_Date" layoutX="176.0" layoutY="261.0" />
+                <Label layoutX="20.0" layoutY="318.0" text="To(End date)" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
                 <Button fx:id="Next1" layoutX="413.0" layoutY="509.0" mnemonicParsing="false" onAction="#NextNewBooking" text="NEXT" textFill="#195190">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
+                <Label layoutX="743.0" layoutY="175.0" text="Dinner" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="Dinner_choicebox" layoutX="684.0" layoutY="193.0" prefWidth="150.0" />
+                <Label layoutX="339.0" layoutY="24.0" text="Enter Information for Conference" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label fx:id="DisplayInformationLabel" layoutX="429.0" layoutY="234.0" prefHeight="214.0" prefWidth="430.0" textFill="#195190">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+            <Label layoutX="22.0" layoutY="67.0" text="Cracker type" textFill="#195190">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="376.0" text="Number of guests" textFill="#195190">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="guests" layoutX="176.0" layoutY="374.0" prefHeight="26.0" prefWidth="214.0" promptText="Enter expected number of attendants" />
+            <Button fx:id="GetCost" layoutX="294.0" layoutY="435.0" mnemonicParsing="false" onAction="#DisplayFinalCost" text="Get expected Cost" />
+            <Button layoutX="64.0" layoutY="436.0" mnemonicParsing="false" text="Back" />
+            <Label fx:id="RemarVenue" layoutX="583.0" layoutY="53.0" prefHeight="110.0" prefWidth="468.0" textFill="#195190">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
             </children></AnchorPane>
-    </center>
+   </bottom>
 </BorderPane>
-
