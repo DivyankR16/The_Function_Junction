@@ -46,6 +46,9 @@ public class NewBookingMarriageViewController implements Initializable
     @FXML
     private Button Next1;
     @FXML
+    private Button GoBack;
+
+    @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
         ControllerFunctions.GoToHome(event);
@@ -213,11 +216,21 @@ public class NewBookingMarriageViewController implements Initializable
         v.setCapacity();
         totalCapacity=v.getCapacity();
         no_of_guests= Integer.parseInt(guests.getText());
-        if(totalCapacity<no_of_guests){
+        if(totalCapacity<no_of_guests)
+        {
         DisplayInformationLabel.setText("Venue capacity is insufficient");
-    }
+        }
     else SetBooking();
         //DisplayInformationLabel.setText("Breakfast");
+    }
+    @FXML
+    protected void ReturnToHome(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBooking_View.fxml"));
+        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(),1080,720);
+        stage.setTitle("THE FUNCTION JUNCTION");
+        stage.setScene(scene);
+        stage.show();
     }
 
     private String Name;
@@ -299,7 +312,7 @@ public class NewBookingMarriageViewController implements Initializable
         Lunch l1 = new Lunch();
         b1.setNumberOfGuests(no_of_guests);
         if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
-            l1.setLunch_class(myChoice_breakfast);
+            l1.setLunch_class(myChoice_Lunch);
             Lunch_cost = l1.calculateCost();}
         else{
             Lunch_cost=0;
@@ -308,7 +321,7 @@ public class NewBookingMarriageViewController implements Initializable
         Snacks s1 = new Snacks();
         s1.setNumberOfGuests(no_of_guests);
         if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
-            s1.setSnack_class(myChoice_breakfast);
+            s1.setSnack_class(myChoice_Snacks);
             Snacks_cost = s1.calculateCost();}
         else{
             Snacks_cost=0;
@@ -317,7 +330,7 @@ public class NewBookingMarriageViewController implements Initializable
         Dinner d1 = new Dinner();
         d1.setNumberOfGuests(no_of_guests);
         if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
-            d1.setDinner_class(myChoice_breakfast);
+            d1.setDinner_class(myChoice_Dinner);
             Dinner_cost = d1.calculateCost();}
         else{
             Dinner_cost=0;
@@ -341,7 +354,7 @@ public class NewBookingMarriageViewController implements Initializable
         System.out.println(Dinner_cost);
         System.out.println(booking_status);
         double Menu_Cost = Breakfast_cost + Lunch_cost + Snacks_cost + Drinks_cost + Dinner_cost;
-        System.out.print(Menu_Cost);
+        System.out.println(Menu_Cost);
         double Final_Cost;
         if(booking_status.compareToIgnoreCase("Available") == 0)
         {
