@@ -41,7 +41,7 @@ public class Lunch extends Menu
         Connection con= Connect.createConnection();
         try {
             Statement St = con.createStatement();
-            String query = "Select * from Menue where type='Breakfast'";
+            String query = "Select * from Menue where type='Lunch'";
             ResultSet rs=St.executeQuery(query);
             while (rs.next()){
                 if (rs.getString(3).compareToIgnoreCase( this.lunch_class)==0){
@@ -55,7 +55,7 @@ public class Lunch extends Menu
         finally {
             Connect.closeConnection();
         }
-        return this.cost;
+        return this.getNumberOfGuests()*this.cost;
 
     }
 }

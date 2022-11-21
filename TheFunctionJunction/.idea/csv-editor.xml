@@ -31,14 +31,14 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\GUI\src\main\java\CSVLoaders\venue.csv">
+        <entry key="\GUI\src\main\java\CSVLoaders\tempCustomer.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="\customer.csv">
+        <entry key="\GUI\src\main\java\CSVLoaders\venue.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

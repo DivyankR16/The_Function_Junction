@@ -21,7 +21,7 @@ public class ManagerControllerFunctions
     }
     protected static void NewBookingButtonClicked(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBooking_View.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerNewBooking_View.fxml"));
         Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(),1080,720);
         stage.setTitle("THE FUNCTION JUNCTION");
