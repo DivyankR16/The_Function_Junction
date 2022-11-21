@@ -5,7 +5,17 @@ import Login.*;
 public final class Send_Data_Between {
     private Customer customer;
     private Manager manager;
+    private String LoginIDCust;
     private int check;
+
+    public String getLoginIDCust() {
+        return LoginIDCust;
+    }
+
+    public void setLoginIDCust(String loginIDCust) {
+        LoginIDCust = loginIDCust;
+    }
+
     private String searchInput;
 
     public String getSearchInput() {

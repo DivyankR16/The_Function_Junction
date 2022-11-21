@@ -55,7 +55,7 @@ public class BreakFast extends Menu
         finally {
             Connect.closeConnection();
         }
-        return this.cost;
+        return this.getNumberOfGuests()*this.cost;
 
     }
 }
