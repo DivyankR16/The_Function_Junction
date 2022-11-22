@@ -12,7 +12,7 @@ public class ManagerUpdate {
     private int batchSize = 20;
     static String csvFilePath="";
     Connection con= Connect.createConnection();
-    public void UpdateCSV(String OldPassword,String NewPassword){
+    public void UpdateCSV(int loginid,String NewPassword){
         try{
             Statement St = con.createStatement();
             con.setAutoCommit(false);
@@ -35,8 +35,8 @@ public class ManagerUpdate {
             String lineText = null;
 
             int count = 0;
-
-            lineReader.readLine(); // skip header line
+            int flag=0;
+//            lineReader.readLine(); // skip header line
             FileWriter Writer= new FileWriter("tempManger.csv");
             while ((lineText = lineReader.readLine()) != null) {
                 String[] data = lineText.split(",");
@@ -49,26 +49,30 @@ public class ManagerUpdate {
                 String newPassword=Password;
                 String DOB=data[6];
 
-                if (Password.compareTo(OldPassword)==0) {
+                if (loginid==Integer.parseInt(LoginID)) {
                     newPassword=NewPassword;
                 }
                 Writer.write(FirstName+","+LastName+","+PhoneNumber+","+emailID+","+LoginID+","+newPassword+","+DOB+"\n");
-                statement.setString(1, FirstName);
-                statement.setString(2, LastName);
+                if (flag != 0) {
+                    statement.setString(1, FirstName);
+                    statement.setString(2, LastName);
 
-                statement.setInt(3,Integer.parseInt(PhoneNumber));
+                    statement.setInt(3,Integer.parseInt(PhoneNumber));
 
-                statement.setString(4, emailID);
+                    statement.setString(4, emailID);
 
-                statement.setInt(5, Integer.parseInt(LoginID));
-                statement.setInt(6, Integer.parseInt(newPassword));
-                statement.setString(7, DOB);
+                    statement.setInt(5, Integer.parseInt(LoginID));
+                    statement.setInt(6, Integer.parseInt(newPassword));
+                    statement.setString(7, DOB);
 
-                statement.addBatch();
+                    statement.addBatch();
 
-                if (count % batchSize == 0) {
-                    statement.executeBatch();
+                    if (count % batchSize == 0) {
+                        statement.executeBatch();
+                    }
                 }
+
+                flag++;
             }
             Writer.close();
             lineReader.close();

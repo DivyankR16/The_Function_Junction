@@ -12,7 +12,7 @@ public class CustomerUpdate {
     private int batchSize = 50;
     static String csvFilePath="customer.csv";
     Connection con= Connect.createConnection();
-    public void UpdateCustomerCSV(String OldPassword,String NewPassword){
+    public void UpdateCustomerCSV(int Loginid,String NewPassword){
         try{
             Statement St = con.createStatement();
             con.setAutoCommit(false);
@@ -27,8 +27,9 @@ public class CustomerUpdate {
             String lineText = null;
 
             int count = 0;
+            int flag=0;
 
-            lineReader.readLine(); // skip header line
+//            lineReader.readLine(); // skip header line
             FileWriter Writer= new FileWriter("tempCustomer.csv");
 
             while ((lineText = lineReader.readLine()) != null)
@@ -46,27 +47,31 @@ public class CustomerUpdate {
                 String DateOfJoining_data = data[9];
 
                 String newPassword=password_data;
-                if (password_data.compareTo(OldPassword)==0) {
+                if (Loginid==Integer.parseInt(loginid_data)) {
                     newPassword=NewPassword;
                 }
                 Writer.write(loginid_data+","+newPassword+","+FirstName_data+","+LastName_data+","+PhoneNumber_data+","+EmailId_data+","+DOB_data+","+CustomerID_data+","+MembershipStatus_data+","+DateOfJoining_data+"\n");
-                statement.setInt(1, Integer.parseInt(loginid_data));
-                statement.setInt(2, Integer.parseInt(newPassword));
-                statement.setString(3, FirstName_data);
-                statement.setString(4, LastName_data);
-                statement.setString(5, PhoneNumber_data);
-                statement.setString(6, EmailId_data);
-                statement.setDate(7, Date.valueOf(DOB_data));
-                statement.setInt(8, Integer.parseInt(CustomerID_data));
-                statement.setString(9, MembershipStatus_data);
-                statement.setDate(10, Date.valueOf(DateOfJoining_data));
+                if (flag != 0) {
+                    statement.setInt(1, Integer.parseInt(loginid_data));
+                    statement.setInt(2, Integer.parseInt(newPassword));
+                    statement.setString(3, FirstName_data);
+                    statement.setString(4, LastName_data);
+                    statement.setString(5, PhoneNumber_data);
+                    statement.setString(6, EmailId_data);
+                    statement.setDate(7, Date.valueOf(DOB_data));
+                    statement.setInt(8, Integer.parseInt(CustomerID_data));
+                    statement.setString(9, MembershipStatus_data);
+                    statement.setDate(10, Date.valueOf(DateOfJoining_data));
 
-                statement.addBatch();
+                    statement.addBatch();
 
-                if (count % batchSize == 0)
-                {
-                    statement.executeBatch();
+                    if (count % batchSize == 0)
+                    {
+                        statement.executeBatch();
+                    }
                 }
+
+                flag++;
             }
 
             lineReader.close();
