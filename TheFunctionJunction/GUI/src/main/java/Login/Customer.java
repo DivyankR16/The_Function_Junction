@@ -151,4 +151,20 @@ public class Customer extends Person implements Login
             System.out.println("unsuccessfull");
         }
     }
+    public static void DeleteMe(String LoginID)
+    {
+        Connection conn=Connect.createConnection();
+        try{
+            String query="delete from customer where loginid=?";
+            PreparedStatement preparedStatement=conn.prepareStatement(query);
+            preparedStatement.setString(1,LoginID);
+            preparedStatement.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            Connect.closeConnection();
+        }
+    }
 }
