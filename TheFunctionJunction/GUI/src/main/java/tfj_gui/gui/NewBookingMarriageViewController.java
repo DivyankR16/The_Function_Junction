@@ -47,6 +47,8 @@ public class NewBookingMarriageViewController implements Initializable
     private Button Next1;
     @FXML
     private Button GoBack;
+    @FXML
+    private Label RemarkVenue;
 
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
@@ -146,6 +148,23 @@ public class NewBookingMarriageViewController implements Initializable
         Dinner_choicebox.setOnAction((this::Choice_in_Choice_box_dinner));
     }
     private String myChoice_decoration,myChoice_breakfast,myChoice_Drinks,myChoice_venue,myChoice_Lunch,myChoice_Snacks,myChoice_Dinner;
+    private String getDescription() {
+        String desc = "";
+        Connection con = Connect.createConnection();
+        try {
+            Statement stmt = con.createStatement();
+            String query = "Select * from venue where name='" + (myChoice_venue) + "'";
+            ResultSet rs = stmt.executeQuery(query);
+            if (rs.next()) {
+                desc = "Capacity=" + (rs.getInt(3)) + "\nPrice per day :-" + (rs.getInt(4)) + "\n" + (rs.getString(5));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Connect.closeConnection();
+        }
+        return desc;
+    }
     protected void Choice_in_Choice_box_decoration(ActionEvent event)
     {
         myChoice_decoration=Decoration_choicebox.getValue();
@@ -159,6 +178,7 @@ public class NewBookingMarriageViewController implements Initializable
     protected void Choice_in_Choice_box_venue(ActionEvent event)
     {
         myChoice_venue=Venue_choicebox.getValue();
+        RemarkVenue.setText(getDescription());
         System.out.println(myChoice_venue);
     }
     protected void Choice_in_Choice_box_breakfast(ActionEvent event)
@@ -304,13 +324,13 @@ public class NewBookingMarriageViewController implements Initializable
         BreakFast b1 = new BreakFast();
         b1.setNumberOfGuests(no_of_guests);
         if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
-        b1.setBf_class(myChoice_breakfast);
-        Breakfast_cost = b1.calculateCost();}
+            b1.setBf_class(myChoice_breakfast);
+            Breakfast_cost = b1.calculateCost();}
         else{
             Breakfast_cost=0;
         }
         Lunch l1 = new Lunch();
-        b1.setNumberOfGuests(no_of_guests);
+        l1.setNumberOfGuests(no_of_guests);
         if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
             l1.setLunch_class(myChoice_Lunch);
             Lunch_cost = l1.calculateCost();}
@@ -346,15 +366,8 @@ public class NewBookingMarriageViewController implements Initializable
         dr1.setMyChoice(drinks_index);
         dr1.setNumberOfGuests(no_of_guests);
         Drinks_cost = dr1.calculateCost();
-
-        System.out.println(Breakfast_cost);
-        System.out.println(Lunch_cost);
-        System.out.println(Snacks_cost);
-        System.out.println(Drinks_cost);
-        System.out.println(Dinner_cost);
-        System.out.println(booking_status);
         double Menu_Cost = Breakfast_cost + Lunch_cost + Snacks_cost + Drinks_cost + Dinner_cost;
-        System.out.println(Menu_Cost);
+        System.out.print(Menu_Cost);
         double Final_Cost;
         if(booking_status.compareToIgnoreCase("Available") == 0)
         {
@@ -367,12 +380,12 @@ public class NewBookingMarriageViewController implements Initializable
             Venue_cost = w1.CalculateCost();
             System.out.print(Venue_cost);
             Final_Cost = Venue_cost + Menu_Cost;
-            DisplayInformationLabel.setText("Breakfast Cost : "+Breakfast_cost);
-            DisplayInformationLabel.setText("Lunch Cost : "+Lunch_cost);
-            DisplayInformationLabel.setText("Drinks Cost : "+Drinks_cost);
-            DisplayInformationLabel.setText("Snacks Cost : "+Snacks_cost);
-            DisplayInformationLabel.setText("Dinner Cost : "+Dinner_cost);
-            DisplayInformationLabel.setText("Final_Cost = "+ Final_Cost);
+            DisplayInformationLabel.setText("Breakfast Cost : "+(Breakfast_cost)+"\nLunch Cost : "+(Lunch_cost)
+                    +"\nDrinks Cost : "+(Drinks_cost)
+                    +"\nSnacks Cost : "+(Snacks_cost)
+                    +"\nDinner Cost : "+(Dinner_cost)
+                    +"\nVenue Cost : " +(Venue_cost)
+                    +"\nFinal_Cost = "+(Final_Cost));
         }
 //        else
 //        {

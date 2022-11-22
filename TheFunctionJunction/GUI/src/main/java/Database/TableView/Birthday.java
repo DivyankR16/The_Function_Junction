@@ -1,70 +1,34 @@
 package Database.TableView;
 
-import Database.DBconnection.Connect;
-
-import java.sql.*;
-import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Birthday extends Event{
-    private int age;
-    private String cake;
+    private int NumberOfGuests;
+    private final int [] PricePerPlate = {350,400,300,300,500,450,0};
+    private int myChoice;
 
-    public int getAge() {
-        return age;
+    public int getNumberOfGuests() {
+        return NumberOfGuests;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setNumberOfGuests(int numberOfGuests) {
+        NumberOfGuests = numberOfGuests;
     }
 
-    public String getCake() {
-        return cake;
+    public int[] getPricePerPlate() {
+        return PricePerPlate;
     }
 
-    public void setCake(String cake) {
-        this.cake = cake;
+    public int getMyChoice() {
+        return myChoice;
     }
 
-    public Birthday() {
+    public void setMyChoice(int myChoice) {
+        this.myChoice = myChoice;
     }
 
-    public Birthday(int age, String cake) {
-        this.age = age;
-        this.cake = cake;
-    }
-
-    public Birthday(Date startDate, Date endDate, Venue venue, String bookingStatus, ArrayList<Menu> menus, int age, String cake) {
-        super(startDate, endDate, venue, bookingStatus, menus);
-        this.age = age;
-        this.cake = cake;
-    }
-
-    public double getCostCake(){
-        Connection con= Connect.createConnection();
-        double cost=0;
-        try {
-            Statement St= con.createStatement();
-            String query="select * from cakes";
-            ResultSet rs=St.executeQuery(query);
-            while (rs.next()){
-                if (this.cake == rs.getString(1)) {
-                    cost=rs.getDouble(2);
-                }
-            }
-        }
-        catch (SQLException e){
-            e.printStackTrace();
-        }
-        finally {
-            Connect.closeConnection();
-        }
-        return cost;
-    }
     @Override
-    double CalculateCost() {
-        long interval=(super.getEndDate().getTime()-super.getStartDate().getTime())/(1000*60*60*24)%365;
-        double cost=super.getVenue().getCost()*interval+getCostCake();
-
-        return cost;
+    public double CalculateCost() {
+        return (float)(this.PricePerPlate[this.getMyChoice()]);
     }
 }
