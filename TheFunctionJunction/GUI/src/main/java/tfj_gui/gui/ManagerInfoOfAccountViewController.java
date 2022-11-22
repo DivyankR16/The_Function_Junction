@@ -19,6 +19,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -37,6 +38,8 @@ public class ManagerInfoOfAccountViewController implements Initializable
     public Label LoginId;
     @FXML
     public Label Age;
+    public TextField userInput1;
+    public Label AdvSearch1;
     @FXML
     private TextField userInput;
     @FXML
@@ -150,6 +153,24 @@ public class ManagerInfoOfAccountViewController implements Initializable
         need.setSearchInput(userInput.getText());
         if(Search.getCustNames(need.getSearchInput()).size()>1){
         ManagerControllerFunctions.GoToSearch(event);}
+        else{
+            Remark.setText("Either no person matches with inputted name or input is empty");
+        }
+    }
+    @FXML
+    protected  void GotoSearchID(ActionEvent event) throws IOException,SQLException{
+        if(Search.listCustId(userInput1.getText())!=null){
+            StringBuilder ans= new StringBuilder();
+            Customer i=Search.listCustId(userInput1.getText());
+                ans.append(" \n FirstName: "+(i.getFirstName())+
+                        "    \n LastName: "+(i.getLastName())+
+                        "    \n PhoneNumber: "+(i.getPhoneNumber())+
+                        "    \n EmailId: "+(i.getEmailId())+
+                        "    \n LoginId: "+(i.getLoginId())+
+                        "    \n Password: "+(i.getPassword())+
+                        "    \n DOB: "+(i.getDOB())+
+                        "    \n MembershipStatus :"+(i.getMembershipStatus()));
+            Remark.setText(ans.toString());}
         else{
             Remark.setText("Either no person matches with inputted name or input is empty");
         }
