@@ -55,12 +55,12 @@ public class MyBookingsViewController implements Initializable {
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
-        ManagerControllerFunctions.GoToHome(event);
+        ControllerFunctions.GoToHome(event);
     }
     @FXML
     protected void NewBookingButtonClicked(ActionEvent event) throws IOException
     {
-        ManagerControllerFunctions.NewBookingButtonClicked(event);
+        ControllerFunctions.NewBookingButtonClicked(event);
     }
     @FXML
     protected void MyAccountButtonClicked(ActionEvent event) throws IOException
@@ -85,16 +85,16 @@ public class MyBookingsViewController implements Initializable {
     @FXML
     protected void HelpButtonClicked(ActionEvent event) throws IOException
     {
-        ManagerControllerFunctions.HelpButtonClicked(event);
+        ControllerFunctions.HelpButtonClicked(event);
     }
     @FXML
     protected void LogoutButtonClicked(ActionEvent event) throws IOException {
-        ManagerControllerFunctions.LogoutButtonClicked(event);
+        ControllerFunctions.LogoutButtonClicked(event);
     }
     @FXML
     protected void ExitButtonClicked(ActionEvent event) throws IOException
     {
-        ManagerControllerFunctions.ExitButtonClicked(event);
+        ControllerFunctions.ExitButtonClicked(event);
     }
 
     @Override

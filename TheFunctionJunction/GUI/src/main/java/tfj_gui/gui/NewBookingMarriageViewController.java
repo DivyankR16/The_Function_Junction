@@ -53,7 +53,12 @@ public class NewBookingMarriageViewController implements Initializable
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
-        ControllerFunctions.GoToHome(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.GoToHome(event);}
+        else{
+            ControllerFunctions.GoToHome(event);
+        }
     }
     @FXML
     protected void NewBookingButtonClicked(ActionEvent event) throws IOException
@@ -63,36 +68,72 @@ public class NewBookingMarriageViewController implements Initializable
     @FXML
     protected void MyAccountButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.MyAccountButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.MyAccountButtonClicked(event);}
+        else{
+            ControllerFunctions.MyAccountButtonClicked(event);
+        }
     }
     @FXML
     protected void MyBookingsButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.MyBookingsButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.MyBookingsButtonClicked(event);}
+        else{
+            ControllerFunctions.MyBookingsButtonClicked(event);
+        }
     }
     @FXML
     protected void ChangePasswordButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.ChangePasswordButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.ChangePasswordButtonClicked(event);}
+        else{
+            ControllerFunctions.ChangePasswordButtonClicked(event);
+        }
     }
     @FXML
     protected void AboutUsButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.AboutUsButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.AboutUsButtonClicked(event);}
+        else{
+            ControllerFunctions.AboutUsButtonClicked(event);
+        }
     }
     @FXML
     protected void HelpButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.HelpButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.HelpButtonClicked(event);}
+        else{
+            ControllerFunctions.HelpButtonClicked(event);
+        }
     }
     @FXML
-    protected void LogoutButtonClicked(ActionEvent event) throws IOException {
-        ControllerFunctions.LogoutButtonClicked(event);
+    protected void LogoutButtonClicked(ActionEvent event) throws IOException
+    {
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.LogoutButtonClicked(event);}
+        else{
+            ControllerFunctions.LogoutButtonClicked(event);
+        }
     }
     @FXML
     protected void ExitButtonClicked(ActionEvent event) throws IOException
     {
-        ControllerFunctions.ExitButtonClicked(event);
+        Send_Data_Between inst=Send_Data_Between.getInstance();
+        if(inst.getCheck()==1){
+            ManagerControllerFunctions.ExitButtonClicked(event);}
+        else{
+            ControllerFunctions.ExitButtonClicked(event);
+        }
     }
     private final String[] Drinks_Choices = {"Lemon juice","Orange juice","Mixed fruit juice","Beer","---None---"};
     private final String[] Venue_Choices = new Venue().getAllVenueNames().toArray(new String[0]);

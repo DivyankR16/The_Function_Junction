@@ -6,8 +6,12 @@ import Database.TableView.*;
 import Login.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -43,6 +47,8 @@ public class NewBookingNewYearViewController implements Initializable
     private Button ExitButton;
     @FXML
     private Button Next1;
+    @FXML
+    private Button GoBack;
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException
     {
@@ -280,6 +286,16 @@ public class NewBookingNewYearViewController implements Initializable
         }
         else SetBooking();
         //DisplayInformationLabel.setText("Breakfast");
+    }
+
+    @FXML
+    protected void ReturnToHome(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBooking_View.fxml"));
+        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(),1080,720);
+        stage.setTitle("THE FUNCTION JUNCTION");
+        stage.setScene(scene);
+        stage.show();
     }
 
     private String Name;

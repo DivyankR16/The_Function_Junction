@@ -13,8 +13,7 @@ import java.io.IOException;
 
 import static javafx.application.Platform.exit;
 
-public class LogoutViewController
-{
+public class LogoutViewController {
     @FXML
     private Button HomeButton;
     @FXML
@@ -40,11 +39,10 @@ public class LogoutViewController
 
     @FXML
     protected void FinalLogoutButtonClicked(ActionEvent event) throws IOException {
-        if (ConfirmLogoutCheckbox.isSelected())
-        {
+        if (ConfirmLogoutCheckbox.isSelected()) {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login_View.fxml"));
-            Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(fxmlLoader.load(),1080,720);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
             stage.setTitle("THE FUNCTION JUNCTION");
             stage.setScene(scene);
             stage.show();
@@ -52,47 +50,87 @@ public class LogoutViewController
     }
 
     @FXML
-    protected void GoToHome(ActionEvent event) throws IOException
-    {
-        ControllerFunctions.GoToHome(event);
+    protected void GoToHome(ActionEvent event) throws IOException {
+        Send_Data_Between inst = Send_Data_Between.getInstance();
+        if (inst.getCheck() == 1) {
+            ManagerControllerFunctions.GoToHome(event);
+        } else {
+            ControllerFunctions.GoToHome(event);
+        }
     }
+
     @FXML
-    protected void NewBookingButtonClicked(ActionEvent event) throws IOException
-    {
-        ControllerFunctions.NewBookingButtonClicked(event);
+    protected void NewBookingButtonClicked(ActionEvent event) throws IOException {
+
     }
+
     @FXML
-    protected void MyAccountButtonClicked(ActionEvent event) throws IOException
-    {
-        ControllerFunctions.MyAccountButtonClicked(event);
+    protected void MyAccountButtonClicked(ActionEvent event) throws IOException {
+        Send_Data_Between inst = Send_Data_Between.getInstance();
+        if (inst.getCheck() == 1) {
+            ManagerControllerFunctions.MyAccountButtonClicked(event);
+        } else {
+            ControllerFunctions.MyAccountButtonClicked(event);
+        }
     }
+
     @FXML
-    protected void MyBookingsButtonClicked(ActionEvent event) throws IOException
-    {
-        ControllerFunctions.MyBookingsButtonClicked(event);
+    protected void MyBookingsButtonClicked(ActionEvent event) throws IOException {
+        Send_Data_Between inst = Send_Data_Between.getInstance();
+        if (inst.getCheck() == 1) {
+            ManagerControllerFunctions.MyBookingsButtonClicked(event);
+        } else {
+            ControllerFunctions.MyBookingsButtonClicked(event);
+        }
     }
+
     @FXML
-    protected void ChangePasswordButtonClicked(ActionEvent event) throws IOException
-    {
-        ControllerFunctions.ChangePasswordButtonClicked(event);
+    protected void ChangePasswordButtonClicked(ActionEvent event) throws IOException {
+        Send_Data_Between inst = Send_Data_Between.getInstance();
+        if (inst.getCheck() == 1) {
+            ManagerControllerFunctions.ChangePasswordButtonClicked(event);
+        } else {
+            ControllerFunctions.ChangePasswordButtonClicked(event);
+        }
     }
+
     @FXML
-    protected void AboutUsButtonClicked(ActionEvent event) throws IOException
-    {
-        ControllerFunctions.AboutUsButtonClicked(event);
+    protected void AboutUsButtonClicked(ActionEvent event) throws IOException {
+        Send_Data_Between inst = Send_Data_Between.getInstance();
+        if (inst.getCheck() == 1) {
+            ManagerControllerFunctions.AboutUsButtonClicked(event);
+        } else {
+            ControllerFunctions.AboutUsButtonClicked(event);
+        }
     }
+
     @FXML
-    protected void HelpButtonClicked(ActionEvent event) throws IOException
-    {
-        ControllerFunctions.HelpButtonClicked(event);
+    protected void HelpButtonClicked(ActionEvent event) throws IOException {
+        Send_Data_Between inst = Send_Data_Between.getInstance();
+        if (inst.getCheck() == 1) {
+            ManagerControllerFunctions.HelpButtonClicked(event);
+        } else {
+            ControllerFunctions.HelpButtonClicked(event);
+        }
     }
+
     @FXML
     protected void LogoutButtonClicked(ActionEvent event) throws IOException {
-        ControllerFunctions.LogoutButtonClicked(event);
+        Send_Data_Between inst = Send_Data_Between.getInstance();
+        if (inst.getCheck() == 1) {
+            ManagerControllerFunctions.LogoutButtonClicked(event);
+        } else {
+            ControllerFunctions.LogoutButtonClicked(event);
+        }
     }
+
     @FXML
-    protected void ExitButtonClicked(ActionEvent event) throws IOException
-    {
-        ControllerFunctions.ExitButtonClicked(event);
+    protected void ExitButtonClicked(ActionEvent event) throws IOException {
+        Send_Data_Between inst = Send_Data_Between.getInstance();
+        if (inst.getCheck() == 1) {
+            ManagerControllerFunctions.ExitButtonClicked(event);
+        } else {
+            ControllerFunctions.ExitButtonClicked(event);
+        }
     }
 }
