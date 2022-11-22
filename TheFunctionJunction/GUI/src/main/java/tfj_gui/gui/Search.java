@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Search {
@@ -36,5 +37,18 @@ public class Search {
             j++;
         }
         return i == userInput.length();
+    }
+    public static Customer listCustId(String userInput) throws SQLException {
+        Customer c=null;
+        Connection con= Connect.createConnection();
+        Statement stmt= con.createStatement();
+        String query="Select * from customer";
+        ResultSet rs= stmt.executeQuery(query);
+        while(rs.next()){
+            if(userInput.compareTo(rs.getString(8))==0){
+                c=new Customer(rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(1),rs.getString(2),rs.getString(7),rs.getString(9));
+            }
+        }
+        return c;
     }
 }
