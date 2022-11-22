@@ -108,13 +108,28 @@ public class ManagerNewBookingViewController implements Initializable
            stage.show();
        }
        else  if(myChoice_Event.compareToIgnoreCase("NewYear")==0){
-
+           FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingNewYear_View.fxml"));
+           Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+           Scene scene = new Scene(fxmlLoader.load(),1080,720);
+           stage.setTitle("THE FUNCTION JUNCTION");
+           stage.setScene(scene);
+           stage.show();
        }
        else  if(myChoice_Event.compareToIgnoreCase("Custom")==0){
-
+           FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingCustom_View.fxml"));
+           Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+           Scene scene = new Scene(fxmlLoader.load(),1080,720);
+           stage.setTitle("THE FUNCTION JUNCTION");
+           stage.setScene(scene);
+           stage.show();
        }
        else  if(myChoice_Event.compareToIgnoreCase("Birthday")==0){
-
+           FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBookingBirthday_View.fxml"));
+           Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+           Scene scene = new Scene(fxmlLoader.load(),1080,720);
+           stage.setTitle("THE FUNCTION JUNCTION");
+           stage.setScene(scene);
+           stage.show();
        }
     }
 
