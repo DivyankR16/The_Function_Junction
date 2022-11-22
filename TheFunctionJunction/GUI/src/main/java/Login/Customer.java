@@ -159,11 +159,13 @@ public class Customer extends Person implements Login
             PreparedStatement preparedStatement=conn.prepareStatement(query);
             preparedStatement.setString(1,LoginID);
             preparedStatement.executeUpdate();
+            changeCustomerCSV.load_outof_customer_csv(LoginID);
         }
-        catch(SQLException e){
+        catch(SQLException | IOException e){
             e.printStackTrace();
         }
-        finally{
+        finally
+        {
             Connect.closeConnection();
         }
     }

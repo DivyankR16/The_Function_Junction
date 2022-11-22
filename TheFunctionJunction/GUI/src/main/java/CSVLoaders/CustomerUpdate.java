@@ -10,7 +10,7 @@ import java.sql.*;
 
 public class CustomerUpdate {
     private int batchSize = 50;
-    static String csvFilePath="customer.csv";
+    static String csvFilePath="GUI/src/main/java/CSVLoaders/customer.csv";
     Connection con= Connect.createConnection();
     public void UpdateCustomerCSV(int Loginid,String NewPassword){
         try{
