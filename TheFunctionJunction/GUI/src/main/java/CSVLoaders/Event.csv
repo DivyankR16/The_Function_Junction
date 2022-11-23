@@ -1,1 +1,1 @@
-"BookingID","Event Name","cfname","clname","Email","Phone Number","Venue","Start Date","End Date","Expected Cost","Status"
+"BookingID","CustomerId","Event Name","cfname","clname","Email","Phone Number","Venue","Start Date","End Date","Expected Cost","Status"
