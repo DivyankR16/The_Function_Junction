@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tfj_gui.gui.HelpViewController">
     <left>
@@ -20,7 +21,14 @@
             </children></VBox>
     </left>
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER" />
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="This is a simple event management system.It has been made using JAVA and JAVAFX.&#10;On the extreme left of the screen is navigation bar .&#10;1)Top most button has &quot;Home &quot; written on it .&#10;&#9;It will take you to Home section of the app where you can look at our venues and past management events.&#10;2) Next from top is New Booking. &#10;&#9;On clicking this button you will be redirected to a page where you can make a new booking for your event.&#10;3)Next from top is button for My Account page. &#10;&#9;On clicking this you will see information related to your account on display. &#10;&#9;You can also delete your account from the options given on this page.&#10;4)On clicking the My Bookings button of the navigation bar, &#10;&#9;you will see a screen that displays information about your past event bookings from our app.&#10;5)Next is the change Password page .&#10;&#9;You can click on this if you want to change password of your account.&#10;6)Next is the About US button.&#10;&#9;On clicking this button you wil see information about the creaters of this system diaplayed on he screen.&#10;7)Next is the Help Button which will take you to this page.&#10;8)After Help comes the Logout button. &#10;&#9; On clicking this button you will be shown a screen where you will be asked to confirm if you want to logout.&#10;&#9;On confirmation you will logout and will be shown the login screen.&#10;9)At the end is the exit button.&#10;&#9;On clicking this button you will be shown a sceen where you wil be asked to confirm if you want to exit.&#10;&#9;On confirmation you will exit the system." textFill="#195190">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
     </center>
     <top>
         <Pane prefHeight="150.0" prefWidth="1080.0" style="-fx-background-color: #195190FF;" BorderPane.alignment="CENTER">

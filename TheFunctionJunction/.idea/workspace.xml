@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Changes done">
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Customer update and manager update changed(csv).">
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/photo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/photo4.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/CustomerUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/CustomerUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/Event.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/Event.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/ManagerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/ManagerLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/ManagerUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/ManagerUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/changeCustomerCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/changeCustomerCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/customer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/manager.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/manager.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/tempcustomer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/tempcustomer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Login/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Login/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Login/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Login/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/AboutUs_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/AboutUs_View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Help_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Help_View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerAboutUs_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerAboutUs_View.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,13 +72,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667465189804</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Made Login GUI also known as front page">
-      <created>1667485392261</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1667485392261</updated>
     </task>
     <task id="LOCAL-00002" summary="Added images at appropriate folders">
       <created>1667497013867</created>
@@ -415,7 +402,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669185161906</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Customer update and manager update changed(csv).">
+      <created>1669202151480</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1669202151480</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Customer update and manager update changed(csv).">
+      <created>1669202401630</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1669202401630</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,7 +431,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made Person,Customer,Manager." />
     <MESSAGE value="Adding mysql-connector-java-8.0.30.jar file." />
     <MESSAGE value="Added table in MyBookings_View.fxml . &#10;Added output labels in InfoOfAccount_View.fxml." />
     <MESSAGE value=" -" />
@@ -455,7 +455,8 @@
     <MESSAGE value="Delete customer account in csv added." />
     <MESSAGE value="Parth commit:&#10;Managar update data type changed.&#10;Manager loader data type changed." />
     <MESSAGE value="Changes done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes done" />
+    <MESSAGE value="Customer update and manager update changed(csv)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Customer update and manager update changed(csv)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

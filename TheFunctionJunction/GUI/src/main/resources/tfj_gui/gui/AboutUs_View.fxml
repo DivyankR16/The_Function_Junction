@@ -55,7 +55,7 @@
             </Label>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="185.0" layoutY="269.0" pickOnBounds="true">
                <image>
-                  <Image url="@tfjlogo5.png" />
+                  <Image url="@photo4.jpg" />
                </image></ImageView>
             <Label layoutX="231.0" layoutY="434.0" text="Digvijay Ghule&#10;(S20210010082)" textAlignment="CENTER" textFill="#195190">
                <font>
@@ -64,7 +64,7 @@
             </Label>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="506.0" layoutY="269.0" pickOnBounds="true">
                <image>
-                  <Image url="@tfjlogo5.png" />
+                  <Image url="@photo3.jpg" />
                </image>
             </ImageView>
             <Label layoutX="552.0" layoutY="434.0" text="Anurag Yadav&#10;(S20210010026)&#10;" textAlignment="CENTER" textFill="#195190">

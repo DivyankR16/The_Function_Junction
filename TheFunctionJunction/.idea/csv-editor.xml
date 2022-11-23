@@ -38,6 +38,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\GUI\src\main\java\CSVLoaders\tempManger.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\GUI\src\main\java\CSVLoaders\tempcustomer.csv">
           <value>
             <Attribute>
