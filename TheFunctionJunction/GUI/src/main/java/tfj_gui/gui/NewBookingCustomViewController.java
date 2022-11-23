@@ -155,7 +155,7 @@ public class NewBookingCustomViewController implements Initializable {
 
     protected void Choice_in_Choice_box(ActionEvent event) {
         myChoice_venue = Venue_choicebox.getValue();
-        System.out.println(myChoice_venue);
+        getDescription();
     }
 
     @FXML
@@ -182,8 +182,18 @@ public class NewBookingCustomViewController implements Initializable {
             DisplayInformationLabel.setText("Venue capacity is insufficient");
         } else {
             SetBooking();
-            if (w1.getBookingStatus().compareToIgnoreCase("Booked") == 0) Add_to_DB();
+            if (w1.getBookingStatus().compareToIgnoreCase("Booked") == 0) {
+                Add_to_DB();
+                Send_Data_Between inst = Send_Data_Between.getInstance();
+                if (inst.getCheck() == 1) {
+                    ManagerControllerFunctions.GoToHome(event);
+                } else {
+                    ControllerFunctions.GoToHome(event);
+                }
+
+            }
             else DisplayInformationLabel.setText("Venue not available");
+
         }
     }
 
@@ -332,7 +342,7 @@ public class NewBookingCustomViewController implements Initializable {
             Statement preStatement=conn.prepareStatement(query);
             ResultSet rs=preStatement.executeQuery(query);
             while(rs.next()){
-                ans.append("\nName "+(rs.getString("name")+" Contact "+(rs.getString("phonenumber"))));
+                ans.append("\nName ").append(rs.getString("name")).append(" Contact ").append(rs.getString("phonenumber"));
             }
         }
         catch(SQLException e){

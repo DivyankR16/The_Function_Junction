@@ -281,7 +281,15 @@ public class NewBookingBirthdayController implements Initializable
         }
         else{
             SetBooking();
-            if(w1.getBookingStatus().compareToIgnoreCase("Booked")==0)     Add_to_DB();
+            if(w1.getBookingStatus().compareToIgnoreCase("Booked")==0) {
+                Add_to_DB();
+                Send_Data_Between inst = Send_Data_Between.getInstance();
+                if (inst.getCheck() == 1) {
+                    ManagerControllerFunctions.GoToHome(event);
+                } else {
+                    ControllerFunctions.GoToHome(event);
+                }
+            }
             else DisplayInformationLabel.setText("Venue not available");}
     }
     @FXML
