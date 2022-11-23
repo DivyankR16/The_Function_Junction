@@ -1,10 +1,10 @@
 "menuid","type","class","Description","Cost per plate"
-0001,"Breakfast","Basic","",75
-0002,"Breakfast","Premium",,150
-0003,"Breakfast","Royal","",200
-0004,"Lunch","Basic","",150
-0005,"Lunch","Premium","",250
-0006,"Lunch","Royal","",350
+0001,"Breakfast","Basic","Idli;Chutney;Potato masala subjee with Dosa and orange juice.",75
+0002,"Breakfast","Premium","Idli;Chutney;Potato masala subjee with Dosa and orange juice. Bread;Jam;Butter and Omelette",150
+0003,"Breakfast","Royal","Idli;Chutney;Potato masala subjee with Dosa and orange juice. Bread;Jam;Butter and Omelette. Cornflakes;Milk and Paster.",200
+0004,"Lunch","Basic","Mutter Paneer; Dal Tadka; Jira Rice; Roti; Ice Cream Vanilla",150
+0005,"Lunch","Premium","Mutter Paneer;Handi Chicken ;Dal Tadka; Jira Rice; Naan/Roti; Mango Ice Cream",250
+0006,"Lunch","Royal","Mutter Paneer;Manchurian;Handi Chicken;Noodles;Dal Tadka; Jira Rice; Naan/Roti; Gulabjamun;Mango Ice Cream",350
 0007,"Snacks","Basic","",50
 0008,"Snacks","Premium","",75
 0009,"Snacks","Royal","",150

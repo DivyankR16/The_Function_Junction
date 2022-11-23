@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Customer update and manager update changed(csv).">
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/photo3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/photo4.jpg" afterDir="false" />
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Added Digvijay and Anurag's photos in About Us. &#10;Also wrote content on help fxml and manager help fxml.">
       <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/AboutUs_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/AboutUs_View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Help_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/Help_View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerAboutUs_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/ManagerAboutUs_View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/customer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/venue.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/venue.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,13 +69,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667465189804</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added images at appropriate folders">
-      <created>1667497013867</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1667497013867</updated>
     </task>
     <task id="LOCAL-00003" summary="Added Home GUI">
       <created>1667500365292</created>
@@ -416,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669202401630</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Added Digvijay and Anurag's photos in About Us. &#10;Also wrote content on help fxml and manager help fxml.">
+      <created>1669204526459</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1669204526459</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -431,7 +428,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding mysql-connector-java-8.0.30.jar file." />
     <MESSAGE value="Added table in MyBookings_View.fxml . &#10;Added output labels in InfoOfAccount_View.fxml." />
     <MESSAGE value=" -" />
     <MESSAGE value="Signup added." />
@@ -456,7 +452,8 @@
     <MESSAGE value="Parth commit:&#10;Managar update data type changed.&#10;Manager loader data type changed." />
     <MESSAGE value="Changes done" />
     <MESSAGE value="Customer update and manager update changed(csv)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Customer update and manager update changed(csv)." />
+    <MESSAGE value="Added Digvijay and Anurag's photos in About Us. &#10;Also wrote content on help fxml and manager help fxml." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Digvijay and Anurag's photos in About Us. &#10;Also wrote content on help fxml and manager help fxml." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
