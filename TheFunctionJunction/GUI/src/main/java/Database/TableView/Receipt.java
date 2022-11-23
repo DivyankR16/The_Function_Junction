@@ -5,7 +5,7 @@ import java.io.*;
 import java.sql.*;
 
 public class Receipt {
-    public void PrintReceipt(String EID){
+    public void PrintReceipt(String bookingID){
         try{
             String Name="";
             String EventName="";
@@ -17,7 +17,7 @@ public class Receipt {
             String query = "Select * from Event";
             ResultSet rs=St.executeQuery(query);
             while (rs.next()){
-                if (rs.getString(1)==EID){
+                if (rs.getString(1)==bookingID){
                     Name= rs.getString(2);
                     EventName=rs.getString(3);
                     SDate=rs.getDate(4);
@@ -26,7 +26,8 @@ public class Receipt {
                 }
             }
             FileWriter Writer
-                    = new FileWriter(EID+"_Recipt.txt");
+                    = new FileWriter(bookingID+"_Recipt.txt");
+            Writer.write("Booking ID:- "+bookingID+"\n");
             Writer.write("Booked by:- "+Name+"\n");
             Writer.write("Type:- "+EventName+"\n");
             Writer.write("Start Date:- "+SDate+"\n");
