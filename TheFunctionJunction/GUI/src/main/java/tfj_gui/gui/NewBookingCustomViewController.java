@@ -53,6 +53,8 @@ public class NewBookingCustomViewController implements Initializable {
     private Button ExitButton;
     @FXML
     private Button Next1;
+    @FXML
+    private Button GoBack;
 
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException {
@@ -193,6 +195,16 @@ public class NewBookingCustomViewController implements Initializable {
         if (totalCapacity < no_of_guests) {
             DisplayInformationLabel.setText("Venue capacity is insufficient");
         } else SetBooking();
+    }
+
+    @FXML
+    protected void ReturnToHome(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("NewBooking_View.fxml"));
+        Stage stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(),1080,720);
+        stage.setTitle("THE FUNCTION JUNCTION");
+        stage.setScene(scene);
+        stage.show();
     }
 
     private String getDescription() {
