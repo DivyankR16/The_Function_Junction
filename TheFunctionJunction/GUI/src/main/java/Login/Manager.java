@@ -1,5 +1,6 @@
 package Login;
 
+import CSVLoaders.ManagerUpdate;
 import Database.DBconnection.Connect;
 
 import java.sql.Connection;
@@ -56,6 +57,7 @@ public class Manager extends Person
             preparedStatement.setString(1,newPassword);
             preparedStatement.setString(2,LoginID);
             preparedStatement.executeUpdate();
+            ManagerUpdate.UpdateCSV(LoginID,newPassword);
         }
         catch(SQLException e){
             e.printStackTrace();

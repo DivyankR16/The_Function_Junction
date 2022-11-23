@@ -10,7 +10,7 @@ public class changeCustomerCSV {
         {
             String csvFilePath = "GUI/src/main/java/CSVLoaders/customer.csv";
             FileWriter fileWriter = new FileWriter(csvFilePath,true);
-            fileWriter.write("\n\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",%s,\"%s\",\"%s\"".formatted(LoginId, Password,FirstName,LastName,PhNo,EmailID,Dob,CustID,memst, LocalDate.now()));
+            fileWriter.write("\n%s,%s,%s,%s,%s,%s,%s,%s,%s,%s".formatted(LoginId, Password,FirstName,LastName,PhNo,EmailID,Dob,CustID,memst, LocalDate.now()));
             fileWriter.close();
         }
         public static void load_outof_customer_csv(String lgid) throws IOException

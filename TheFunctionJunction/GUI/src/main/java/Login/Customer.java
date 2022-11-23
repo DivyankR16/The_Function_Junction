@@ -1,5 +1,6 @@
 package Login;
 
+import CSVLoaders.CustomerUpdate;
 import CSVLoaders.changeBookingHistoryCSV;
 import CSVLoaders.changeCustomerCSV;
 import Database.DBconnection.Connect;
@@ -68,11 +69,17 @@ public class Customer extends Person implements Login
             preparedStatement.setString(1,newPassword);
             preparedStatement.setString(2,LoginID);
             preparedStatement.executeUpdate();
+            CustomerUpdate.UpdateCustomerCSV(LoginID,newPassword);
         }
         catch(SQLException e){
             e.printStackTrace();
         }
-        finally{
+        catch (IOException e)
+        {
+            throw new RuntimeException(e);
+        }
+        finally
+        {
             Connect.closeConnection();
         }
     }

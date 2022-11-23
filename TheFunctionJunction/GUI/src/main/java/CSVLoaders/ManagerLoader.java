@@ -8,26 +8,27 @@ import java.io.IOException;
 import java.sql.*;
 
 public class ManagerLoader {
-    private int batchSize = 20;
+    private static int batchSize = 20;
     static String csvFilePath="GUI/src/main/java/CSVLoaders/manager.csv";
-    Connection con= Connect.createConnection();
-    public void LoadCSV(){
+    static Connection con= Connect.createConnection();
+    public static void LoadCSV()
+    {
         try{
             Statement St = con.createStatement();
             con.setAutoCommit(false);
-            String Query1="Drop table if exist Manager";
+            String Query1="Drop table if exists manager";
             String Query2="create table manager(" +
                     "FirstName text," +
                     "LastName text," +
-                    "PhoneNumber text,'" +
+                    "PhoneNumber text," +
                     "emailID text," +
                     "LoginID text," +
                     "Password text)";
 
-            St.executeQuery(Query1);
-            St.executeQuery(Query2);
+            St.executeUpdate(Query1);
+            St.executeUpdate(Query2);
 
-            String Query3 = "INSERT INTO review (FirstName, LastName, PhoneNumber, emailID,LoginID, Password) VALUES (?, ?, ?, ?, ?,?)";
+            String Query3 = "INSERT INTO manager (FirstName, LastName, PhoneNumber, emailID,LoginID, Password) VALUES (?, ?, ?, ?, ?,?)";
             PreparedStatement statement = con.prepareStatement(Query3);
 
             BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath));
@@ -48,10 +49,10 @@ public class ManagerLoader {
 
                 statement.setString(1, FirstName);
                 statement.setString(2, LastName);
-                statement.setString(1, PhoneNumber);
-                statement.setString(2, emailID);
-                statement.setString(1, LoginID);
-                statement.setString(2, Password);
+                statement.setString(3, PhoneNumber);
+                statement.setString(4, emailID);
+                statement.setString(5, LoginID);
+                statement.setString(6, Password);
 
                 statement.addBatch();
 

@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Parth commit:&#10;Managar update data type changed.&#10;Manager loader data type changed.">
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/Event.csv" afterDir="false" />
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Changes done">
       <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/CustomerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/CustomerLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/CustomerUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/CustomerUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/Event.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/Event.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/ManagerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/ManagerLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/ManagerUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/ManagerUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/bookinghistory.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/bookinghistory.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/changeCustomerCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/changeCustomerCSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/customer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/manager.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/manager.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/tempcustomer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/tempcustomer.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Login/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Login/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/Login/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/Login/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669183443320</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Changes done">
+      <created>1669185161906</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1669185161906</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -421,7 +430,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made Person" />
     <MESSAGE value="Made Person,Customer,Manager." />
     <MESSAGE value="Adding mysql-connector-java-8.0.30.jar file." />
     <MESSAGE value="Added table in MyBookings_View.fxml . &#10;Added output labels in InfoOfAccount_View.fxml." />
@@ -446,7 +454,8 @@
     <MESSAGE value="Delete customer account by login id after confirming password functionality added." />
     <MESSAGE value="Delete customer account in csv added." />
     <MESSAGE value="Parth commit:&#10;Managar update data type changed.&#10;Manager loader data type changed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Parth commit:&#10;Managar update data type changed.&#10;Manager loader data type changed." />
+    <MESSAGE value="Changes done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
