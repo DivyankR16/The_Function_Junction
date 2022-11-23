@@ -9,10 +9,10 @@ import java.sql.*;
 
 public class CustomerLoader
 {
-    private int batchSize = 50;
+    private static int batchSize = 50;
     static String csvFilePath="customer.csv";
-    Connection con= Connect.createConnection();
-    public void LoadCustomerCSV(){
+    static Connection con= Connect.createConnection();
+    public static void LoadCustomerCSV(){
         try{
             Statement St = con.createStatement();
             con.setAutoCommit(false);

@@ -12,7 +12,7 @@ public class ManagerUpdate {
     private int batchSize = 20;
     static String csvFilePath="";
     Connection con= Connect.createConnection();
-    public void UpdateCSV(int loginid,String NewPassword){
+    public void UpdateCSV(String loginid,String NewPassword){
         try{
             Statement St = con.createStatement();
             con.setAutoCommit(false);
@@ -20,10 +20,10 @@ public class ManagerUpdate {
             String Query2="create table manager(" +
                     "FirstName text," +
                     "LastName text," +
-                    "PhoneNumber INT,'" +
+                    "PhoneNumber text,'" +
                     "emailID text," +
-                    "LoginID int," +
-                    "Password int)";
+                    "LoginID text," +
+                    "Password text)";
 
             St.executeUpdate(Query1);
             St.executeUpdate(Query2);
@@ -49,7 +49,7 @@ public class ManagerUpdate {
                 String newPassword=Password;
                 String DOB=data[6];
 
-                if (loginid==Integer.parseInt(LoginID)) {
+                if (loginid.compareTo(LoginID)==0) {
                     newPassword=NewPassword;
                 }
                 Writer.write(FirstName+","+LastName+","+PhoneNumber+","+emailID+","+LoginID+","+newPassword+","+DOB+"\n");
@@ -57,12 +57,12 @@ public class ManagerUpdate {
                     statement.setString(1, FirstName);
                     statement.setString(2, LastName);
 
-                    statement.setInt(3,Integer.parseInt(PhoneNumber));
+                    statement.setString(3,PhoneNumber);
 
                     statement.setString(4, emailID);
 
-                    statement.setInt(5, Integer.parseInt(LoginID));
-                    statement.setInt(6, Integer.parseInt(newPassword));
+                    statement.setString(5, LoginID);
+                    statement.setString(6, newPassword);
                     statement.setString(7, DOB);
 
                     statement.addBatch();

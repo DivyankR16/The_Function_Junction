@@ -19,15 +19,15 @@ public class ManagerLoader {
             String Query2="create table manager(" +
                     "FirstName text," +
                     "LastName text," +
-                    "PhoneNumber INT,'" +
+                    "PhoneNumber text,'" +
                     "emailID text," +
-                    "LoginID int," +
-                    "Password int)";
+                    "LoginID text," +
+                    "Password text)";
 
             St.executeQuery(Query1);
             St.executeQuery(Query2);
 
-            String Query3 = "INSERT INTO review (course_name, student_name, timestamp, rating, comment) VALUES (?, ?, ?, ?, ?)";
+            String Query3 = "INSERT INTO review (FirstName, LastName, PhoneNumber, emailID,LoginID, Password) VALUES (?, ?, ?, ?, ?,?)";
             PreparedStatement statement = con.prepareStatement(Query3);
 
             BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath));
@@ -39,22 +39,19 @@ public class ManagerLoader {
 
             while ((lineText = lineReader.readLine()) != null) {
                 String[] data = lineText.split(",");
-                String courseName = data[0];
-                String studentName = data[1];
-                String timestamp = data[2];
-                String rating = data[3];
-                String comment = data.length == 5 ? data[4] : "";
+                String FirstName = data[0];
+                String LastName = data[1];
+                String PhoneNumber = data[2];
+                String emailID = data[3];
+                String LoginID=data[4];
+                String Password = data[5];
 
-                statement.setString(1, courseName);
-                statement.setString(2, studentName);
-
-                Timestamp sqlTimestamp = Timestamp.valueOf(timestamp);
-                statement.setTimestamp(3, sqlTimestamp);
-
-                Float fRating = Float.parseFloat(rating);
-                statement.setFloat(4, fRating);
-
-                statement.setString(5, comment);
+                statement.setString(1, FirstName);
+                statement.setString(2, LastName);
+                statement.setString(1, PhoneNumber);
+                statement.setString(2, emailID);
+                statement.setString(1, LoginID);
+                statement.setString(2, Password);
 
                 statement.addBatch();
 
