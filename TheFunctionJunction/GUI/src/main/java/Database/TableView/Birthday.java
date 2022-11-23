@@ -26,9 +26,14 @@ public class Birthday extends Event{
     public void setMyChoice(int myChoice) {
         this.myChoice = myChoice;
     }
+    public double cakecost(){
+        return (float)(this.PricePerPlate[this.getMyChoice()]);
+    }
 
     @Override
     public double CalculateCost() {
-        return (float)(this.PricePerPlate[this.getMyChoice()]);
+        long gap=getEndDate().getTime()-getStartDate().getTime();
+        double days= TimeUnit.DAYS.convert(gap, TimeUnit.MILLISECONDS)+1;
+        return this.cakecost()+days*getVenue().getCost();
     }
 }

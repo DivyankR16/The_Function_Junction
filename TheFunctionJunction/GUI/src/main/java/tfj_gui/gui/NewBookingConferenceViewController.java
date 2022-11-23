@@ -273,6 +273,7 @@ public class NewBookingConferenceViewController implements Initializable
         else{
         SetBooking();
         if(w1.getBookingStatus().compareToIgnoreCase("Booked")==0)     {Add_to_DB();
+            UpdateEvent();
             Send_Data_Between inst = Send_Data_Between.getInstance();
             if (inst.getCheck() == 1) {
                 ManagerControllerFunctions.GoToHome(event);
@@ -357,7 +358,7 @@ public class NewBookingConferenceViewController implements Initializable
     double Snacks_cost;
     double Drinks_cost;
     double Dinner_cost;
-    Conference w1 = new Conference();
+    static Conference w1 = new Conference();
     protected void SetBooking()
     {
 
@@ -431,6 +432,7 @@ public class NewBookingConferenceViewController implements Initializable
             Venue_cost = w1.CalculateCost();
             System.out.print(Venue_cost);
             Final_Cost = Venue_cost + Menu_Cost;
+            w1.setFinalCost(Final_Cost);
             DisplayInformationLabel.setText("Breakfast Cost : "+(Breakfast_cost)+"\nLunch Cost : "+(Lunch_cost)
             +"\nDrinks Cost : "+(Drinks_cost)
             +"\nSnacks Cost : "+(Snacks_cost)
@@ -471,5 +473,11 @@ public class NewBookingConferenceViewController implements Initializable
         ps1.setString(7,w1.getEndDate().toString());
         ps1.setString(8,"Booked");
         ps1.executeUpdate();
+    }
+    public void UpdateEvent() throws SQLException {
+        Send_Data_Between need=Send_Data_Between.getInstance();
+        Customer k=need.getCustomer();
+        Customer c=Customer.getDetailsCustomer(k.getLoginId());
+        Event.updateEvent(w1,c,Integer.parseInt(GetBookingID()),"Conference");
     }
 }

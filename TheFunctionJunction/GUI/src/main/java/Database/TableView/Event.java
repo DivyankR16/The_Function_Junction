@@ -1,14 +1,47 @@
 package Database.TableView;
+import CSVLoaders.EventUpdate;
+import CSVLoaders.changeBookingHistoryCSV;
+import Database.DBconnection.Connect;
+import Login.Customer;
+
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
-abstract class Event
+public abstract class Event
 {
     private Date StartDate;
     private Date EndDate;
     private Venue venue;
-    private String BookingStatus;
+    private String BookingStatus="";
     private ArrayList<Menu> menus=new ArrayList<>();
+    private double finalCost;
+    private String firstName;
+    private String lastName;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public double getFinalCost() {
+        return finalCost;
+    }
+
+    public void setFinalCost(double finalCost) {
+        this.finalCost = finalCost;
+    }
 
     public Date getStartDate() {
         return StartDate;
@@ -62,4 +95,28 @@ abstract class Event
     }
 
     abstract double CalculateCost();
+    public static void updateEvent(Event even, Customer c, int BookingID, String name) throws SQLException {
+        try (Connection con = Connect.createConnection()) {
+            String query = "insert into event values(?,?,?,?,?,?,?,?,?,?,?,?)";
+            PreparedStatement ps=con.prepareStatement(query);
+            ps.setInt(1,BookingID);
+            ps.setString(2,c.getCustomerID());
+            ps.setString(3,name);
+            ps.setString(4,c.getFirstName());
+            ps.setString(5,c.getLastName());
+            ps.setString(6,c.getEmailId());
+            ps.setString(7,c.getPhoneNumber());
+            ps.setString(8,even.getVenue().getVenueName());
+            ps.setString(9,even.getStartDate().toString());
+            ps.setString(10,even.getEndDate().toString());
+            ps.setDouble(11,even.getFinalCost());
+            ps.setString(12,even.getBookingStatus());
+            EventUpdate.load_into_event_csv(String.valueOf(BookingID),c.getCustomerID(),name,c.getFirstName(),c.getLastName(),c.getEmailId(),even.getVenue().getVenueName(),even.getStartDate().toString(),even.getEndDate().toString(),String.valueOf(even.getFinalCost()),c.getPhoneNumber(),even.getBookingStatus());
+            changeBookingHistoryCSV.load_into_customer_csv(String.valueOf(BookingID),c.getFirstName(),c.getLastName(),c.getEmailId(),c.getPhoneNumber(),even.getVenue().getVenueName(),even.getStartDate().toString(),even.getEndDate().toString(),even.getBookingStatus());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

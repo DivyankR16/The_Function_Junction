@@ -12,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,6 +42,8 @@ public class InfoOfAccountViewController implements Initializable {
     @FXML
     public Label Age;
     @FXML
+    public Label Remarkkk;
+    @FXML
     private Button HomeButton;
     @FXML
     private Button NewBookingButton;
@@ -60,6 +63,10 @@ public class InfoOfAccountViewController implements Initializable {
     private Button ExitButton;
     @FXML
     private Button DMA;
+    @FXML
+    private Button Cancel_Booking;
+    @FXML
+    private TextField Booking_ID;
 
     @FXML
     protected void GoToHome(ActionEvent event) throws IOException {
@@ -155,5 +162,56 @@ public class InfoOfAccountViewController implements Initializable {
         stage.setTitle("THE FUNCTION JUNCTION");
         stage.setScene(scene);
         stage.show();
+    }
+    public String getEmail(){
+        String emailID="";
+        Send_Data_Between need=Send_Data_Between.getInstance();
+        String loginID=need.getCustomer().getLoginId();
+        try{
+            Connection conn= Connect.createConnection();
+            String query="Select * from customer where loginid=?";
+            PreparedStatement preStatement=conn.prepareStatement(query);
+            preStatement.setString(1,loginID);
+            ResultSet rs=preStatement.executeQuery();
+            if(rs.next()){
+                emailID=rs.getString(6);
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            Connect.closeConnection();
+        }
+        return emailID;
+    }
+
+    private String Customer_BookingID;
+    protected void CEvent(int ID) throws Exception
+    {
+        try (Connection con = Connect.createConnection()) {
+            String query1="Select * from bookinghistory where bookingid=?";
+            PreparedStatement ps=con.prepareStatement(query1);
+            ps.setInt(1,ID);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+            if(rs.getString(3).compareToIgnoreCase(getEmail())==0){
+            String query = "Update bookinghistory set status='Canceled' where bookingid=?";
+            PreparedStatement preStatement = con.prepareStatement(query);
+            preStatement.setInt(1, ID);
+            preStatement.executeUpdate();}
+            else{
+                Remarkkk.setText("Please enter correct booking_ID");
+            }}
+            else{
+                Remarkkk.setText("Booking ID doesn't exist");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void Cancel_Event(ActionEvent event) throws Exception {
+        CEvent(Integer.parseInt(Booking_ID.getText()));
     }
 }

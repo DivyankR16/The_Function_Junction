@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 
 public class EventUpdate {
-    public static void load_into_event_csv(String BookingID,String  CustomerId,String Event_Name,String cfname,String clname,String Email,String Venue,String Start_Date,String End_Date,double Expected_Cost,String PhoneNumber,String Status)
+    public static void load_into_event_csv(String BookingID,String  CustomerId,String Event_Name,String cfname,String clname,String Email,String Venue,String Start_Date,String End_Date,String Expected_Cost,String PhoneNumber,String Status)
     {
         try {
             String csvFilePath = "GUI/src/main/java/CSVLoaders/Event.csv";
@@ -23,7 +23,7 @@ public class EventUpdate {
     public static void CancelEvent(String bookingID)
     {
         try {
-            String csvFilePath = "GUI/src/main/java/CSVLoaders/customer.csv";;
+            String csvFilePath = "GUI/src/main/java/CSVLoaders/Event.csv";;
             FileWriter Writer= new FileWriter("GUI/src/main/java/CSVLoaders/tempevent.csv");
             BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath));
             String lineText = null;

@@ -15,7 +15,15 @@ public class BookingHistory{
     private String StartDate;
     private String EndDate;
     private String Status;
+    private double Cost;
 
+    public String getCost() {
+        return String.valueOf(Cost);
+    }
+
+    public void setCost(double cost) {
+        Cost = cost;
+    }
 
     public BookingHistory(int bookin_Id, String name, String email, String phoneNumber, String hallName, String startDate, String endDate, String status) {
         this.Bookin_Id = bookin_Id;
@@ -26,6 +34,7 @@ public class BookingHistory{
         this.StartDate = startDate;
         this.EndDate = endDate;
         this.Status = status;
+        this.Cost=Cost;
     }
     public BookingHistory(String name, String email, String phoneNumber, String hallName, String startDate, String endDate) {
         this.Name = name;

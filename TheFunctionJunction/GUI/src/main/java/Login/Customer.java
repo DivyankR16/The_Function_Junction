@@ -61,6 +61,30 @@ public class Customer extends Person implements Login
         }
         return password;
     }
+    public static Customer getDetailsCustomer(String loginID){
+        Customer c=new Customer();
+        try{
+            Connection conn= Connect.createConnection();
+            String query="Select * from customer where loginid=?";
+            PreparedStatement preStatement=conn.prepareStatement(query);
+            preStatement.setString(1,loginID);
+            ResultSet rs=preStatement.executeQuery();
+            if(rs.next()){
+                c.setFirstName(rs.getString(3));
+                c.setLastName(rs.getString(4));
+                c.setPhoneNumber(rs.getString(5));
+                c.setEmailId(rs.getString(6));
+                c.setCustomerID(rs.getString(8));
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            Connect.closeConnection();
+        }
+        return c;
+    }
     @Override
     public void changePass(String LoginID,String newPassword){
         Connection conn=Connect.createConnection();
@@ -142,12 +166,7 @@ public class Customer extends Person implements Login
             catch (SQLException e)
             {
                 e.printStackTrace();
-            }
-            catch (IOException e)
-            {
-                throw new RuntimeException(e);
-            }
-            finally
+            } finally
             {
                 Connect.closeConnection();
             }

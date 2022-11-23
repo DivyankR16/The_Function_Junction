@@ -283,6 +283,7 @@ public class NewBookingBirthdayController implements Initializable
             SetBooking();
             if(w1.getBookingStatus().compareToIgnoreCase("Booked")==0) {
                 Add_to_DB();
+                UpdateEvent();
                 Send_Data_Between inst = Send_Data_Between.getInstance();
                 if (inst.getCheck() == 1) {
                     ManagerControllerFunctions.GoToHome(event);
@@ -432,8 +433,6 @@ public class NewBookingBirthdayController implements Initializable
         dr1.setMyChoice(drinks_index);
         dr1.setNumberOfGuests(no_of_guests);
         Drinks_cost = dr1.calculateCost();
-
-        Birthday br = new Birthday();
         int cake_index=0;
         if(Objects.equals(myChoice_cakeflavor, CakeFlavorChoices[0]))     cake_index=0;
         if(Objects.equals(myChoice_cakeflavor, CakeFlavorChoices[1]))     cake_index=1;
@@ -442,9 +441,9 @@ public class NewBookingBirthdayController implements Initializable
         if(Objects.equals(myChoice_cakeflavor, CakeFlavorChoices[4]))     cake_index=4;
         if(Objects.equals(myChoice_cakeflavor, CakeFlavorChoices[5]))     cake_index=5;
         if(Objects.equals(myChoice_cakeflavor, CakeFlavorChoices[6]))     cake_index=6;
-        br.setMyChoice(cake_index);
-        br.setNumberOfGuests(no_of_guests);
-        Cake_Cost = br.CalculateCost();
+        w1.setMyChoice(cake_index);
+        w1.setNumberOfGuests(no_of_guests);
+        Cake_Cost = w1.cakecost();
         BPName = BName.getText();
         double Menu_Cost = Breakfast_cost + Lunch_cost + Snacks_cost + Drinks_cost + Dinner_cost + Cake_Cost;
         System.out.print(Menu_Cost);
@@ -460,6 +459,7 @@ public class NewBookingBirthdayController implements Initializable
             Venue_cost = w1.CalculateCost();
             System.out.print(Venue_cost);
             Final_Cost = Venue_cost + Menu_Cost;
+            w1.setFinalCost(Final_Cost);
             DisplayInformationLabel.setText("\nCake Cost : " + Cake_Cost + "\nBreakfast Cost : "+(Breakfast_cost)+"\nLunch Cost : "+(Lunch_cost)
                     +"\nDrinks Cost : "+(Drinks_cost)
                     +"\nSnacks Cost : "+(Snacks_cost)
@@ -502,5 +502,12 @@ public class NewBookingBirthdayController implements Initializable
         ps1.setString(7,w1.getEndDate().toString());
         ps1.setString(8,"Booked");
         ps1.executeUpdate();
+    }
+    public void UpdateEvent() throws SQLException {
+        Send_Data_Between need=Send_Data_Between.getInstance();
+        Customer k=need.getCustomer();
+        Customer c=Customer.getDetailsCustomer(k.getLoginId());
+        Event.updateEvent(w1,c,Integer.parseInt(GetBookingID()),"Birthday");
+
     }
 }

@@ -2,6 +2,7 @@ package tfj_gui.gui;
 
 import Database.DBconnection.Connect;
 import Database.TableView.Custom;
+import Database.TableView.Event;
 import Database.TableView.Venue;
 import Database.TableView.Wedding;
 import Login.Customer;
@@ -184,6 +185,7 @@ public class NewBookingCustomViewController implements Initializable {
             SetBooking();
             if (w1.getBookingStatus().compareToIgnoreCase("Booked") == 0) {
                 Add_to_DB();
+                UpdateEvent();
                 Send_Data_Between inst = Send_Data_Between.getInstance();
                 if (inst.getCheck() == 1) {
                     ManagerControllerFunctions.GoToHome(event);
@@ -301,6 +303,7 @@ public class NewBookingCustomViewController implements Initializable {
             w1.setVenue(v1);
             Venue_cost = w1.CalculateCost();
             Final_Cost = Venue_cost;
+            w1.setFinalCost(Final_Cost);
             DisplayInformationLabel.setText("\nVenue Cost : " + (Venue_cost)
                             + "\nFinal_Cost = " + (Final_Cost));
         }
@@ -352,5 +355,12 @@ public class NewBookingCustomViewController implements Initializable {
             Connect.closeConnection();
         }
         return ans.toString();
+    }
+    public void UpdateEvent() throws SQLException {
+        Send_Data_Between need=Send_Data_Between.getInstance();
+        Customer k=need.getCustomer();
+        Customer c=Customer.getDetailsCustomer(k.getLoginId());
+        Event.updateEvent(w1,c,Integer.parseInt(GetBookingID()),guests1.getText());
+
     }
 }

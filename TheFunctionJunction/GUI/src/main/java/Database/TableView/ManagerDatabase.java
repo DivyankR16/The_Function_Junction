@@ -62,7 +62,7 @@ public class ManagerDatabase {
             preStatement.setString(1,email);
             ResultSet rs=preStatement.executeQuery();
             while (rs.next()) {
-                Cdata.add(new BookingHistory(rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5), rs.getDate(6).toString(), rs.getDate(7).toString()));
+                Cdata.add(new BookingHistory(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5), rs.getDate(6).toString(), rs.getDate(7).toString(),rs.getString(8)));
             }
         }
         catch (SQLException e){

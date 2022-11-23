@@ -93,6 +93,18 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
+            <Label layoutX="545.0" layoutY="41.0" text="Cancel Booking" textFill="#195190">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Booking_ID" layoutX="545.0" layoutY="95.0" prefHeight="26.0" prefWidth="231.0" promptText="Enter booking ID of event to be canceled" />
+            <Button fx:id="Cancel_Booking" layoutX="605.0" layoutY="167.0" mnemonicParsing="false" onAction="#Cancel_Event" text="Cancel Booking" />
+            <Label fx:id="Remarkkk" layoutX="531.0" layoutY="247.0" prefHeight="51.0" prefWidth="340.0" textFill="#d11909">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
     </center>
     <top>

@@ -21,6 +21,10 @@ import java.util.ResourceBundle;
 
 public class MyBookingsViewController implements Initializable {
     @FXML
+    private TableColumn<BookingHistory,String> BookingID;
+    @FXML
+    private TableColumn<BookingHistory,String> Status;
+    @FXML
     private TableColumn<BookingHistory,String> NameColumn;
     @FXML
     private TableColumn<BookingHistory,String> EmailColumn;
@@ -105,6 +109,8 @@ public class MyBookingsViewController implements Initializable {
         VenueColumn.setCellValueFactory(new PropertyValueFactory<>("HallName"));
         StartDateColumn.setCellValueFactory(new PropertyValueFactory<>("StartDate"));
         EndDateColumn.setCellValueFactory(new PropertyValueFactory<>("EndDate"));
+        Status.setCellValueFactory(new PropertyValueFactory<>("Status"));
+        BookingID.setCellValueFactory(new PropertyValueFactory<>("BookinID"));
         ManagerDatabase m=new ManagerDatabase();
         Send_Data_Between need=Send_Data_Between.getInstance();
         try {

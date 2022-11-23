@@ -26,12 +26,14 @@
                 <TableView fx:id="tableview" layoutX="-151.0" layoutY="-90.0" prefHeight="510.0" prefWidth="900.0" style="-fx-background-color: #A2A2A1FF;" AnchorPane.topAnchor="-50.0">
                     <columns>
 <!--                        <TableColumn prefWidth="75.0" text="Booking ID" />-->
-                        <TableColumn fx:id="NameColumn" minWidth="-Infinity" prefWidth="200.0" text="Name" />
-                        <TableColumn fx:id="EmailColumn" prefWidth="200.0" text="Email" />
-                        <TableColumn fx:id="PhoneNumberColumn" prefWidth="100.0" text="Phone No." />
-                        <TableColumn fx:id="VenueColumn" minWidth="0.0" prefWidth="100.0" text="venue" />
-                        <TableColumn fx:id="StartDateColumn" prefWidth="75.0" text="Start Date" />
-                        <TableColumn fx:id="EndDateColumn" prefWidth="75.0" text="End Date" />
+                        <TableColumn fx:id="NameColumn" minWidth="-Infinity" prefWidth="115.1999740600586" text="Name" />
+                        <TableColumn fx:id="EmailColumn" prefWidth="124.00000762939453" text="Email" />
+                        <TableColumn fx:id="PhoneNumberColumn" prefWidth="130.20001220703125" text="Phone No." />
+                        <TableColumn fx:id="VenueColumn" minWidth="0.0" prefWidth="113.5999755859375" text="venue" />
+                        <TableColumn fx:id="StartDateColumn" prefWidth="91.80007934570312" text="Start Date" />
+                        <TableColumn fx:id="EndDateColumn" prefWidth="97.7999267578125" text="End Date" />
+                  <TableColumn fx:id="BookingID" minWidth="0.0" prefWidth="102.79998779296875" text="Booking_ID" />
+                  <TableColumn fx:id="Status" prefWidth="127.199951171875" text="Booking_Status" />
 <!--                        <TableColumn prefWidth="75.0" text="Status" />-->
                     </columns>
                 </TableView>
