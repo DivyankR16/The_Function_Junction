@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\GUI\src\main\java\CSVLoaders\Event.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\GUI\src\main\java\CSVLoaders\bookinghistory.csv">
           <value>
             <Attribute>

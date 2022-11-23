@@ -114,7 +114,6 @@ public class Customer extends Person implements Login
         this.setMembershipStatus("New");
         this.DateOfJoining = LocalDate.now();
         this.setCustomerID(cid);
-//        Connection conn = Connect.createConnection();
         if (Availability(LoginId))
         {  Connection c2 = Connect.createConnection();
             try {
@@ -131,7 +130,7 @@ public class Customer extends Person implements Login
                 preStatement2.setString(9,this.getMembershipStatus());
                 preStatement2.setString(10,this.getDateOfJoining().toString());
                 preStatement2.executeUpdate();
-                changeCustomerCSV.load_into_customer_csv(this.getFirstName(),this.getLastName(),this.getPhoneNumber(),this.getEmailId(),this.getLoginId(),this.getPassword(),this.getDOB(),this.getCustomerID());
+                changeCustomerCSV.load_into_customer_csv(this.getFirstName(),this.getLastName(),this.getPhoneNumber(),this.getEmailId(),this.getLoginId(),this.getPassword(),this.getDOB(),this.getCustomerID(),this.getMembershipStatus());
             }
             catch (SQLException e)
             {

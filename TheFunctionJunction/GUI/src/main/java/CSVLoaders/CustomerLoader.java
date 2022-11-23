@@ -10,14 +10,14 @@ import java.sql.*;
 public class CustomerLoader
 {
     private static int batchSize = 50;
-    static String csvFilePath="customer.csv";
+    static String csvFilePath="GUI/src/main/java/CSVLoaders/customer.csv";
     static Connection con= Connect.createConnection();
     public static void LoadCustomerCSV(){
         try{
             Statement St = con.createStatement();
             con.setAutoCommit(false);
-            String Query1="Drop table if exist customer";
-            String Query2="create table customer(loginid INT, password INT, FirstName TEXT, LastName TEXT, PhoneNumber INT, EmailId TEXT, DOB DATE, CustomerID INT, MembershipStatus TEXT, DateOfJoining DATE)" ;
+            String Query1="Drop table if exists customer";
+            String Query2="create table customer(loginid TEXT, password TEXT, FirstName TEXT, LastName TEXT, PhoneNumber TEXT, EmailId TEXT, DOB DATE, CustomerID INT, MembershipStatus TEXT, DateOfJoining DATE)" ;
             St.executeUpdate(Query1);
             St.executeUpdate(Query2);
 
@@ -46,16 +46,16 @@ public class CustomerLoader
 
                 String comment = data.length == 5 ? data[4] : "";
 
-                statement.setInt(1, Integer.parseInt(loginid_data));
-                statement.setInt(2, Integer.parseInt(password_data));
+                statement.setString(1, loginid_data);
+                statement.setString(2, password_data);
                 statement.setString(3, FirstName_data);
                 statement.setString(4, LastName_data);
                 statement.setString(5, PhoneNumber_data);
                 statement.setString(6, EmailId_data);
-                statement.setDate(7, Date.valueOf(DOB_data));
-                statement.setInt(8, Integer.parseInt(CustomerID_data));
+                statement.setString(7, DOB_data);
+                statement.setString(8, CustomerID_data);
                 statement.setString(9, MembershipStatus_data);
-                statement.setDate(10, Date.valueOf(DateOfJoining_data));
+                statement.setString(10, DateOfJoining_data);
 
                 statement.addBatch();
 

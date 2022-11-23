@@ -9,7 +9,7 @@ import java.sql.*;
 
 public class ManagerLoader {
     private int batchSize = 20;
-    static String csvFilePath="";
+    static String csvFilePath="GUI/src/main/java/CSVLoaders/manager.csv";
     Connection con= Connect.createConnection();
     public void LoadCSV(){
         try{

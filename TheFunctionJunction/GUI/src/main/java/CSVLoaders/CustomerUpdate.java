@@ -17,7 +17,7 @@ public class CustomerUpdate {
             Statement St = con.createStatement();
             con.setAutoCommit(false);
             String Query1="Drop table if exist customer";
-            String Query2="create table customer(loginid INT, password INT, FirstName TEXT, LastName TEXT, PhoneNumber INT, EmailId TEXT, DOB DATE, CustomerID INT, MembershipStatus TEXT, DateOfJoining DATE)" ;
+            String Query2="create table customer(loginid TEXT, password TEXT, FirstName TEXT, LastName TEXT, PhoneNumber TEXT, EmailId TEXT, DOB DATE, CustomerID INT, MembershipStatus TEXT, DateOfJoining DATE)" ;
             St.executeUpdate(Query1);
             St.executeUpdate(Query2);
 
@@ -52,8 +52,8 @@ public class CustomerUpdate {
                 }
                 Writer.write(loginid_data+","+newPassword+","+FirstName_data+","+LastName_data+","+PhoneNumber_data+","+EmailId_data+","+DOB_data+","+CustomerID_data+","+MembershipStatus_data+","+DateOfJoining_data+"\n");
                 if (flag != 0) {
-                    statement.setInt(1, Integer.parseInt(loginid_data));
-                    statement.setInt(2, Integer.parseInt(newPassword));
+                    statement.setString(1, loginid_data);
+                    statement.setString(2, newPassword);
                     statement.setString(3, FirstName_data);
                     statement.setString(4, LastName_data);
                     statement.setString(5, PhoneNumber_data);
