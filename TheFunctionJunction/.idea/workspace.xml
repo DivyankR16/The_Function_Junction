@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Added Digvijay and Anurag's photos in About Us. &#10;Also wrote content on help fxml and manager help fxml.">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Added some customers and description to menues.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/customer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/venue.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/venue.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/menue.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/menue.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,13 +67,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667465189804</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added Home GUI">
-      <created>1667500365292</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1667500365292</updated>
     </task>
     <task id="LOCAL-00004" summary="Adding more GUI">
       <created>1667501690344</created>
@@ -413,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669204526459</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Added some customers and description to menues.">
+      <created>1669206319073</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1669206319073</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -428,7 +426,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added table in MyBookings_View.fxml . &#10;Added output labels in InfoOfAccount_View.fxml." />
     <MESSAGE value=" -" />
     <MESSAGE value="Signup added." />
     <MESSAGE value="Signup WORKING.&#10;Don't use date datatype otherwise signup will not work.&#10;Use String datatype in java and text datatype in mysql." />
@@ -453,7 +450,8 @@
     <MESSAGE value="Changes done" />
     <MESSAGE value="Customer update and manager update changed(csv)." />
     <MESSAGE value="Added Digvijay and Anurag's photos in About Us. &#10;Also wrote content on help fxml and manager help fxml." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Digvijay and Anurag's photos in About Us. &#10;Also wrote content on help fxml and manager help fxml." />
+    <MESSAGE value="Added some customers and description to menues." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some customers and description to menues." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
