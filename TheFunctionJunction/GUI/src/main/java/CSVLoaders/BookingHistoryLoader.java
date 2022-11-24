@@ -22,18 +22,19 @@ public class BookingHistoryLoader
             con.setAutoCommit(false);
             String Query1="Drop table if exists bookinghistory";
             String Query2="create table bookinghistory(" +
-                    "BookingID text," +
+                    "BookingID INT," +
                     "Name text," +
                     "Email text," +
                     "PhoneNumber text," +
                     "Venue text," +
                     "StartDate date,"+
-                    "EndDate date)";
+                    "EndDate date,"+
+                    "status TEXT)";
 
             St.executeUpdate(Query1);
             St.executeUpdate(Query2);
 
-            String Query3 = "INSERT INTO bookinghistory (BookingID, Name, Email, PhoneNumber,Venue, StartDate,EndDate) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String Query3 = "INSERT INTO bookinghistory (BookingID, Name, Email, PhoneNumber,Venue, StartDate,EndDate,Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = con.prepareStatement(Query3);
 
             BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath));
@@ -52,14 +53,16 @@ public class BookingHistoryLoader
                 String venue_data=data[4];
                 String sd_data = data[5];
                 String ed_data = data[6];
+                String status_data = data[7];
 
-                statement.setString(1, bid);
+                statement.setInt(1, Integer.parseInt(bid));
                 statement.setString(2, name_data);
                 statement.setString(3, email_data);
                 statement.setString(4, phno_data);
                 statement.setString(5, venue_data);
                 statement.setString(6, sd_data);
                 statement.setString(7, ed_data);
+                statement.setString(8,status_data);
 
                 statement.addBatch();
 

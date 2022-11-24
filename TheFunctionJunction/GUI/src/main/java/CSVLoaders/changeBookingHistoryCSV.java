@@ -12,7 +12,7 @@ public class changeBookingHistoryCSV
         File custcsv = new File(csvFilePath);
         System.out.println(custcsv.exists());
         FileWriter fileWriter = new FileWriter(csvFilePath,true);
-        fileWriter.write("\n%s,\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",%s,\"%s\",\"%s\"".formatted(BookingID,fname,lname,email,phno,Venu,sd,ed,status));
+        fileWriter.write("\n%s,%s,%s,%s,%s,%s,%s,%s".formatted(BookingID,fname,email,phno,Venu,sd,ed,status));
         fileWriter.close();
     }
 }

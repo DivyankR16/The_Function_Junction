@@ -24,6 +24,7 @@ public class HelloApplication extends Application
         EventCSVLoader.LoadCSV();
         VenueLoader.LoadCSV();
         BookingHistoryLoader.LoadCSV();
+        MenuLoader.LoadCSV();
         launch();
     }
 }

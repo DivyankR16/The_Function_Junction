@@ -1,1 +1,3 @@
-"BookingID","fname","lname","Email","PhoneNumber","Venue","StartDate","EndDate","Status"
+"BookingID","fname","Email","PhoneNumber","Venue","StartDate","EndDate","Status"
+0001,Harshit,asdcsfs,avgc,asccg,2022-11-08,2022-11-09,booked
+3,Harshit,harshit.c21@iiits.in,9192939495,Ruby Room,2022-11-25,2022-11-26,Booked

@@ -61,7 +61,7 @@ public class Venue
         Connection con= Connect.createConnection();
         try{
             Statement stmt=con.createStatement();
-            String query="select * from bookinghistory where hallname='"+(VenueName)+"'";
+            String query="select * from bookinghistory where Venue='"+(VenueName)+"'";
             ResultSet rs=stmt.executeQuery(query);
            while(rs.next()){
                Date startDate=rs.getDate(6);
