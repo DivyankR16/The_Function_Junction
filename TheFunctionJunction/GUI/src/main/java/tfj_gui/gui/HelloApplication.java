@@ -3,6 +3,7 @@ package tfj_gui.gui;
 import CSVLoaders.CustomerLoader;
 import CSVLoaders.EventCSVLoader;
 import CSVLoaders.ManagerLoader;
+import CSVLoaders.VenueLoader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -24,6 +25,7 @@ public class HelloApplication extends Application
         CustomerLoader.LoadCustomerCSV();
         ManagerLoader.LoadCSV();
         EventCSVLoader.LoadCSV();
+        VenueLoader.LoadCSV();
         launch();
     }
 }

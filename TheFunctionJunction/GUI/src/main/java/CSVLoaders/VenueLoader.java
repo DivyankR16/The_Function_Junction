@@ -9,15 +9,15 @@ import java.sql.*;
 
 public class VenueLoader
 {
-    private int batchSize = 10;
+    private static int batchSize = 10;
     static String csvFilePath="venue.csv";
-    Connection con= Connect.createConnection();
-    public void LoadCSV(){
+    static Connection con= Connect.createConnection();
+    public static void LoadCSV(){
         try{
             Statement St = con.createStatement();
             con.setAutoCommit(false);
-            String Query1="Drop table if exist venue";
-            String Query2="create table venue(venuid INT, name TEXT, capacity INT, price_per_day INT, description TEXT)" ;
+            String Query1="Drop table if exists venue";
+            String Query2="create table venue(venuid TEXT, name TEXT, capacity INT, price_per_day INT, description TEXT)" ;
             St.executeUpdate(Query1);
             St.executeUpdate(Query2);
 
