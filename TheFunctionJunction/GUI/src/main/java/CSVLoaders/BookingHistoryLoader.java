@@ -33,7 +33,7 @@ public class BookingHistoryLoader
             St.executeUpdate(Query1);
             St.executeUpdate(Query2);
 
-            String Query3 = "INSERT INTO manager (FirstName, LastName, PhoneNumber, emailID,LoginID, Password) VALUES (?, ?, ?, ?, ?,?)";
+            String Query3 = "INSERT INTO bookinghistory (BookingID, Name, Email, PhoneNumber,Venue, StartDate,EndDate) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = con.prepareStatement(Query3);
 
             BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath));
@@ -45,19 +45,21 @@ public class BookingHistoryLoader
 
             while ((lineText = lineReader.readLine()) != null) {
                 String[] data = lineText.split(",");
-                String FirstName = data[0];
-                String LastName = data[1];
-                String PhoneNumber = data[2];
-                String emailID = data[3];
-                String LoginID=data[4];
-                String Password = data[5];
+                String bid = data[0];
+                String name_data = data[1];
+                String email_data = data[2];
+                String phno_data = data[3];
+                String venue_data=data[4];
+                String sd_data = data[5];
+                String ed_data = data[6];
 
-                statement.setString(1, FirstName);
-                statement.setString(2, LastName);
-                statement.setString(3, PhoneNumber);
-                statement.setString(4, emailID);
-                statement.setString(5, LoginID);
-                statement.setString(6, Password);
+                statement.setString(1, bid);
+                statement.setString(2, name_data);
+                statement.setString(3, email_data);
+                statement.setString(4, phno_data);
+                statement.setString(5, venue_data);
+                statement.setString(6, sd_data);
+                statement.setString(7, ed_data);
 
                 statement.addBatch();
 
@@ -67,14 +69,15 @@ public class BookingHistoryLoader
             }
             lineReader.close();
             statement.executeBatch();
-
             con.commit();
             con.close();
-
         }
-        catch(SQLException e){
+        catch(SQLException e)
+        {
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
     }

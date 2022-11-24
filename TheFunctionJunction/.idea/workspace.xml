@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="-">
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/BookingHistoryLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/EventUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/EventUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/ManagerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/ManagerLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/bookinghistory.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/bookinghistory.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/venue.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/venue.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/NewBookingBirthday_View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/resources/tfj_gui/gui/NewBookingBirthday_View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/BookingHistoryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/BookingHistoryLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,13 +82,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667465189804</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Made Person,Customer,Manager.">
-      <created>1667566442660</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1667566442660</updated>
     </task>
     <task id="LOCAL-00010" summary="-">
       <created>1667571935682</created>
@@ -431,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669268665778</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="-">
+      <created>1669269830972</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1669269830972</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -1,4 +1,1 @@
 "BookingID","fname","lname","Email","PhoneNumber","Venue","StartDate","EndDate","Status"
-1,"Adolf","Patric","adolfpatric@gmail.com","1234567890","Dhanush","2022-11-08","2022-11-12","booked"
-2,"Akash","Kulkarni","akashkulkarni@gmail.com","9834947924","Lawn","2022-11-11","2022-11-25","Booked"
-3,"Akash","Kulkarni","akashkulkarni@gmail.com","9834947924", "Lawn","2022-11-26","2022-12-01","Booked"
