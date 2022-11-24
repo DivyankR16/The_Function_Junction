@@ -383,7 +383,7 @@ public class NewBookingConferenceViewController implements Initializable
         }
         Lunch l1 = new Lunch();
         l1.setNumberOfGuests(no_of_guests);
-        if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
+        if(myChoice_Lunch.compareToIgnoreCase("---None---")!=0){
             l1.setLunch_class(myChoice_Lunch);
             Lunch_cost = l1.calculateCost();}
         else{
@@ -392,7 +392,7 @@ public class NewBookingConferenceViewController implements Initializable
 
         Snacks s1 = new Snacks();
         s1.setNumberOfGuests(no_of_guests);
-        if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
+        if(myChoice_Snacks.compareToIgnoreCase("---None---")!=0){
             s1.setSnack_class(myChoice_Snacks);
             Snacks_cost = s1.calculateCost();}
         else{
@@ -401,7 +401,7 @@ public class NewBookingConferenceViewController implements Initializable
 
         Dinner d1 = new Dinner();
         d1.setNumberOfGuests(no_of_guests);
-        if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
+        if(myChoice_Dinner.compareToIgnoreCase("---None---")!=0){
             d1.setDinner_class(myChoice_Dinner);
             Dinner_cost = d1.calculateCost();}
         else{
