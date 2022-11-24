@@ -55,11 +55,11 @@ public class EventCSVLoader {
                 String cfname = data[3];
                 String clname = data[4];
                 String Email=data[5];
-                String Venue = data[6];
-                String Start_Date = data[7];
-                String End_Date=data[8];
-                String Expected_Cost = data[9];
-                String PhoneNumber = data[10];
+                String Venue = data[7];
+                String PhoneNumber = data[6];
+                String Start_Date = data[8];
+                String End_Date=data[9];
+                String Expected_Cost = data[10];
                 String Status=data[11];
 
                 statement.setString(1, BookingID);
