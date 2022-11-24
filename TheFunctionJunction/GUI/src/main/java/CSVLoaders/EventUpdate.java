@@ -13,7 +13,7 @@ public class EventUpdate {
         try {
             String csvFilePath = "GUI/src/main/java/CSVLoaders/Event.csv";
             FileWriter fileWriter = new FileWriter(csvFilePath,true);
-            fileWriter.write("\n%s,%s,%s,%s,%s,%s,%s,%s,%s,%s".formatted(BookingID, CustomerId,Event_Name,cfname,clname,Email,Venue,Start_Date,End_Date,Expected_Cost, PhoneNumber,Status));
+            fileWriter.write("\n%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s".formatted(BookingID, CustomerId,Event_Name,cfname,clname,Email,PhoneNumber,Venue,Start_Date,End_Date,Expected_Cost,Status));
             fileWriter.close();
         }
         catch (IOException e){
@@ -42,7 +42,7 @@ public class EventUpdate {
                 String Expected_Cost = data[9];
                 String PhoneNumber = data[10];
                 String Status=data[11];
-                Writer.write(BookingID+ "," +  CustomerId+ "," + Event_Name+ "," + cfname+ "," + clname+ "," + Email+ "," + Venue+ "," + Start_Date+ "," + End_Date+ "," + Expected_Cost+ "," +  PhoneNumber+ "," + Status+"\n");
+                Writer.write(BookingID+ "," +  CustomerId+ "," + Event_Name+ "," + cfname+ "," + clname+ "," + Email+ ","+PhoneNumber+"," + Venue+ "," + Start_Date+ "," + End_Date+ "," + Expected_Cost+ ","  + Status+"\n");
             }
             lineReader.close();
             Writer.close();
@@ -66,11 +66,11 @@ public class EventUpdate {
                 String Status=data[11];
                 if (bookingID.compareTo(BookingID)!=0)
                 {
-                    writer1.write(BookingID+ "," +  CustomerId+ "," + Event_Name+ "," + cfname+ "," + clname+ "," + Email+ "," + Venue+ "," + Start_Date+ "," + End_Date+ "," + Expected_Cost+ "," +  PhoneNumber+ ","+"cancelled" +"\n");
+                    writer1.write(BookingID+ "," +  CustomerId+ "," + Event_Name+ "," + cfname+ "," + clname+ "," + Email+ ","+PhoneNumber+"," + Venue+ "," + Start_Date+ "," + End_Date+ "," + Expected_Cost+ ","+"cancelled" +"\n");
                 }
                 else
                 {
-                    writer1.write(BookingID+ "," +  CustomerId+ "," + Event_Name+ "," + cfname+ "," + clname+ "," + Email+ "," + Venue+ "," + Start_Date+ "," + End_Date+ "," + Expected_Cost+ "," +  PhoneNumber+ "," + Status+"\n");
+                    writer1.write(BookingID+ "," +  CustomerId+ "," + Event_Name+ "," + cfname+ "," + clname+ "," + Email+ ","+PhoneNumber+"," + Venue+ "," + Start_Date+ "," + End_Date+ "," + Expected_Cost+ ","  + Status+"\n");
                 }
             }
             writer1.close();

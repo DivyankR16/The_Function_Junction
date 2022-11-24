@@ -5,26 +5,30 @@ import Database.DBconnection.Connect;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-public class ManagerLoader {
+public class BookingHistoryLoader
+{
     private static int batchSize = 20;
-    static String csvFilePath="GUI/src/main/java/CSVLoaders/manager.csv";
+    static String csvFilePath="GUI/src/main/java/CSVLoaders/bookinghistory.csv";
     static Connection con= Connect.createConnection();
     public static void LoadCSV()
     {
         try{
             Statement St = con.createStatement();
             con.setAutoCommit(false);
-            String Query1="Drop table if exists manager";
-            String Query2="create table manager(" +
-                    "FirstName text," +
-                    "LastName text," +
+            String Query1="Drop table if exists bookinghistory";
+            String Query2="create table bookinghistory(" +
+                    "BookingID text," +
+                    "Name text," +
+                    "Email text," +
                     "PhoneNumber text," +
-                    "emailID text," +
-                    "LoginID text," +
-                    "Password text,"+
-                    "DOB date)";
+                    "Venue text," +
+                    "StartDate date,"+
+                    "EndDate date)";
 
             St.executeUpdate(Query1);
             St.executeUpdate(Query2);
