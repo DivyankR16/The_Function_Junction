@@ -105,17 +105,22 @@ public abstract class Event
             ps.setString(4,c.getFirstName());
             ps.setString(5,c.getLastName());
             ps.setString(6,c.getEmailId());
-            ps.setString(7,c.getPhoneNumber());
-            ps.setString(8,even.getVenue().getVenueName());
-            ps.setString(9,even.getStartDate().toString());
-            ps.setString(10,even.getEndDate().toString());
-            ps.setDouble(11,even.getFinalCost());
+            ps.setString(7,even.getVenue().getVenueName());
+            ps.setString(8,even.getStartDate().toString());
+            ps.setString(9,even.getEndDate().toString());
+            ps.setDouble(10,even.getFinalCost());
+            ps.setString(11,c.getPhoneNumber());
             ps.setString(12,even.getBookingStatus());
+            ps.executeUpdate();
             EventUpdate.load_into_event_csv(String.valueOf(BookingID),c.getCustomerID(),name,c.getFirstName(),c.getLastName(),c.getEmailId(),even.getVenue().getVenueName(),even.getStartDate().toString(),even.getEndDate().toString(),String.valueOf(even.getFinalCost()),c.getPhoneNumber(),even.getBookingStatus());
             changeBookingHistoryCSV.load_into_customer_csv(String.valueOf(BookingID),c.getFirstName(),c.getLastName(),c.getEmailId(),c.getPhoneNumber(),even.getVenue().getVenueName(),even.getStartDate().toString(),even.getEndDate().toString(),even.getBookingStatus());
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             throw new RuntimeException(e);
         }
     }
