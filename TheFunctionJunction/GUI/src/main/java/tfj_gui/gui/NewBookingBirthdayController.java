@@ -393,9 +393,11 @@ public class NewBookingBirthdayController implements Initializable
         if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
             b1.setBf_class(myChoice_breakfast);
             Breakfast_cost = b1.calculateCost();}
-        else{
+        else
+        {
             Breakfast_cost=0;
         }
+
         Lunch l1 = new Lunch();
         l1.setNumberOfGuests(no_of_guests);
         if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
