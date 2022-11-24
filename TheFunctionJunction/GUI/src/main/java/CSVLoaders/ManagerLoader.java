@@ -23,7 +23,7 @@ public class ManagerLoader {
                     "PhoneNumber text," +
                     "emailID text," +
                     "LoginID text," +
-                    "Password text"+
+                    "Password text,"+
                     "DOB date)";
 
             St.executeUpdate(Query1);
