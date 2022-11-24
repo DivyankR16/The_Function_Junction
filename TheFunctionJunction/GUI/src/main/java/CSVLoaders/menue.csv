@@ -1,13 +1,13 @@
-"menuid","type","class","Description","Cost per plate"
-0001,"Breakfast","Basic","Idli;Chutney;Potato masala subjee with Dosa and orange juice.",75
-0002,"Breakfast","Premium","Idli;Chutney;Potato masala subjee with Dosa and orange juice. Bread;Jam;Butter and Omelette",150
-0003,"Breakfast","Royal","Idli;Chutney;Potato masala subjee with Dosa and orange juice. Bread;Jam;Butter and Omelette. Cornflakes;Milk and Paster.",200
-0004,"Lunch","Basic","Mutter Paneer; Dal Tadka; Jira Rice; Roti; Ice Cream Vanilla",150
-0005,"Lunch","Premium","Mutter Paneer;Handi Chicken ;Dal Tadka; Jira Rice; Naan/Roti; Mango Ice Cream",250
-0006,"Lunch","Royal","Mutter Paneer;Manchurian;Handi Chicken;Noodles;Dal Tadka; Jira Rice; Naan/Roti; Gulabjamun;Chocolate Ice Cream",350
-0007,"Snacks","Basic","Dahi Samosa;Pani Puri",50
-0008,"Snacks","Premium","Dahi Samosa;Pani Puri; Paneer Tikka",75
-0009,"Snacks","Royal","Dahi Samosa;Pani Puri; Paneer Tikka; Fish pakoda",150
-0010,"Dinner","Basic","Paneer Tikka Masala;Cauliflower Subjee;Dal Tadka; Naan/Tandoori Roti; Jira Rice;Salad; ; Ras Malai; Chocolate Ice Cream",200
-0011,"Dinner","Premium","Paneer Tikka Masala; Handi Chicken; Mix Veg; Dal Tadka; Naan/Tandoori Roti; Jira Rice;Salad; Ras Malai; Chocolate Ice Cream",300
-0012,"Dinner","Royal","Fish Fry;Paneer Tikka Masala;;Handi Chicken; Mix Veg; Dal Tadka; Naan/Tandoori Roti; Jira Rice;Salad; Ras Malai; Ice Cream(Cookies and Cream)",400
+menuid,type,class,Description,Cost per plate
+0001,Breakfast,Basic,Idli;Chutney;Potato masala subjee with Dosa and orange juice.,75
+0002,Breakfast,Premium,Idli;Chutney;Potato masala subjee with Dosa and orange juice. Bread;Jam;Butter and Omelette,150
+0003,Breakfast,Royal,Idli;Chutney;Potato masala subjee with Dosa and orange juice. Bread;Jam;Butter and Omelette. Cornflakes;Milk and Paster.,200
+0004,Lunch,Basic,Mutter Paneer; Dal Tadka; Jira Rice; Roti; Ice Cream Vanilla,150
+0005,Lunch,Premium,Mutter Paneer;Handi Chicken ;Dal Tadka; Jira Rice; Naan/Roti; Mango Ice Cream,250
+0006,Lunch,Royal,Mutter Paneer;Manchurian;Handi Chicken;Noodles;Dal Tadka; Jira Rice; Naan/Roti; Gulabjamun;Chocolate Ice Cream,350
+0007,Snacks,Basic,Dahi Samosa;Pani Puri,50
+0008,Snacks,Premium,Dahi Samosa;Pani Puri; Paneer Tikka,75
+0009,Snacks,Royal,Dahi Samosa;Pani Puri; Paneer Tikka; Fish pakoda,150
+0010,Dinner,Basic,Paneer Tikka Masala;Cauliflower Subjee;Dal Tadka; Naan/Tandoori Roti; Jira Rice;Salad; ; Ras Malai; Chocolate Ice Cream,200
+0011,Dinner,Premium,Paneer Tikka Masala; Handi Chicken; Mix Veg; Dal Tadka; Naan/Tandoori Roti; Jira Rice;Salad; Ras Malai; Chocolate Ice Cream,300
+0012,Dinner,Royal,Fish Fry;Paneer Tikka Masala;;Handi Chicken; Mix Veg; Dal Tadka; Naan/Tandoori Roti; Jira Rice;Salad; Ras Malai; Ice Cream(Cookies and Cream),400
