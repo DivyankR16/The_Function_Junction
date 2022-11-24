@@ -20,7 +20,14 @@
          </children></VBox>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2A2A1FF;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="567.0" fitWidth="841.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/D:/CP,DSA%20Lab%20Codes/UG2_OOP/The_Function_Junction(1)/TheFunctionJunction/Images/welcome-paper-poster-with-colorful-brush-strokes-vector-21849050.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </center>
    <top>
       <Pane prefHeight="150.0" prefWidth="1080.0" style="-fx-background-color: #195190FF;" BorderPane.alignment="CENTER">
