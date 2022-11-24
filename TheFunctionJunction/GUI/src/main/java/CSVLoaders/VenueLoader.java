@@ -10,7 +10,7 @@ import java.sql.*;
 public class VenueLoader
 {
     private static int batchSize = 10;
-    static String csvFilePath="venue.csv";
+    static String csvFilePath="GUI/src/main/java/CSVLoaders/venue.csv";
     static Connection con= Connect.createConnection();
     public static void LoadCSV(){
         try{
@@ -21,7 +21,7 @@ public class VenueLoader
             St.executeUpdate(Query1);
             St.executeUpdate(Query2);
 
-            String Query3 = "INSERT INTO venue(venuid, name, capacity, price_per_day, description) VALUES (?, ?, ?, ?, ?, ?)";
+            String Query3 = "INSERT INTO venue(venuid, name, capacity, price_per_day, description) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement statement = con.prepareStatement(Query3);
             BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath));
             String lineText = null;
