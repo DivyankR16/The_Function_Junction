@@ -101,7 +101,8 @@ public class ChangePasswordViewController {
             LoginID=m1.getLoginId();
             p=new Manager();
         }
-        else{
+        else
+        {
             Customer c1=need.getCustomer();
             LoginID=c1.getLoginId();
             p=new Customer();
@@ -110,11 +111,13 @@ public class ChangePasswordViewController {
         {
               if (oldPassword.compareTo(p.getPass(LoginID))==0)
               {
-                  if(p instanceof Manager){
+                  if(p instanceof Manager)
+                  {
                        p.changePass(LoginID,newPassword);
                        //Manager m=new Manager();
-                   }
-                  else if(p instanceof Customer){
+                  }
+                  else if(p instanceof Customer)
+                  {
                        p.changePass(LoginID,newPassword);
                        //Customer c=new Customer();
                    }

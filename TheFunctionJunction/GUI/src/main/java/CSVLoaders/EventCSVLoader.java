@@ -30,7 +30,7 @@ public class EventCSVLoader {
                     "Venue text," +
                     "Start_Date date," +
                     "End_Date date," +
-                    "Expected_Cost numeric(10,2)" +
+                    "Expected_Cost numeric(10,2)," +
                     "PhoneNumber text," +
                     "Status text)";
 

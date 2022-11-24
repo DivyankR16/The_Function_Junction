@@ -73,6 +73,5 @@ public class changeCustomerCSV {
             catch (IOException e){
                 e.printStackTrace();
             }
-            }
-
+        }
 }

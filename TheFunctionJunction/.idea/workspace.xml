@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Added some customers and description to menues.">
+    <list default="true" id="6aa49edf-9c62-4bd6-b468-5e490971a42a" name="Changes" comment="Added description to menues.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/menue.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/menue.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/Event.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/Event.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/EventCSVLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/EventCSVLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/changeCustomerCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/CSVLoaders/changeCustomerCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ChangePasswordViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/ChangePasswordViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/tfj_gui/gui/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +63,21 @@
       <recent name="D:\IIIT\IIIT Shri City\JavaProject\TFJ\TheFunctionJunction\GUI\src\main\resources\tfj_gui\gui" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tfj_gui.gui.HelloApplication" />
+      <module name="GUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tfj_gui.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,13 +86,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667465189804</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Adding more GUI">
-      <created>1667501690344</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1667501690344</updated>
     </task>
     <task id="LOCAL-00005" summary="Adding more GUI again.Made internal menu and navigation bar on the left side.">
       <created>1667559036750</created>
@@ -411,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669206319073</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Added description to menues.">
+      <created>1669207548793</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1669207548794</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -426,7 +445,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" -" />
     <MESSAGE value="Signup added." />
     <MESSAGE value="Signup WORKING.&#10;Don't use date datatype otherwise signup will not work.&#10;Use String datatype in java and text datatype in mysql." />
     <MESSAGE value="Added alerts for login page&#10;1) login id cant be empty&#10;2) password cant be empty&#10;3) login id and password do not match&#10;&#10;Changed a bit in login controller to ensure that 1080*720 is consistent." />
@@ -451,7 +469,8 @@
     <MESSAGE value="Customer update and manager update changed(csv)." />
     <MESSAGE value="Added Digvijay and Anurag's photos in About Us. &#10;Also wrote content on help fxml and manager help fxml." />
     <MESSAGE value="Added some customers and description to menues." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some customers and description to menues." />
+    <MESSAGE value="Added description to menues." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added description to menues." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
