@@ -280,6 +280,7 @@ public class NewBookingMarriageViewController implements Initializable
         }
         else DisplayInformationLabel.setText("Venue not available");}
     }
+    int next_booking_id=0;
     @FXML
     protected void DisplayFinalCost(ActionEvent event)
     {   Venue v=new Venue(myChoice_venue,no_of_guests);
@@ -381,7 +382,7 @@ public class NewBookingMarriageViewController implements Initializable
         }
         Lunch l1 = new Lunch();
         l1.setNumberOfGuests(no_of_guests);
-        if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
+        if(myChoice_Lunch.compareToIgnoreCase("---None---")!=0){
             l1.setLunch_class(myChoice_Lunch);
             Lunch_cost = l1.calculateCost();}
         else{
@@ -390,7 +391,7 @@ public class NewBookingMarriageViewController implements Initializable
 
         Snacks s1 = new Snacks();
         s1.setNumberOfGuests(no_of_guests);
-        if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
+        if(myChoice_Snacks.compareToIgnoreCase("---None---")!=0){
             s1.setSnack_class(myChoice_Snacks);
             Snacks_cost = s1.calculateCost();}
         else{
@@ -399,7 +400,7 @@ public class NewBookingMarriageViewController implements Initializable
 
         Dinner d1 = new Dinner();
         d1.setNumberOfGuests(no_of_guests);
-        if(myChoice_breakfast.compareToIgnoreCase("---None---")!=0){
+        if(myChoice_Dinner.compareToIgnoreCase("---None---")!=0){
             d1.setDinner_class(myChoice_Dinner);
             Dinner_cost = d1.calculateCost();}
         else{
@@ -421,7 +422,7 @@ public class NewBookingMarriageViewController implements Initializable
         double Final_Cost;
         if(booking_status.compareToIgnoreCase("Available") == 0)
         {
-            int next_booking_id = Integer.parseInt(GetBookingID());
+            next_booking_id = Integer.parseInt(GetBookingID());
             w1.setBookingStatus("Booked");
             w1.setChoice(myChoice_decoration);
             w1.setStartDate(sd);
@@ -463,7 +464,7 @@ public class NewBookingMarriageViewController implements Initializable
 
         String query2 = "insert into bookinghistory values(?,?,?,?,?,?,?,?)";
         PreparedStatement ps1 = dbcon.prepareStatement(query2);
-        ps1.setString(1,GetBookingID());
+        ps1.setString(1,String.valueOf(next_booking_id));
         ps1.setString(2,name);
         ps1.setString(3,email);
         ps1.setString(4,ph_number);
