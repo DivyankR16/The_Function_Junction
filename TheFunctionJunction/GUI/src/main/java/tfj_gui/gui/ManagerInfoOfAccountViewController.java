@@ -151,10 +151,10 @@ public class ManagerInfoOfAccountViewController implements Initializable
     protected void GotoSearch(ActionEvent event) throws IOException, SQLException {
         Send_Data_Between need=Send_Data_Between.getInstance();
         need.setSearchInput(userInput.getText());
-        if(Search.getCustNames(need.getSearchInput()).size()>1){
+        if(Search.getCustNames(need.getSearchInput()).size()>=1){
         ManagerControllerFunctions.GoToSearch(event);}
         else{
-            Remark.setText("Either no person matches with inputted name or input is empty");
+            Remark.setText("Either no person matches with input name or input is empty");
         }
     }
     @FXML

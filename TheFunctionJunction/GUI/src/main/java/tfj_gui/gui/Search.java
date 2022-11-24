@@ -31,7 +31,7 @@ public class Search {
         int j=0;
         userInput= userInput.toLowerCase();
         while(i<userInput.length() && j<custName.length()){
-            if(userInput.charAt(i)==custName.toLowerCase().charAt(j)){
+            if(userInput.charAt(i)==(custName.toLowerCase().charAt(j))){
                 i++;
             }
             j++;

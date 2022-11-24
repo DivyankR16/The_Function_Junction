@@ -29,7 +29,7 @@ public class ManagerLoader {
             St.executeUpdate(Query1);
             St.executeUpdate(Query2);
 
-            String Query3 = "INSERT INTO manager (FirstName, LastName, PhoneNumber, emailID,LoginID, Password) VALUES (?, ?, ?, ?, ?,?)";
+            String Query3 = "INSERT INTO manager (FirstName, LastName, PhoneNumber, emailID,LoginID, Password, DOB) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = con.prepareStatement(Query3);
 
             BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath));
@@ -47,6 +47,7 @@ public class ManagerLoader {
                 String emailID = data[3];
                 String LoginID=data[4];
                 String Password = data[5];
+                String dob_data = data[6];
 
                 statement.setString(1, FirstName);
                 statement.setString(2, LastName);
@@ -54,6 +55,7 @@ public class ManagerLoader {
                 statement.setString(4, emailID);
                 statement.setString(5, LoginID);
                 statement.setString(6, Password);
+                statement.setString(7, dob_data);
 
                 statement.addBatch();
 

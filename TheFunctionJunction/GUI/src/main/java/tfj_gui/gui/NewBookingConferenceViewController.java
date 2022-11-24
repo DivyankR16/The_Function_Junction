@@ -22,7 +22,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class NewBookingConferenceViewController implements Initializable
-{
+{   int next_booking_id;
     @FXML
     public Label DisplayInformationLabel;
     @FXML
@@ -423,7 +423,7 @@ public class NewBookingConferenceViewController implements Initializable
         double Final_Cost;
         if(booking_status.compareToIgnoreCase("Available") == 0)
         {
-            int next_booking_id = Integer.parseInt(GetBookingID());
+            next_booking_id = Integer.parseInt(GetBookingID());
             w1.setBookingStatus("Booked");
             w1.setChoice(myChoice_decoration);
             w1.setStartDate(sd);
@@ -478,6 +478,6 @@ public class NewBookingConferenceViewController implements Initializable
         Send_Data_Between need=Send_Data_Between.getInstance();
         Customer k=need.getCustomer();
         Customer c=Customer.getDetailsCustomer(k.getLoginId());
-        Event.updateEvent(w1,c,Integer.parseInt(GetBookingID()),"Conference");
+        Event.updateEvent(w1,c,next_booking_id,"Conference");
     }
 }

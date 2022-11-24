@@ -478,7 +478,7 @@ public class NewBookingMarriageViewController implements Initializable
         Send_Data_Between need=Send_Data_Between.getInstance();
         Customer k=need.getCustomer();
         Customer c=Customer.getDetailsCustomer(k.getLoginId());
-        Event.updateEvent(w1,c,Integer.parseInt(GetBookingID()),"Marriage");
+        Event.updateEvent(w1,c,Integer.parseInt(String.valueOf(next_booking_id)),"Marriage");
 
     }
 }
